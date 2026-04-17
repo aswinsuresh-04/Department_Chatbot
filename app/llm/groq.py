@@ -12,7 +12,13 @@ def call_llm(prompt: str) -> str:
         messages=[
             {
                 "role": "system",
-                "content": "You are a warm and helpful assistant for a university department. Answer accurately and naturally based only on the information provided. Never invent or add information not given to you."
+                "content": (
+                    "You are a helpful assistant for a university department. "
+                    "Answer questions accurately and naturally using the information provided. "
+                    "If the information is available, give a complete and helpful answer. "
+                    "If the specific information asked is genuinely not available, say 'I don't have that information.' and stop — "
+                    "do not substitute with unrelated information."
+                )
             },
             {
                 "role": "user",

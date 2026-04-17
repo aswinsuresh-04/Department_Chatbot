@@ -13,85 +13,249 @@
     --text: #e8e8e8; --text-muted: #666; --text-dim: #999;
     --font: 'Sora', sans-serif; --mono: 'JetBrains Mono', monospace;
   }
-  body { font-family: var(--font); background: var(--bg); color: var(--text); height: 100vh; display: flex; overflow: hidden; }
 
-  /* ── Sidebar ── */
-  .sidebar { width: 260px; background: var(--sidebar); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
-  .sidebar-header { padding: 20px 16px 16px; border-bottom: 1px solid var(--border); }
-  .sidebar-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-  .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-  .logo-text { font-size: 13px; font-weight: 600; line-height: 1.3; }
-  .logo-text span { display: block; font-size: 10px; font-weight: 400; color: var(--text-muted); margin-top: 1px; }
-  .new-chat-btn { width: 100%; padding: 9px 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: var(--font); font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s; }
-  .new-chat-btn:hover { background: #2a2a2a; }
-  .sidebar-section { padding: 12px 16px 6px; font-size: 10px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
-  .chat-history { flex: 1; overflow-y: auto; padding: 0 8px; }
-  .history-item { padding: 8px 10px; border-radius: 6px; font-size: 12px; color: var(--text-dim); cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: background 0.15s; }
-  .history-item:hover { background: var(--surface2); color: var(--text); }
-  .sidebar-footer { padding: 10px 16px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-  .footer-status { font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
-  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; flex-shrink: 0; box-shadow: 0 0 6px #22c55e88; }
+  body { font-family: var(--font); background: transparent; margin: 0; padding: 0; }
+
+  /* ── Floating Button ── */
+  .chat-fab {
+    position: fixed; bottom: 24px; right: 24px;
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 50%; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; box-shadow: 0 4px 24px #4f8ef755;
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 1000;
+  }
+  .chat-fab:hover { transform: scale(1.08); box-shadow: 0 6px 32px #4f8ef788; }
+  .chat-fab.hidden { display: none; }
+
+  /* ── Small Chatbox ── */
+  .chat-popup {
+    position: fixed; bottom: 90px; right: 24px;
+    width: 360px; height: 520px;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 16px; display: none; flex-direction: column;
+    overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    z-index: 1000; animation: popIn 0.2s ease;
+  }
+  .chat-popup.show { display: flex; }
+  @keyframes popIn {
+    from { opacity: 0; transform: translateY(16px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* Popup header */
+  .popup-header {
+    background: var(--sidebar); padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+  }
+  .popup-avatar {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-size: 16px; flex-shrink: 0;
+  }
+  .popup-title { flex: 1; }
+  .popup-title .pt-name { font-size: 13px; font-weight: 600; color: var(--text); }
+  .popup-title .pt-sub { font-size: 10px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; margin-top: 1px; }
+  .pt-dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
+  .popup-actions { display: flex; gap: 4px; }
+  .popup-btn {
+    width: 28px; height: 28px; border-radius: 6px;
+    background: none; border: none; cursor: pointer;
+    color: var(--text-muted); font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, color 0.15s;
+  }
+  .popup-btn:hover { background: var(--surface2); color: var(--text); }
+
+  /* Popup chat area */
+  .popup-chat {
+    flex: 1; overflow-y: auto; padding: 16px 12px;
+    scroll-behavior: smooth;
+  }
+  .popup-chat::-webkit-scrollbar { width: 3px; }
+  .popup-chat::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* Popup welcome */
+  .popup-welcome {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; height: 100%; text-align: center; padding: 16px;
+  }
+  .popup-welcome .pw-icon { font-size: 36px; margin-bottom: 10px; }
+  .popup-welcome h3 { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+  .popup-welcome p { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; }
+  .popup-suggestions { display: flex; flex-direction: column; gap: 6px; width: 100%; }
+  .popup-sug {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 10px; font-size: 11px;
+    color: var(--text-dim); cursor: pointer; text-align: left;
+    transition: border-color 0.15s, background 0.15s; font-family: var(--font);
+  }
+  .popup-sug:hover { border-color: var(--accent); background: var(--surface2); color: var(--text); }
+
+  /* Popup messages */
+  .popup-msg-row { display: flex; gap: 8px; margin-bottom: 10px; animation: fadeIn 0.2s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+  .popup-av {
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; flex-shrink: 0; margin-top: 2px;
+  }
+  .popup-av.user { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-size: 9px; font-weight: 600; }
+  .popup-av.bot { background: var(--surface2); border: 1px solid var(--border); font-size: 12px; }
+  .popup-msg-content { flex: 1; min-width: 0; }
+  .popup-msg-name { font-size: 10px; font-weight: 600; margin-bottom: 3px; color: var(--text-dim); }
+  .popup-msg-name.un { color: var(--accent); }
+  .popup-msg-text { font-size: 12px; line-height: 1.6; color: var(--text); white-space: pre-wrap; word-break: break-word; }
+  .popup-msg-sources { margin-top: 5px; display: flex; flex-wrap: wrap; gap: 3px; }
+  .popup-src { background: var(--surface2); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; font-size: 9px; font-family: var(--mono); color: var(--text-muted); }
+  .popup-typing { display: flex; gap: 8px; margin-bottom: 10px; }
+  .popup-typing-dots { display: flex; align-items: center; gap: 3px; padding: 8px 0; }
+  .popup-typing-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--text-muted); animation: bounce 1.2s infinite; }
+  .popup-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .popup-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bounce { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-4px); opacity: 1; } }
+
+  /* Popup input */
+  .popup-input {
+    padding: 10px 12px; border-top: 1px solid var(--border);
+    display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0;
+  }
+  .popup-input textarea {
+    flex: 1; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 10px; color: var(--text);
+    font-family: var(--font); font-size: 12px; resize: none;
+    outline: none; max-height: 80px; min-height: 34px; line-height: 1.4;
+    transition: border-color 0.15s;
+  }
+  .popup-input textarea:focus { border-color: var(--accent); }
+  .popup-input textarea::placeholder { color: var(--text-muted); }
+  .popup-send {
+    width: 30px; height: 30px; border-radius: 7px;
+    background: var(--accent); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: background 0.15s;
+  }
+  .popup-send:hover { background: #3a7de8; }
+  .popup-send:disabled { background: var(--surface2); cursor: not-allowed; }
+  .popup-send svg { width: 13px; height: 13px; fill: white; }
+
+  /* ── Full Screen ── */
+  .fullscreen {
+    position: fixed; inset: 0;
+    display: none; z-index: 999;
+    animation: fsIn 0.2s ease;
+  }
+  .fullscreen.show { display: flex; }
+  @keyframes fsIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Sidebar */
+  .fs-sidebar {
+    width: 260px; background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; flex-shrink: 0;
+  }
+  .fs-sidebar-header { padding: 20px 16px 16px; border-bottom: 1px solid var(--border); }
+  .fs-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .fs-logo-icon {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 8px; display: flex; align-items: center;
+    justify-content: center; font-size: 16px; flex-shrink: 0;
+  }
+  .fs-logo-text { font-size: 13px; font-weight: 600; line-height: 1.3; color: var(--text); }
+  .fs-logo-text span { display: block; font-size: 10px; font-weight: 400; color: var(--text-muted); margin-top: 1px; }
+  .fs-new-chat {
+    width: 100%; padding: 9px 12px; background: var(--surface2);
+    border: 1px solid var(--border); border-radius: 8px; color: var(--text);
+    font-family: var(--font); font-size: 13px; cursor: pointer;
+    display: flex; align-items: center; gap: 8px; transition: background 0.15s;
+  }
+  .fs-new-chat:hover { background: #2a2a2a; }
+  .fs-section { padding: 12px 16px 6px; font-size: 10px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .fs-history { flex: 1; overflow-y: auto; padding: 0 8px; }
+  .fs-history-item { padding: 8px 10px; border-radius: 6px; font-size: 12px; color: var(--text-dim); cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: background 0.15s; }
+  .fs-history-item:hover { background: var(--surface2); color: var(--text); }
+  .fs-footer { padding: 10px 16px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .fs-status { font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+  .fs-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 6px #22c55e88; }
   .staff-btn { background: #1a2a1a; border: 1px solid #2a3a2a; color: #ffffff; font-size: 12px; cursor: pointer; padding: 5px 10px; border-radius: 6px; transition: all 0.2s; font-family: var(--font); display: flex; align-items: center; gap: 5px; }
   .staff-btn:hover { background: #1e341e; border-color: #4a9a4a; color: #ffffff; }
 
-  /* ── Main ── */
-  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
-  .topbar { height: 52px; border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 20px; gap: 12px; flex-shrink: 0; }
-  .model-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: var(--text-dim); font-family: var(--mono); display: flex; align-items: center; gap: 6px; }
-  .model-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-  .topbar-title { font-size: 13px; color: var(--text-muted); margin-left: auto; }
+  /* Full screen main */
+  .fs-main { flex: 1; display: flex; flex-direction: column; overflow: hidden; background: var(--bg); }
+  .fs-topbar {
+    height: 52px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; padding: 0 20px; gap: 12px; flex-shrink: 0;
+  }
+  .fs-model-badge {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 6px; padding: 4px 10px; font-size: 12px;
+    color: var(--text-dim); font-family: var(--mono);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .fs-model-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .fs-topbar-title { font-size: 13px; color: var(--text-muted); }
+  .fs-topbar-actions { margin-left: auto; display: flex; gap: 6px; }
+  .fs-top-btn {
+    width: 30px; height: 30px; border-radius: 7px; background: var(--surface2);
+    border: 1px solid var(--border); cursor: pointer; color: var(--text-muted);
+    font-size: 14px; display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, color 0.15s;
+  }
+  .fs-top-btn:hover { background: #2a2a2a; color: var(--text); }
+  .fs-top-btn.close:hover { background: #3a1a1a; color: var(--danger); border-color: var(--danger); }
 
-  /* ── Chat ── */
-  .chat-area { flex: 1; overflow-y: auto; padding: 24px 0; scroll-behavior: smooth; }
-  .chat-area::-webkit-scrollbar { width: 4px; }
-  .chat-area::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-  .message-row { display: flex; padding: 6px 20px; gap: 12px; max-width: 860px; margin: 0 auto; width: 100%; animation: fadeIn 0.2s ease; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-  .avatar { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
-  .avatar.user { background: linear-gradient(135deg, var(--accent), var(--accent2)); font-weight: 600; font-size: 11px; color: white; }
-  .avatar.bot { background: var(--surface2); border: 1px solid var(--border); }
-  .message-content { flex: 1; min-width: 0; }
-  .message-name { font-size: 12px; font-weight: 600; margin-bottom: 5px; color: var(--text-dim); }
-  .message-name.user-name { color: var(--accent); }
-  .message-text { font-size: 14px; line-height: 1.7; color: var(--text); white-space: pre-wrap; word-break: break-word; }
-  .message-sources { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-  .source-tag { background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 10px; font-family: var(--mono); color: var(--text-muted); }
-  .typing-row { display: flex; padding: 6px 20px; gap: 12px; max-width: 860px; margin: 0 auto; width: 100%; }
-  .typing-dots { display: flex; align-items: center; gap: 4px; padding: 10px 0; }
-  .typing-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--text-muted); animation: bounce 1.2s infinite; }
-  .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-  .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes bounce { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-5px); opacity: 1; } }
+  /* Full screen chat */
+  .fs-chat { flex: 1; overflow-y: auto; padding: 24px 0; scroll-behavior: smooth; }
+  .fs-chat::-webkit-scrollbar { width: 4px; }
+  .fs-chat::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  .fs-msg-row { display: flex; padding: 6px 20px; gap: 12px; max-width: 860px; margin: 0 auto; width: 100%; animation: fadeIn 0.2s ease; }
+  .fs-av { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .fs-av.user { background: linear-gradient(135deg, var(--accent), var(--accent2)); font-weight: 600; font-size: 11px; color: white; }
+  .fs-av.bot { background: var(--surface2); border: 1px solid var(--border); }
+  .fs-msg-content { flex: 1; min-width: 0; }
+  .fs-msg-name { font-size: 12px; font-weight: 600; margin-bottom: 5px; color: var(--text-dim); }
+  .fs-msg-name.un { color: var(--accent); }
+  .fs-msg-text { font-size: 14px; line-height: 1.7; color: var(--text); white-space: pre-wrap; word-break: break-word; }
+  .fs-msg-sources { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .fs-src { background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 10px; font-family: var(--mono); color: var(--text-muted); }
+  .fs-typing-row { display: flex; padding: 6px 20px; gap: 12px; max-width: 860px; margin: 0 auto; width: 100%; }
 
-  /* ── Welcome ── */
-  .welcome { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; }
-  .welcome-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 30px; margin-bottom: 20px; box-shadow: 0 8px 32px #4f8ef733; }
-  .welcome h1 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
-  .welcome p { font-size: 14px; color: var(--text-muted); max-width: 400px; line-height: 1.6; margin-bottom: 28px; }
-  .suggestions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; max-width: 500px; width: 100%; }
-  .suggestion-btn { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; text-align: left; cursor: pointer; transition: border-color 0.15s, background 0.15s; font-family: var(--font); }
-  .suggestion-btn:hover { border-color: var(--accent); background: var(--surface2); }
-  .suggestion-btn .s-icon { font-size: 16px; margin-bottom: 5px; display: block; }
-  .suggestion-btn .s-text { font-size: 12px; color: var(--text-dim); line-height: 1.4; }
+  /* Full screen welcome */
+  .fs-welcome { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; }
+  .fs-welcome-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 30px; margin-bottom: 20px; box-shadow: 0 8px 32px #4f8ef733; }
+  .fs-welcome h1 { font-size: 22px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+  .fs-welcome p { font-size: 14px; color: var(--text-muted); max-width: 400px; line-height: 1.6; margin-bottom: 28px; }
+  .fs-suggestions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; max-width: 500px; width: 100%; }
+  .fs-sug { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; text-align: left; cursor: pointer; transition: border-color 0.15s, background 0.15s; font-family: var(--font); }
+  .fs-sug:hover { border-color: var(--accent); background: var(--surface2); }
+  .fs-sug .si { font-size: 16px; margin-bottom: 5px; display: block; }
+  .fs-sug .st { font-size: 12px; color: var(--text-dim); line-height: 1.4; }
 
-  /* ── Input ── */
-  .input-area { padding: 16px 20px 20px; border-top: 1px solid var(--border); flex-shrink: 0; max-width: 860px; margin: 0 auto; width: 100%; }
-  .input-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: flex-end; gap: 8px; padding: 10px 12px; transition: border-color 0.15s; }
-  .input-box:focus-within { border-color: var(--accent); }
-  #userInput { flex: 1; background: none; border: none; outline: none; color: var(--text); font-family: var(--font); font-size: 14px; resize: none; max-height: 120px; min-height: 24px; line-height: 1.5; padding: 2px 0; }
-  #userInput::placeholder { color: var(--text-muted); }
-  #sendBtn { width: 32px; height: 32px; border-radius: 8px; background: var(--accent); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s, transform 0.1s; }
-  #sendBtn:hover { background: #3a7de8; }
-  #sendBtn:active { transform: scale(0.93); }
-  #sendBtn:disabled { background: var(--surface2); cursor: not-allowed; }
-  #sendBtn svg { width: 15px; height: 15px; fill: white; }
-  .input-hint { font-size: 11px; color: var(--text-muted); margin-top: 7px; text-align: center; }
+  /* Full screen input */
+  .fs-input-area { padding: 16px 20px 20px; border-top: 1px solid var(--border); flex-shrink: 0; max-width: 860px; margin: 0 auto; width: 100%; }
+  .fs-input-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: flex-end; gap: 8px; padding: 10px 12px; transition: border-color 0.15s; }
+  .fs-input-box:focus-within { border-color: var(--accent); }
+  #fsInput { flex: 1; background: none; border: none; outline: none; color: var(--text); font-family: var(--font); font-size: 14px; resize: none; max-height: 120px; min-height: 24px; line-height: 1.5; padding: 2px 0; }
+  #fsInput::placeholder { color: var(--text-muted); }
+  #fsSendBtn { width: 32px; height: 32px; border-radius: 8px; background: var(--accent); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s; }
+  #fsSendBtn:hover { background: #3a7de8; }
+  #fsSendBtn:disabled { background: var(--surface2); cursor: not-allowed; }
+  #fsSendBtn svg { width: 15px; height: 15px; fill: white; }
+  .fs-input-hint { font-size: 11px; color: var(--text-muted); margin-top: 7px; text-align: center; }
 
   /* ── Modals ── */
-  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); display: none; align-items: center; justify-content: center; z-index: 200; backdrop-filter: blur(4px); }
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); display: none; align-items: center; justify-content: center; z-index: 2000; backdrop-filter: blur(4px); }
   .modal-overlay.show { display: flex; }
   .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 380px; animation: fadeIn 0.2s ease; }
-  .modal h2 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .modal h2 { font-size: 16px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
   .modal p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
   .pw-wrapper { position: relative; margin-bottom: 6px; }
   .pw-wrapper input { width: 100%; padding: 10px 40px 10px 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: var(--font); font-size: 14px; outline: none; transition: border-color 0.15s; }
@@ -106,9 +270,9 @@
   .btn-primary:hover { background: #3a7de8; }
   .btn-primary:disabled { background: var(--surface2); color: var(--text-muted); cursor: not-allowed; }
 
-  /* ── Staff Panel ── */
+  /* Staff Panel */
   .staff-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 460px; max-height: 80vh; overflow-y: auto; animation: fadeIn 0.2s ease; }
-  .staff-panel h2 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+  .staff-panel h2 { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: var(--text); }
   .staff-panel .subtitle { font-size: 12px; color: var(--text-muted); margin-bottom: 24px; }
   .panel-section { margin-bottom: 24px; }
   .panel-section h3 { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
@@ -129,8 +293,8 @@
   .panel-close:hover { background: #2a2a2a; }
   .upload-progress { font-size: 12px; color: var(--accent); margin-top: 8px; text-align: center; min-height: 18px; }
 
-  /* ── Toast ── */
-  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 20px; font-size: 13px; color: var(--text); display: none; align-items: center; gap: 8px; z-index: 300; white-space: nowrap; }
+  /* Toast */
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 20px; font-size: 13px; color: var(--text); display: none; align-items: center; gap: 8px; z-index: 3000; white-space: nowrap; }
   .toast.show { display: flex; }
   .toast.success { border-color: #22c55e; color: #22c55e; }
   .toast.error { border-color: var(--danger); color: var(--danger); }
@@ -138,67 +302,109 @@
 </head>
 <body>
 
-<!-- Sidebar -->
-<div class="sidebar">
-  <div class="sidebar-header">
-    <div class="sidebar-logo">
-      <div class="logo-icon">🎓</div>
-      <div class="logo-text">CUSAT CS <span>Department Assistant</span></div>
+<!-- Floating Button -->
+<button class="chat-fab" id="chatFab" onclick="openPopup()">🎓</button>
+
+<!-- Small Chatbox Popup -->
+<div class="chat-popup" id="chatPopup">
+  <div class="popup-header">
+    <div class="popup-avatar">🎓</div>
+    <div class="popup-title">
+      <div class="pt-name">CUSAT CS Assistant</div>
+      <div class="pt-sub"><span class="pt-dot"></span> Online</div>
     </div>
-    <button class="new-chat-btn" onclick="newChat()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-      New Chat
-    </button>
+    <div class="popup-actions">
+      <button class="popup-btn" onclick="maximizeToFullscreen()" title="Maximize">⛶</button>
+      <button class="popup-btn" onclick="closeAll()" title="Close">✕</button>
+    </div>
   </div>
-  <div class="sidebar-section">Recent</div>
-  <div class="chat-history" id="chatHistory"></div>
-  <div class="sidebar-footer">
-    <div class="footer-status">
-      <div class="status-dot"></div>
-      Groq · RAG Active
+  <div class="popup-chat" id="popupChat">
+    <div class="popup-welcome" id="popupWelcome">
+      <div class="pw-icon">🎓</div>
+      <h3>Hi! How can I help?</h3>
+      <p>Ask me anything about the Department of Computer Science at CUSAT.</p>
+      <div class="popup-suggestions">
+        <button class="popup-sug" onclick="popupSuggest('Who is the Head of Department?')">👤 Who is the Head of Department?</button>
+        <button class="popup-sug" onclick="popupSuggest('What programmes are offered?')">📚 What programmes are offered?</button>
+        <button class="popup-sug" onclick="popupSuggest('How many faculty members are there?')">👥 How many faculty members?</button>
+        <button class="popup-sug" onclick="popupSuggest('What are the research areas?')">🔬 What are the research areas?</button>
+      </div>
     </div>
-    <button class="staff-btn" onclick="openStaffLogin()" title="Staff Access">⚙ Staff</button>
+  </div>
+  <div class="popup-input">
+    <textarea id="popupInput" placeholder="Ask a question..." rows="1"
+      onkeydown="handlePopupKey(event)" oninput="autoResizePopup(this)"></textarea>
+    <button class="popup-send" id="popupSendBtn" onclick="sendPopupMessage()">
+      <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+    </button>
   </div>
 </div>
 
-<!-- Main -->
-<div class="main">
-  <div class="topbar">
-    <div class="model-badge">llama-3.3-70b · chromadb</div>
-    <div class="topbar-title">Department of Computer Science · CUSAT</div>
-  </div>
-
-  <div class="welcome" id="welcome">
-    <div class="welcome-icon">🎓</div>
-    <h1>How can I help you?</h1>
-    <p>Ask me anything about the Department of Computer Science at CUSAT — faculty, programmes, research, admissions, and more.</p>
-    <div class="suggestions">
-      <button class="suggestion-btn" onclick="suggest('Who is the Head of Department?')">
-        <span class="s-icon">👤</span><span class="s-text">Who is the Head of Department?</span>
+<!-- Full Screen -->
+<div class="fullscreen" id="fullscreen">
+  <!-- Sidebar -->
+  <div class="fs-sidebar">
+    <div class="fs-sidebar-header">
+      <div class="fs-logo">
+        <div class="fs-logo-icon">🎓</div>
+        <div class="fs-logo-text">CUSAT CS <span>Department Assistant</span></div>
+      </div>
+      <button class="fs-new-chat" onclick="fsNewChat()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        New Chat
       </button>
-      <button class="suggestion-btn" onclick="suggest('What programmes are offered?')">
-        <span class="s-icon">📚</span><span class="s-text">What programmes are offered?</span>
-      </button>
-      <button class="suggestion-btn" onclick="suggest('How many faculty members are there?')">
-        <span class="s-icon">👥</span><span class="s-text">How many faculty members are there?</span>
-      </button>
-      <button class="suggestion-btn" onclick="suggest('What are the research areas?')">
-        <span class="s-icon">🔬</span><span class="s-text">What are the research areas?</span>
-      </button>
+    </div>
+    <div class="fs-section">Recent</div>
+    <div class="fs-history" id="fsHistory"></div>
+    <div class="fs-footer">
+      <div class="fs-status"><div class="fs-status-dot"></div> Groq · RAG Active</div>
+      <button class="staff-btn" onclick="openStaffLogin()">⚙ Staff</button>
     </div>
   </div>
 
-  <div class="chat-area" id="chatArea" style="display:none;"></div>
-
-  <div class="input-area">
-    <div class="input-box">
-      <textarea id="userInput" placeholder="Ask a question about the department..." rows="1"
-        onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
-      <button id="sendBtn" onclick="sendMessage()">
-        <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
-      </button>
+  <!-- Main -->
+  <div class="fs-main">
+    <div class="fs-topbar">
+      <div class="fs-model-badge">llama-4-scout · chromadb</div>
+      <div class="fs-topbar-title">Department of Computer Science · CUSAT</div>
+      <div class="fs-topbar-actions">
+        <button class="fs-top-btn" onclick="minimizeToPopup()" title="Minimize">⊟</button>
+        <button class="fs-top-btn close" onclick="closeAll()" title="Close">✕</button>
+      </div>
     </div>
-    <div class="input-hint">Press Enter to send · Shift+Enter for new line</div>
+
+    <div class="fs-welcome" id="fsWelcome">
+      <div class="fs-welcome-icon">🎓</div>
+      <h1>How can I help you?</h1>
+      <p>Ask me anything about the Department of Computer Science at CUSAT — faculty, programmes, research, admissions, and more.</p>
+      <div class="fs-suggestions">
+        <button class="fs-sug" onclick="fsSuggest('Who is the Head of Department?')">
+          <span class="si">👤</span><span class="st">Who is the Head of Department?</span>
+        </button>
+        <button class="fs-sug" onclick="fsSuggest('What programmes are offered?')">
+          <span class="si">📚</span><span class="st">What programmes are offered?</span>
+        </button>
+        <button class="fs-sug" onclick="fsSuggest('How many faculty members are there?')">
+          <span class="si">👥</span><span class="st">How many faculty members are there?</span>
+        </button>
+        <button class="fs-sug" onclick="fsSuggest('What are the research areas?')">
+          <span class="si">🔬</span><span class="st">What are the research areas?</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="fs-chat" id="fsChat" style="display:none;"></div>
+
+    <div class="fs-input-area">
+      <div class="fs-input-box">
+        <textarea id="fsInput" placeholder="Ask a question about the department..." rows="1"
+          onkeydown="handleFsKey(event)" oninput="autoResizeFs(this)"></textarea>
+        <button id="fsSendBtn" onclick="sendFsMessage()">
+          <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+        </button>
+      </div>
+      <div class="fs-input-hint">Press Enter to send · Shift+Enter for new line</div>
+    </div>
   </div>
 </div>
 
@@ -224,8 +430,6 @@
   <div class="staff-panel">
     <h2>⚙ Staff Panel</h2>
     <div class="subtitle">Manage department documents</div>
-
-    <!-- Upload -->
     <div class="panel-section">
       <h3>Upload Document</h3>
       <div class="upload-zone" onclick="document.getElementById('panelFileInput').click()">
@@ -236,22 +440,19 @@
       <input type="file" id="panelFileInput" accept=".pdf,.txt" onchange="uploadFile(this)">
       <div class="upload-progress" id="uploadProgress"></div>
     </div>
-
-    <!-- Documents -->
     <div class="panel-section">
       <h3>Indexed Documents</h3>
       <div class="doc-list" id="panelDocsList"></div>
     </div>
-
     <button class="panel-close" onclick="closeOverlay('staffOverlay')">Close Panel</button>
   </div>
 </div>
 
-<!-- Confirm Delete Modal -->
+<!-- Confirm Delete -->
 <div class="modal-overlay" id="deleteOverlay">
   <div class="modal">
     <h2>🗑 Delete Document</h2>
-    <p id="deleteMsg">Are you sure you want to delete this document? This will also remove it from the knowledge base.</p>
+    <p id="deleteMsg">Are you sure?</p>
     <div class="modal-btns">
       <button class="btn-cancel" onclick="closeOverlay('deleteOverlay')">Cancel</button>
       <button class="btn-primary" style="background:#ef4444;" id="confirmDeleteBtn" onclick="confirmDelete()">Delete</button>
@@ -263,20 +464,232 @@
 <div class="toast" id="toast"></div>
 
 <script>
-  let chatSessions = [];
-  let currentMessages = [];
+  // ── State ──
+  let messages = [];        // shared message history
+  let fsSessions = [];
   let isLoading = false;
   let staffPassword = '';
   let fileToDelete = '';
 
-  // ── Password toggle ──
+  // ── View control ──
+  function openPopup() {
+    document.getElementById('chatFab').classList.add('hidden');
+    document.getElementById('chatPopup').classList.add('show');
+  }
+
+  function closeAll() {
+    document.getElementById('chatPopup').classList.remove('show');
+    document.getElementById('fullscreen').classList.remove('show');
+    document.getElementById('chatFab').classList.remove('hidden');
+  }
+
+  function maximizeToFullscreen() {
+    document.getElementById('chatPopup').classList.remove('show');
+    document.getElementById('fullscreen').classList.add('show');
+    // Sync messages to fullscreen
+    syncMessagesToFs();
+  }
+
+  function minimizeToPopup() {
+    document.getElementById('fullscreen').classList.remove('show');
+    document.getElementById('chatPopup').classList.add('show');
+    // Sync messages to popup
+    syncMessagesToPopup();
+  }
+
+  // ── Sync messages between views ──
+  function syncMessagesToFs() {
+    const chat = document.getElementById('fsChat');
+    const welcome = document.getElementById('fsWelcome');
+    chat.innerHTML = '';
+    if (messages.length === 0) {
+      welcome.style.display = 'flex';
+      chat.style.display = 'none';
+    } else {
+      welcome.style.display = 'none';
+      chat.style.display = 'block';
+      messages.forEach(m => appendFsMessage(m.role, m.text, m.sources, false));
+      chat.scrollTop = chat.scrollHeight;
+    }
+  }
+
+  function syncMessagesToPopup() {
+    const chat = document.getElementById('popupChat');
+    const welcome = document.getElementById('popupWelcome');
+    // Remove all message rows (keep welcome)
+    Array.from(chat.querySelectorAll('.popup-msg-row')).forEach(el => el.remove());
+    Array.from(chat.querySelectorAll('.popup-typing')).forEach(el => el.remove());
+    if (messages.length === 0) {
+      welcome.style.display = 'flex';
+    } else {
+      welcome.style.display = 'none';
+      messages.forEach(m => appendPopupMessage(m.role, m.text, m.sources, false));
+      chat.scrollTop = chat.scrollHeight;
+    }
+  }
+
+  // ── Send message (shared logic) ──
+  async function sendMessage(query) {
+    if (!query || isLoading) return;
+    isLoading = true;
+
+    messages.push({ role: 'user', text: query, sources: [] });
+
+    // Show typing in active view
+    let typingId;
+    if (document.getElementById('fullscreen').classList.contains('show')) {
+      document.getElementById('fsWelcome').style.display = 'none';
+      document.getElementById('fsChat').style.display = 'block';
+      appendFsMessage('user', query, [], true);
+      typingId = showFsTyping();
+      document.getElementById('fsSendBtn').disabled = true;
+    } else {
+      document.getElementById('popupWelcome').style.display = 'none';
+      appendPopupMessage('user', query, [], true);
+      typingId = showPopupTyping();
+      document.getElementById('popupSendBtn').disabled = true;
+    }
+
+    try {
+      // Send last 4 messages as history (excluding current question)
+      const history = messages.slice(-5, -1).map(m => ({ role: m.role, text: m.text }));
+
+      const res = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: query, history: history })
+      });
+      const data = await res.json();
+
+      removeFsTyping(typingId);
+      removePopupTyping(typingId);
+
+      messages.push({ role: 'bot', text: data.answer, sources: data.sources });
+
+      if (document.getElementById('fullscreen').classList.contains('show')) {
+        appendFsMessage('bot', data.answer, data.sources, true);
+      } else {
+        appendPopupMessage('bot', data.answer, data.sources, true);
+      }
+    } catch(err) {
+      removeFsTyping(typingId);
+      removePopupTyping(typingId);
+      const errMsg = 'Sorry, I could not connect to the server.';
+      messages.push({ role: 'bot', text: errMsg, sources: [] });
+      if (document.getElementById('fullscreen').classList.contains('show')) {
+        appendFsMessage('bot', errMsg, [], true);
+      } else {
+        appendPopupMessage('bot', errMsg, [], true);
+      }
+    }
+
+    isLoading = false;
+    document.getElementById('fsSendBtn').disabled = false;
+    document.getElementById('popupSendBtn').disabled = false;
+  }
+
+  // ── Popup helpers ──
+  function popupSuggest(text) { sendMessage(text); }
+  function handlePopupKey(e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); const v = document.getElementById('popupInput').value.trim(); document.getElementById('popupInput').value = ''; document.getElementById('popupInput').style.height = 'auto'; sendMessage(v); } }
+  function sendPopupMessage() { const v = document.getElementById('popupInput').value.trim(); document.getElementById('popupInput').value = ''; document.getElementById('popupInput').style.height = 'auto'; sendMessage(v); }
+  function autoResizePopup(el) { el.style.height = 'auto'; el.style.height = Math.min(el.scrollHeight, 80) + 'px'; }
+
+  function appendPopupMessage(role, text, sources, scroll) {
+    const chat = document.getElementById('popupChat');
+    const isUser = role === 'user';
+    const row = document.createElement('div');
+    row.className = 'popup-msg-row';
+    const srcHtml = (!isUser && sources && sources.length) ? `<div class="popup-msg-sources">${sources.map(s => `<span class="popup-src">📄 ${s}</span>`).join('')}</div>` : '';
+    row.innerHTML = `
+      <div class="popup-av ${isUser ? 'user' : 'bot'}">${isUser ? 'You' : '🎓'}</div>
+      <div class="popup-msg-content">
+        <div class="popup-msg-name ${isUser ? 'un' : ''}">${isUser ? 'You' : 'CUSAT Assistant'}</div>
+        <div class="popup-msg-text">${escapeHtml(text)}</div>
+        ${srcHtml}
+      </div>`;
+    chat.appendChild(row);
+    if (scroll) chat.scrollTop = chat.scrollHeight;
+  }
+
+  function showPopupTyping() {
+    const chat = document.getElementById('popupChat');
+    const id = 'pt-' + Date.now();
+    const row = document.createElement('div');
+    row.className = 'popup-typing'; row.id = id;
+    row.innerHTML = `<div class="popup-av bot">🎓</div><div class="popup-msg-content"><div class="popup-msg-name">CUSAT Assistant</div><div class="popup-typing-dots"><span></span><span></span><span></span></div></div>`;
+    chat.appendChild(row);
+    chat.scrollTop = chat.scrollHeight;
+    return id;
+  }
+  function removePopupTyping(id) { const el = document.getElementById(id); if (el) el.remove(); }
+
+  // ── Fullscreen helpers ──
+  function fsSuggest(text) { sendMessage(text); }
+  function handleFsKey(e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); const v = document.getElementById('fsInput').value.trim(); document.getElementById('fsInput').value = ''; document.getElementById('fsInput').style.height = 'auto'; sendMessage(v); } }
+  function sendFsMessage() { const v = document.getElementById('fsInput').value.trim(); document.getElementById('fsInput').value = ''; document.getElementById('fsInput').style.height = 'auto'; sendMessage(v); }
+  function autoResizeFs(el) { el.style.height = 'auto'; el.style.height = Math.min(el.scrollHeight, 120) + 'px'; }
+
+  function fsNewChat() {
+    if (messages.length > 0) {
+      fsSessions.unshift({ preview: messages[0].text.slice(0, 40), messages: [...messages] });
+      updateFsHistory();
+    }
+    messages = [];
+    document.getElementById('fsChat').innerHTML = '';
+    document.getElementById('fsChat').style.display = 'none';
+    document.getElementById('fsWelcome').style.display = 'flex';
+    // Also clear popup
+    syncMessagesToPopup();
+  }
+
+  function updateFsHistory() {
+    const el = document.getElementById('fsHistory');
+    el.innerHTML = fsSessions.slice(0, 10).map((s, i) =>
+      `<div class="fs-history-item" onclick="loadFsSession(${i})">${s.preview}...</div>`
+    ).join('');
+  }
+
+  function loadFsSession(i) {
+    messages = fsSessions[i].messages;
+    syncMessagesToFs();
+  }
+
+  function appendFsMessage(role, text, sources, scroll) {
+    const chat = document.getElementById('fsChat');
+    const isUser = role === 'user';
+    const row = document.createElement('div');
+    row.className = 'fs-msg-row';
+    const srcHtml = (!isUser && sources && sources.length) ? `<div class="fs-msg-sources">${sources.map(s => `<span class="fs-src">📄 ${s}</span>`).join('')}</div>` : '';
+    row.innerHTML = `
+      <div class="fs-av ${isUser ? 'user' : 'bot'}">${isUser ? 'You' : '🎓'}</div>
+      <div class="fs-msg-content">
+        <div class="fs-msg-name ${isUser ? 'un' : ''}">${isUser ? 'You' : 'CUSAT Assistant'}</div>
+        <div class="fs-msg-text">${escapeHtml(text)}</div>
+        ${srcHtml}
+      </div>`;
+    chat.appendChild(row);
+    if (scroll) chat.scrollTop = chat.scrollHeight;
+  }
+
+  function showFsTyping() {
+    const chat = document.getElementById('fsChat');
+    const id = 'ft-' + Date.now();
+    const row = document.createElement('div');
+    row.className = 'fs-typing-row'; row.id = id;
+    row.innerHTML = `<div class="fs-av bot">🎓</div><div class="fs-msg-content"><div class="fs-msg-name">CUSAT Assistant</div><div class="popup-typing-dots"><span></span><span></span><span></span></div></div>`;
+    chat.appendChild(row);
+    chat.scrollTop = chat.scrollHeight;
+    return id;
+  }
+  function removeFsTyping(id) { const el = document.getElementById(id); if (el) el.remove(); }
+
+  // ── Staff ──
   function togglePw(inputId, btn) {
     const input = document.getElementById(inputId);
     if (input.type === 'password') { input.type = 'text'; btn.textContent = '🙈'; }
     else { input.type = 'password'; btn.textContent = '👁'; }
   }
 
-  // ── Staff login ──
   function openStaffLogin() {
     document.getElementById('loginPassword').value = '';
     document.getElementById('loginError').textContent = '';
@@ -289,34 +702,15 @@
     const errorEl = document.getElementById('loginError');
     const btn = document.getElementById('loginBtn');
     if (!password) { errorEl.textContent = 'Please enter the password.'; return; }
-
-    btn.disabled = true;
-    btn.textContent = 'Verifying...';
-
+    btn.disabled = true; btn.textContent = 'Verifying...';
     try {
-      const res = await fetch('/verify-password', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password })
-      });
-      if (res.ok) {
-        staffPassword = password;
-        closeOverlay('loginOverlay');
-        openStaffPanel();
-      } else {
-        errorEl.textContent = 'Incorrect password. Please try again.';
-        document.getElementById('loginPassword').value = '';
-        document.getElementById('loginPassword').focus();
-      }
-    } catch(e) {
-      errorEl.textContent = 'Connection error. Please try again.';
-    }
-
-    btn.disabled = false;
-    btn.textContent = 'Login';
+      const res = await fetch('/verify-password', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password }) });
+      if (res.ok) { staffPassword = password; closeOverlay('loginOverlay'); openStaffPanel(); }
+      else { errorEl.textContent = 'Incorrect password. Please try again.'; document.getElementById('loginPassword').value = ''; document.getElementById('loginPassword').focus(); }
+    } catch(e) { errorEl.textContent = 'Connection error.'; }
+    btn.disabled = false; btn.textContent = 'Login';
   }
 
-  // ── Staff panel ──
   async function openStaffPanel() {
     document.getElementById('uploadProgress').textContent = '';
     document.getElementById('staffOverlay').classList.add('show');
@@ -329,207 +723,55 @@
     try {
       const res = await fetch('/documents');
       const data = await res.json();
-      if (data.documents.length === 0) {
-        el.innerHTML = '<div class="no-docs">No documents indexed yet.</div>';
-      } else {
-        el.innerHTML = data.documents.map(d => `
-          <div class="doc-row">
-            <span class="doc-row-icon">📄</span>
-            <span class="doc-row-name">${d}</span>
-            <button class="doc-row-del" onclick="askDelete('${d}')" title="Delete">🗑</button>
-          </div>`).join('');
-      }
-    } catch(e) {
-      el.innerHTML = '<div class="no-docs">Failed to load documents.</div>';
-    }
+      el.innerHTML = data.documents.length
+        ? data.documents.map(d => `<div class="doc-row"><span class="doc-row-icon">📄</span><span class="doc-row-name">${d}</span><button class="doc-row-del" onclick="askDelete('${d}')" title="Delete">🗑</button></div>`).join('')
+        : '<div class="no-docs">No documents indexed yet.</div>';
+    } catch(e) { el.innerHTML = '<div class="no-docs">Failed to load.</div>'; }
   }
 
-  // ── Upload ──
   async function uploadFile(input) {
-    const file = input.files[0];
-    if (!file) return;
+    const file = input.files[0]; if (!file) return;
     const progress = document.getElementById('uploadProgress');
     progress.textContent = `Uploading ${file.name}...`;
-
     const formData = new FormData();
-    formData.append('file', file);
-    formData.append('password', staffPassword);
-
+    formData.append('file', file); formData.append('password', staffPassword);
     try {
       const res = await fetch('/upload', { method: 'POST', body: formData });
-      if (res.status === 401) { showToast('Session expired. Please login again.', 'error'); closeOverlay('staffOverlay'); return; }
+      if (res.status === 401) { showToast('Session expired.', 'error'); closeOverlay('staffOverlay'); return; }
       const data = await res.json();
-      if (data.success) {
-        progress.textContent = `✓ ${data.message}`;
-        showToast(`✓ ${file.name} uploaded successfully`, 'success');
-        await loadPanelDocs();
-      } else {
-        progress.textContent = `✗ ${data.message}`;
-      }
-    } catch(e) {
-      progress.textContent = '✗ Upload failed. Please try again.';
-    }
+      if (data.success) { progress.textContent = `✓ ${data.message}`; showToast(`✓ ${file.name} uploaded`, 'success'); await loadPanelDocs(); }
+      else { progress.textContent = `✗ ${data.message}`; }
+    } catch(e) { progress.textContent = '✗ Upload failed.'; }
     input.value = '';
   }
 
-  // ── Delete ──
   function askDelete(filename) {
     fileToDelete = filename;
-    document.getElementById('deleteMsg').textContent = `Are you sure you want to delete "${filename}"? This will also remove it from the knowledge base.`;
+    document.getElementById('deleteMsg').textContent = `Delete "${filename}"? This removes it from the knowledge base.`;
     document.getElementById('deleteOverlay').classList.add('show');
   }
 
   async function confirmDelete() {
     const btn = document.getElementById('confirmDeleteBtn');
-    btn.disabled = true;
-    btn.textContent = 'Deleting...';
-
+    btn.disabled = true; btn.textContent = 'Deleting...';
     try {
-      const res = await fetch('/delete', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ filename: fileToDelete, password: staffPassword })
-      });
-      if (res.status === 401) { showToast('Session expired. Please login again.', 'error'); closeOverlay('deleteOverlay'); closeOverlay('staffOverlay'); return; }
+      const res = await fetch('/delete', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ filename: fileToDelete, password: staffPassword }) });
+      if (res.status === 401) { showToast('Session expired.', 'error'); closeOverlay('deleteOverlay'); closeOverlay('staffOverlay'); return; }
       const data = await res.json();
-      if (data.success) {
-        closeOverlay('deleteOverlay');
-        showToast(`✓ "${fileToDelete}" deleted successfully`, 'success');
-        await loadPanelDocs();
-      } else {
-        showToast(`✗ ${data.message}`, 'error');
-        closeOverlay('deleteOverlay');
-      }
-    } catch(e) {
-      showToast('Delete failed. Please try again.', 'error');
-    }
-
-    btn.disabled = false;
-    btn.textContent = 'Delete';
-    fileToDelete = '';
+      if (data.success) { closeOverlay('deleteOverlay'); showToast(`✓ Deleted successfully`, 'success'); await loadPanelDocs(); }
+      else { showToast(`✗ ${data.message}`, 'error'); closeOverlay('deleteOverlay'); }
+    } catch(e) { showToast('Delete failed.', 'error'); }
+    btn.disabled = false; btn.textContent = 'Delete'; fileToDelete = '';
   }
 
-  // ── Utilities ──
   function closeOverlay(id) { document.getElementById(id).classList.remove('show'); }
 
   function showToast(message, type) {
     const toast = document.getElementById('toast');
-    toast.textContent = message;
-    toast.className = `toast show ${type}`;
+    toast.textContent = message; toast.className = `toast show ${type}`;
     clearTimeout(toast._timer);
     toast._timer = setTimeout(() => { toast.className = 'toast'; }, 4000);
   }
-
-  function autoResize(el) {
-    el.style.height = 'auto';
-    el.style.height = Math.min(el.scrollHeight, 120) + 'px';
-  }
-
-  function handleKey(e) {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-  }
-
-  function suggest(text) {
-    document.getElementById('userInput').value = text;
-    sendMessage();
-  }
-
-  function newChat() {
-    if (currentMessages.length > 0) {
-      const preview = currentMessages[0]?.text?.slice(0, 40) || 'Chat';
-      chatSessions.unshift({ preview, messages: currentMessages });
-      updateHistory();
-    }
-    currentMessages = [];
-    document.getElementById('chatArea').innerHTML = '';
-    document.getElementById('chatArea').style.display = 'none';
-    document.getElementById('welcome').style.display = 'flex';
-  }
-
-  function updateHistory() {
-    const el = document.getElementById('chatHistory');
-    el.innerHTML = chatSessions.slice(0, 10).map((s, i) =>
-      `<div class="history-item" onclick="loadSession(${i})">${s.preview}...</div>`
-    ).join('');
-  }
-
-  function loadSession(i) {
-    currentMessages = chatSessions[i].messages;
-    const area = document.getElementById('chatArea');
-    area.innerHTML = '';
-    document.getElementById('welcome').style.display = 'none';
-    area.style.display = 'block';
-    currentMessages.forEach(m => appendMessage(m.role, m.text, m.sources, false));
-    area.scrollTop = area.scrollHeight;
-  }
-
-  async function sendMessage() {
-    const input = document.getElementById('userInput');
-    const question = input.value.trim();
-    if (!question || isLoading) return;
-    input.value = '';
-    input.style.height = 'auto';
-    isLoading = true;
-    document.getElementById('sendBtn').disabled = true;
-    document.getElementById('welcome').style.display = 'none';
-    document.getElementById('chatArea').style.display = 'block';
-    appendMessage('user', question, [], true);
-    currentMessages.push({ role: 'user', text: question, sources: [] });
-    const typingId = showTyping();
-    try {
-      const res = await fetch('/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question })
-      });
-      const data = await res.json();
-      removeTyping(typingId);
-      appendMessage('bot', data.answer, data.sources, true);
-      currentMessages.push({ role: 'bot', text: data.answer, sources: data.sources });
-    } catch(err) {
-      removeTyping(typingId);
-      appendMessage('bot', 'Sorry, I could not connect to the server.', [], true);
-    }
-    isLoading = false;
-    document.getElementById('sendBtn').disabled = false;
-    input.focus();
-  }
-
-  function appendMessage(role, text, sources, scroll) {
-    const area = document.getElementById('chatArea');
-    const row = document.createElement('div');
-    row.className = 'message-row';
-    const isUser = role === 'user';
-    const sourcesHTML = (!isUser && sources && sources.length)
-      ? `<div class="message-sources">${sources.map(s => `<span class="source-tag">📄 ${s}</span>`).join('')}</div>` : '';
-    row.innerHTML = `
-      ${isUser ? '<div class="avatar user">You</div>' : '<div class="avatar bot">🎓</div>'}
-      <div class="message-content">
-        <div class="message-name ${isUser ? 'user-name' : ''}">${isUser ? 'You' : 'CUSAT Assistant'}</div>
-        <div class="message-text">${escapeHtml(text)}</div>
-        ${sourcesHTML}
-      </div>`;
-    area.appendChild(row);
-    if (scroll) area.scrollTop = area.scrollHeight;
-  }
-
-  function showTyping() {
-    const area = document.getElementById('chatArea');
-    const id = 'typing-' + Date.now();
-    const row = document.createElement('div');
-    row.className = 'typing-row';
-    row.id = id;
-    row.innerHTML = `<div class="avatar bot">🎓</div>
-      <div class="message-content">
-        <div class="message-name">CUSAT Assistant</div>
-        <div class="typing-dots"><span></span><span></span><span></span></div>
-      </div>`;
-    area.appendChild(row);
-    area.scrollTop = area.scrollHeight;
-    return id;
-  }
-
-  function removeTyping(id) { const el = document.getElementById(id); if (el) el.remove(); }
 
   function escapeHtml(text) {
     return text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');

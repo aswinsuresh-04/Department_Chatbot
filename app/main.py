@@ -1,4 +1,5 @@
 import os
+import re
 import shutil
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -13,10 +14,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 LLM_PROVIDER = os.environ.get("LLM", "groq")
-
 if LLM_PROVIDER == "groq":
     from llm.groq import call_llm
-    print("Using LLM: Groq (llama-3.3-70b)")
+    print("Using LLM: Groq (llama-4-scout)")
 else:
     from llm.ollama import call_llm
     print("Using LLM: Ollama (llama3)")
@@ -24,14 +24,7 @@ else:
 UPLOAD_PASSWORD = os.environ.get("UPLOAD_PASSWORD", "cusat@cs2024")
 
 app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
@@ -44,29 +37,32 @@ collection = chroma_client.get_or_create_collection(name="department_docs")
 
 DATA_PATH = "../data/raw/general"
 
-def read_pdf(file_path: str) -> str:
+def read_pdf(file_path):
     reader = PdfReader(file_path)
     text = ""
     for page in reader.pages:
-        page_text = page.extract_text()
-        if page_text:
-            text += page_text + "\n"
+        t = page.extract_text()
+        if t: text += t + "\n"
     return text
 
-def read_txt(file_path: str) -> str:
-    with open(file_path, "r", encoding="utf-8") as f:
+def read_txt(file_path):
+    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
         return f.read()
 
-def chunk_text(text: str, source: str):
+def chunk_text(text, source):
     chunks = []
-    MAX_CHUNK_SIZE = 900
     paragraphs = text.split("\n\n")
+    if len(paragraphs) <= 1:
+        paragraphs = text.split("\n")
+    if not paragraphs or all(len(p.strip()) == 0 for p in paragraphs):
+        if text.strip():
+            return [{"text": text.strip(), "source": source}]
+        return []
     current_chunk = ""
     for para in paragraphs:
         para = para.strip()
-        if not para:
-            continue
-        if len(current_chunk) + len(para) < MAX_CHUNK_SIZE:
+        if not para: continue
+        if len(current_chunk) + len(para) < 900:
             current_chunk += para + "\n"
         else:
             if current_chunk.strip():
@@ -74,18 +70,16 @@ def chunk_text(text: str, source: str):
             current_chunk = para + "\n"
     if current_chunk.strip():
         chunks.append({"text": current_chunk.strip(), "source": source})
+    if not chunks and text.strip():
+        chunks.append({"text": text.strip(), "source": source})
     return chunks
 
-def ingest_file(file_path: str, source_name: str):
-    if file_path.endswith(".pdf"):
-        text = read_pdf(file_path)
-    elif file_path.endswith(".txt"):
-        text = read_txt(file_path)
-    else:
-        return 0
+def ingest_file(file_path, source_name):
+    if file_path.endswith(".pdf"): text = read_pdf(file_path)
+    elif file_path.endswith(".txt"): text = read_txt(file_path)
+    else: return 0
     chunks = chunk_text(text, source_name)
-    if not chunks:
-        return 0
+    if not chunks: return 0
     texts = [c["text"] for c in chunks]
     embeddings = embed_model.encode(texts, normalize_embeddings=True).tolist()
     existing = collection.count()
@@ -98,54 +92,59 @@ def ingest_file(file_path: str, source_name: str):
         )
     return len(chunks)
 
-def retrieve(query: str, n_results: int = 20):
-    query_embedding = embed_model.encode("query: " + query, normalize_embeddings=True).tolist()
-    return collection.query(
-        query_embeddings=[query_embedding],
-        n_results=n_results,
+def retrieve(query, n_results=7):
+    qe = embed_model.encode("query: " + query, normalize_embeddings=True).tolist()
+
+    # Get more results to ensure general/faculty info is included
+    results = collection.query(
+        query_embeddings=[qe],
+        n_results=min(n_results * 2, collection.count()),
         include=["documents", "metadatas", "distances"]
     )
 
-# -----------------------------
-# Prompt expansion
-# Rewrites the user query into a richer search query
-# for better ChromaDB retrieval
-# -----------------------------
-def expand_query(query: str) -> str:
-    # Use Groq directly with a separate minimal call for expansion
-    # so it doesn't go through the detailed system message
+    docs = results["documents"][0]
+    metas = results["metadatas"][0]
+    distances = results["distances"][0]
+
+    # Separate general and other chunks
+    general_docs, general_metas = [], []
+    other_docs, other_metas = [], []
+
+    for doc, meta, dist in zip(docs, metas, distances):
+        if meta.get("source_type") == "general" or meta.get("source_type") == "uploaded":
+            general_docs.append(doc)
+            general_metas.append(meta)
+        else:
+            other_docs.append(doc)
+            other_metas.append(meta)
+
+    # Always include general chunks first, then fill with others up to n_results
+    final_docs = general_docs + other_docs
+    final_metas = general_metas + other_metas
+
+    return {
+        "documents": [final_docs[:n_results]],
+        "metadatas": [final_metas[:n_results]]
+    }
+
+def expand_query(query):
     try:
         from groq import Groq
-        import os
-        groq_client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
-        response = groq_client.chat.completions.create(
+        gc = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+        res = gc.chat.completions.create(
             model="meta-llama/llama-4-scout-17b-16e-instruct",
             messages=[
-                {
-                    "role": "system",
-                    "content": "You are a search query optimizer. Return ONLY the expanded query, nothing else. No explanations."
-                },
-                {
-                    "role": "user",
-                    "content": f"""Expand this short query into a detailed search query for a university department database.
-Expand abbreviations (HoD = Head of Department, MSc = Master of Science, etc).
-Keep under 25 words. Return ONLY the expanded query.
-
-Query: {query}"""
-                }
+                {"role": "system", "content": "You are a search query optimizer. Return ONLY the expanded query, nothing else."},
+                {"role": "user", "content": f"Expand for a university department database. Expand abbreviations. Keep under 25 words. Return ONLY the query.\n\nQuery: {query}"}
             ],
             max_tokens=60
         )
-        expanded = response.choices[0].message.content.strip().strip('"')
-        if len(expanded) > 200 or not expanded:
-            return query
-        return expanded
+        expanded = res.choices[0].message.content.strip().strip('"')
+        return expanded if expanded and len(expanded) <= 200 else query
     except:
         return query
 
-# -----------------------------
-# Verify staff password
-# -----------------------------
+# Staff endpoints
 class PasswordRequest(BaseModel):
     password: str
 
@@ -155,9 +154,6 @@ def verify_password(req: PasswordRequest):
         return {"success": True}
     raise HTTPException(status_code=401, detail="Incorrect password.")
 
-# -----------------------------
-# Upload — password protected
-# -----------------------------
 @app.post("/upload")
 async def upload_file(file: UploadFile = File(...), password: str = Form(...)):
     if password != UPLOAD_PASSWORD:
@@ -169,16 +165,8 @@ async def upload_file(file: UploadFile = File(...), password: str = Form(...)):
     with open(save_path, "wb") as f:
         shutil.copyfileobj(file.file, f)
     chunks_added = ingest_file(save_path, file.filename)
-    return {
-        "success": True,
-        "message": f"'{file.filename}' uploaded and indexed successfully. {chunks_added} chunks added.",
-        "filename": file.filename,
-        "chunks": chunks_added
-    }
+    return {"success": True, "message": f"'{file.filename}' uploaded and indexed successfully. {chunks_added} chunks added.", "filename": file.filename, "chunks": chunks_added}
 
-# -----------------------------
-# Delete — password protected
-# -----------------------------
 class DeleteRequest(BaseModel):
     filename: str
     password: str
@@ -190,17 +178,12 @@ def delete_file(req: DeleteRequest):
     file_path = os.path.join(DATA_PATH, req.filename)
     if not os.path.exists(file_path):
         return {"success": False, "message": "File not found."}
-    # Remove from disk
     os.remove(file_path)
-    # Remove from ChromaDB
     results = collection.get(where={"source": req.filename})
     if results and results["ids"]:
         collection.delete(ids=results["ids"])
     return {"success": True, "message": f"'{req.filename}' deleted successfully."}
 
-# -----------------------------
-# List documents
-# -----------------------------
 @app.get("/documents")
 def list_documents():
     docs = []
@@ -210,11 +193,14 @@ def list_documents():
                 docs.append(f)
     return {"documents": docs}
 
-# -----------------------------
 # Chat
-# -----------------------------
+class ChatMessage(BaseModel):
+    role: str
+    text: str
+
 class QueryRequest(BaseModel):
     question: str
+    history: list[ChatMessage] = []
 
 @app.post("/chat")
 def chat(req: QueryRequest):
@@ -222,37 +208,40 @@ def chat(req: QueryRequest):
     if not query:
         return {"answer": "Please ask a question.", "sources": []}
 
-    # Expand query for better retrieval
     expanded = expand_query(query)
-    print(f"Original: {query}")
-    print(f"Expanded: {expanded}")
-
     results = retrieve(expanded)
     retrieved_docs = results["documents"][0]
     retrieved_metas = results["metadatas"][0]
     context = "\n".join(retrieved_docs)
     sources = list(dict.fromkeys(m.get("source", "unknown") for m in retrieved_metas))
-    prompt = f"""You are a knowledgeable and friendly assistant for the Department of Computer Science at CUSAT (Cochin University of Science and Technology). You help students, parents, and visitors learn about the department.
 
-Use the context below to answer the question. Respond like a helpful person — natural, warm, and informative.
+    history_str = ""
+    if req.history:
+        lines = []
+        for msg in req.history[-4:]:
+            label = "User" if msg.role == "user" else "Assistant"
+            lines.append(f"{label}: {msg.text}")
+        history_str = "\n".join(lines)
 
-Rules:
-- Give complete, expressive and detailed answers using ALL relevant information from the context. Never give a one-line answer when more detail is available — always elaborate with role, responsibilities, contact info, or any other relevant details present in the context.
-- Never mention the context, documents, file system, or knowledge base in your answer. Just answer naturally.
-- Never say things like "in the context" or "based on the provided information" or "there is no information in the context".
-- Never start your answer by introducing the department. Get straight to the point.
-- When listing, use a clean numbered list with one item per line.
-- Do not invent facts not present in the context.
-- If something is genuinely not available, just say: "I don't have that specific detail right now. For accurate information, please reach out to the department at csdir@cusat.ac.in or +91 484 2862301."
+    prompt = f"""You are a helpful assistant for the Department of Computer Science at CUSAT.
 
 Context:
 {context}
+{"Previous conversation:" if history_str else ""}
+{history_str}
 
-Question:
-{query}
+Question: {query}
 
-Important: Answer naturally and proportionally — short questions deserve concise answers, detailed questions deserve detailed answers. Never invent or assume information not present in the context.
+Rules:
+- Answer only exactly what was asked. Nothing more.
+- If the answer is not in the context, say "I don't have that information." and stop. Do not add anything else.
+- Use previous conversation to understand follow-up questions like "his", "her", "they".
+- Include full name, title and designation when answering about a person.
+- Only mention contact details if the user asks how to contact the department.
+- Never mention the context, documents, or knowledge base.
+- For lists use a clean numbered format, one item per line.
 
 Answer:"""
+
     answer = call_llm(prompt)
     return {"answer": answer, "sources": sources}
