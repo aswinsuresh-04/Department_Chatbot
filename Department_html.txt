@@ -1,0 +1,2599 @@
+
+Facilities - Lab
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Department of Computer Science | Facilities - Lab</title>
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+
+    <link rel="stylesheet" href= "assets/css/bootstrap.min.css">
+
+    <!-- Stellar Nav Styles -->
+    <link rel="stylesheet" href="assets/css/stellarnav.min.css">
+
+    <!-- Lightbox Styles -->
+    <link rel="stylesheet" href="assets/css/lightboxed.css">
+
+    <!-- Animate Styles -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+
+    <!-- AOS Styles -->
+    <link rel="stylesheet" href="assets/css/aos.css">
+
+    <!-- DCS Custom Styles CSS -->
+    <link rel="stylesheet" href="assets/css/dcs_styles.css">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="assets/images/logo-favicon.png"/>
+    <link rel="apple-touch-icon" href="assets/images/logo-favicon.png"/>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <!-- Top Contact Bar -->
+    <div class="container-fluid bg-darkblue pb-3 pb-sm-0">
+        <!-- Container for Top Bar -->
+        <div class="container d-flex flex-column flex-sm-row justify-content-sm-between align-items-center header-top-bar py-2">
+            <!-- Contact Details -->
+            <div class="header-contact d-flex flex-column flex-sm-row justify-content-start align-items-center mb-3 mb-sm-0">
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text me-sm-3">
+                    <div class="contact-icon">
+                        <svg
+                                x="0px" y="0px"
+                                viewBox="0 -8 30 30"
+                                xml:space="preserve">
+   <path class="st0" d="M16.09,0.08L0.59,6.84c-0.76,0.33-0.8,1.4-0.06,1.78l3.14,1.62l9.36-6.51c0.1-0.07,0.2,0.01,0.21,0.1
+				L5.4,11.32c-0.19,0.19-0.3,0.44-0.3,0.71v3.47c0,1,1.31,1.36,1.83,0.51l1.9-3.11l4.03,2.08c0.57,0.29,1.26-0.02,1.41-0.64
+				l3.18-13.11C17.63,0.43,16.83-0.24,16.09,0.08z"/>
+  </svg>
+                    </div>
+                    <div class="">
+                        <p><a href="mailto:csdir@cusat.ac.in">csdir@cusat.ac.in</a></p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text">
+                    <div class="contact-icon">
+                        <svg
+                                x="0px" y="0px"
+                                viewBox="0 -8 30 30"
+                                xml:space="preserve">
+   <path class="st0" d="M15.01,11.34L13,10.26c-0.49-0.26-0.87-0.07-1.29,0.51c-0.93,1.28-1.38,1.53-2.52,0.89
+						c-1.06-0.59-1.82-1.3-2.78-2.25C5.45,8.45,4.75,7.69,4.16,6.63C3.52,5.49,3.77,5.04,5.05,4.11c0.58-0.42,0.77-0.8,0.51-1.29
+						L4.47,0.8c-0.44-0.86-1.07-0.95-2-0.64C1.18,0.6-0.06,2.45,0,3.33c0.18,2.57,1.47,5.66,4.15,8.34
+						c2.68,2.68,5.77,3.97,8.34,4.15c0.88,0.06,2.72-1.19,3.16-2.48C15.97,12.42,15.87,11.79,15.01,11.34z"/>
+                            <path class="st0" d="M8.98,3.58c-0.42,0-0.77,0.35-0.76,0.78c0,0.42,0.35,0.76,0.77,0.76c0.01,0,0.01,0,0.02,0
+						c0.46,0,0.89,0.18,1.21,0.5c0.33,0.33,0.5,0.76,0.5,1.22c0,0.42,0.34,0.77,0.76,0.78h0.01c0.42,0,0.77-0.34,0.77-0.76
+						c0.01-0.88-0.33-1.7-0.95-2.32C10.69,3.91,9.85,3.59,8.98,3.58z M13.57,2.27c-1.22-1.23-2.87-1.9-4.59-1.89
+						c-0.42,0-0.77,0.35-0.77,0.77c0,0.42,0.35,0.77,0.77,0.77c0,0,0.01,0,0.02,0c1.31,0,2.55,0.51,3.48,1.44
+						c0.93,0.93,1.44,2.17,1.44,3.49c0,0.42,0.34,0.77,0.77,0.77h0c0.42,0,0.77-0.34,0.77-0.77C15.47,5.12,14.8,3.49,13.57,2.27z"/>
+  </svg>
+                    </div>
+                    <div class="">
+                        <p><a href="tel:+914842862301">+91-484-2862301</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Contact Details -->
+            <!-- Student Portal Button -->
+            <button type="button" class="btn lightblue-button">Student Portal</button>
+            <!-- End Student Portal Button -->
+        </div>
+        <!-- End Container for Top Bar -->
+    </div>
+    <!-- End Top Contact Bar -->
+    <!-- Sticky Header -->
+    <div class="container-fluid p-0 m-0 bg-white" id="header-sticky">
+        <!-- Logo Bar -->
+        <div class="container bg-white py-3 px-4 px-md-0">
+            <div class="d-flex flex-row justify-content-between align-items-center header-logo-section">
+                <!-- DCS Logo -->
+                <div class="">
+                    <a class = 'header-home-link' href='index.php'><img class='img-fluid header-logo-img d-none d-md-block' src = 'assets/images/header-logo.svg' alt = 'Header All Devices except Mobile Logo'>
+<img class='img-fluid header-logo-mobile-img d-block d-md-none' src = 'assets/images/header-logo-mobile.svg' alt = 'Header Mobile Logo'></a>                </div>
+                <!-- End DCS Logo -->
+                <!-- Cusat Logo -->
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                    <a class="cusat-logo" href="https://cusat.ac.in/">
+                        <img class="img-fluid" src="assets/images/cusat-logo.svg" alt="Cusat Logo"></a>
+                    <a class="fifty-years" href="https://cusat.ac.in/">
+                        <img class="img-fluid" src="assets/images/goldenjubilee_logo.jpg" alt="Cusat Logo"></a>
+                </div>
+                <!-- End Cusat Logo -->
+            </div>
+        </div>
+        <!-- End Logo Bar -->
+        <!-- Nav Bar -->
+        <div class="container-fluid bg-blue p-0 m-0 d-flex flex-row justify-content-between align-items-center">
+            <div class="container">
+                <div class="stellarnav">
+                    <ul><li><a href='index.php'>Home</a></li><li class='has-sub'><a href='#'>About</a><ul style='display: none;' class='sub-menu'><li><a href='about-cusat.php'>About CUSAT</a></li><li><a href='about-dcs.php'>About Department</a></li></ul></li><li class='has-sub'><a href='#'>Academics</a><ul style='display: none;' class='sub-menu'><li><a href='programmes.php'>Programmes</a></li><li><a href='people.php'>People</a></li><li><a href='research.php'>Research</a></li><li><a href='e-learning.php'>E-Learning</a></li></ul></li><li class='has-sub'><a href='#'>Facilities</a><ul style='display: none;' class='sub-menu'><li><a href='labs.php'>Labs</a></li><li><a href='library.php'>Library</a></li><li><a href='https://cusat.ac.in/knowledge-forum' target='_blank'>CUSAT Knowledge Forum</a></li><li><a href='https://cittic.cusat.ac.in/' target='_blank'>Enterpreneurship</a></li><li><a href='computer-center.php'>Computer Center</a></li></ul></li><li class='has-sub'><a href='#'>Admission</a><ul style='display: none;' class='sub-menu'><li><a href='assets/pdf-files/fee-structure.pdf' target='_blank'>Fee Structure</a></li><li><a href='phd.php'>Ph.D</a></li><li><a href='aicte.php'>AICTE Approval / MD</a></li><li><a href='assets/pdf-files/mou.pdf' target='_blank'>MOU</a></li></ul></li><li class='has-sub'><a href='#'>Others</a><ul style='display: none;' class='sub-menu'><li><a href='alumni.php'>Alumni</a></li><li><a href='placements.php'>Placements</a></li><li><a href='assets/pdf-files/events-2022.pdf' target='_blank'>Events</a></li><li><a href='lecture-series.php'>Lecture Series</a></li></ul></li></ul >                 </div>
+            </div>
+        </div>
+        <!-- Nav Bar -->
+    </div>
+    <!-- End Sticky Header -->
+</header>
+<!-- End Header -->
+<!-- Main Content -->
+<div class='container-fluid main-content m-0 p-0'>
+<!-- Header Image  -->
+<div class='inside-header-image d-flex align-items-center p-3' style='background-image: linear-gradient(rgba(23, 24, 69, 0.7), rgba(23, 24, 69, 0.7)), url("assets/images/header-images/header-labs.jpg")'><div class='header-text-container text-center'><h3 data-aos='fade-up'>Labs</h3><h5 class='dcs-breadcrumbs-text' data-aos='fade-up' data-aos-delay='100'><a class='dcs-breadcrumbs' href='index.php'>Home</a> &gt; Facilities &gt; Labs</h5></div></div><!-- End Header Image  -->
+<!-- Text Container -->
+<div class='container p-3 mt-4'>
+
+
+    <p class="mt-3">DCS has an enchanting physical environment spread over an area of 1500 sq.m, with state of
+        the art
+        laboratories to support the M.Tech programmes, research laboratories, air-conditioned Conference room
+        and Auditorium, well organised library, class rooms, faculty rooms, office et cetra. Apart from the
+        wi-fi hotspot in the department, all its constituents are provided with access points to the wired
+        net.</p>
+    <!-- Lab Cards -->
+    
+    <div class="m-0 p-0">
+
+        <!-- GPU Infrastructure Card -->
+        <!--
+        <div class="card courses-card mt-5">
+            <div class="card-header courses-card-header p-4 bg-blue rounded-top">
+                <h5 class="fw-bold text-white">GPU Server Infrastructure</h5>
+            </div>
+            <div class="card-body m-0 p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 lab-img-left" data-aos="fade-up">
+                        <img src="assets/images/labs-gpu.jpg"
+                             alt="MTech Course AI Full Time Image"
+                             class="img-fluid courses-image">
+                    </div>
+                    <div class="col-lg-8 p-3" data-aos="fade-up" data-aos-delay="200">
+                        <p>Accelerated Computing Facility catering to present day computing (AI/ML/Big Data)
+                            requirements</p>
+                        <h6 class="blue-bold-heading mt-4">Hardware Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                Dell Power Edge R730 Server
+                            </li>
+                            <li>
+                                Intel Xeon E5-2620 v3 Hexa Core/16GB DDR4
+                            </li>
+                            <li>
+                                Nvidia Quadro RTX graphics card
+                            </li>
+                            <li>
+                                1TB HDD intermediate storage of working data and results
+                            </li>
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Software Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                Ubuntu with Python 3, CUDA 11.x, PyTorch, Tensorflow
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+        <!-- End GPU Infrastructure Card -->
+        <!-- Hyper-Converged Virtualization Infrastructure Card -->
+        <!--
+        <div class="card courses-card mt-5">
+            <div class="card-header courses-card-header p-4 bg-blue rounded-top">
+                <h5 class="fw-bold text-white">Hyper-Converged Virtualization Infrastructure</h5>
+            </div>
+            <div class="card-body m-0 p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 order-lg-1 order-xl-2 lab-img-right" data-aos="fade-up">
+                        <img src="assets/images/labs-hyper.jpg"
+                             alt="MTech Course AI Full Time Image"
+                             class="img-fluid courses-image">
+                    </div>
+                    <div class="col-lg-8 p-3" data-aos="fade-up" data-aos-delay="200">
+                        <p>A VMware based High Availability Fault Tolerent cluster with bidirectional mirroring
+                            that caters to the demand for virtualized multi-site server deployments</p>
+                        <h6 class="blue-bold-heading mt-4">Hardware Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                Fujistu Primergy RX2530 M4 Rack Servers
+                            </li>
+                            <li>
+                                Cisco 10G Switches, FiberChannel
+                            </li>
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Software Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                Academic VMware ESXi vsphere Standard
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+        <!-- End Hyper-Converged Virtualization Infrastructure Card -->
+        <!-- High Availability Storage (Direct-Attached Storage) Array Card -->
+        <!--
+        <div class="card courses-card mt-5">
+            <div class="card-header courses-card-header p-4 bg-blue rounded-top">
+                <h5 class="fw-bold text-white">High Availability Storage (Direct-Attached Storage) Array</h5>
+            </div>
+            <div class="card-body m-0 p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 lab-img-left" data-aos="fade-up">
+                        <img src="assets/images/labs-high-storage.jpg"
+                             alt="MTech Course AI Full Time Image"
+                             class="img-fluid courses-image">
+                    </div>
+                    <div class="col-lg-8 p-3" data-aos="fade-up" data-aos-delay="200">
+                        <p>Storage cluster with transparent fail-over support for the HA cluster
+                            infrastructure</p>
+                        <h6 class="blue-bold-heading mt-4">Hardware Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                Fujistu ETERNUS DX60 S4 Storage
+                            </li>
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Software Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                ETERNUS SF Storage Cruiser Standard cluster controller
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+        <!-- End High Availability Storage (Direct-Attached Storage) Array Card -->
+        <!-- Human-Computer Interaction  &  Natural Language Processing Laboratory (HCI/NLP Lab) Card -->
+        <!--
+        <div class="card courses-card mt-5">
+            <div class="card-header courses-card-header p-4 bg-blue rounded-top">
+                <h5 class="fw-bold text-white">Human-Computer Interaction & Natural Language Processing
+                    Laboratory (HCI/NLP Lab)</h5>
+            </div>
+            <div class="card-body m-0 p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 order-lg-1 order-xl-2 lab-img-right" data-aos="fade-up">
+                        <img src="assets/images/labs-human.jpg"
+                             alt="MTech Course AI Full Time Image"
+                             class="img-fluid courses-image">
+                    </div>
+                    <div class="col-lg-8 p-3" data-aos="fade-up" data-aos-delay="200">
+                        <h6 class="blue-bold-heading">Hardware Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                <span class="fw-bold">Smash PC- 6 Nodes:</span><br>
+                                Onboard Intel Core i5-8250U 1.6 GHz (8th Gen) Max 3.4GHz Four Core Eight Thread
+                                processor
+                                15 W TDP, , 8Gb RAM IOT/Distributed learning
+                            </li>
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Software Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                AUTODESK Motion Builder Pro-7
+                            </li>
+                            <li>
+                                Q pointer Voice Speech Recognition Software
+                            </li>
+                            <li>
+                                Face Tracking System for Face Gesture Recognition
+                            </li>
+                            <li>
+                                Shape Hand Plus System for capturing full range of wrist, finger & thumb
+                                movement
+                            </li>
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Live Projects</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                Malayalam Handwritten Character Recognition
+                            </li>
+                            <li>
+                                Malayalam Speech to Text Conversion
+                            </li>
+                            <li>
+                                American Sign Language Recognition
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+        <!-- End Human-Computer Interaction  &  Natural Language Processing Laboratory (HCI/NLP Lab) Card -->
+        <!-- Bioinformatics Lab/Artificial Intelligence & Software Engineering Lab Card -->
+        <div class="card courses-card mt-5">
+            <div class="card-header courses-card-header p-4 bg-blue rounded-top">
+                <h5 class="fw-bold text-white">Bioinformatics Lab/Artificial Intelligence & Software Engineering
+                    Lab</h5>
+            </div>
+            <div class="card-body m-0 p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 lab-img-left" data-aos="fade-up">
+                        <img src="assets/images/labs-bioinformatics.jpg"
+                             alt="MTech Course AI Full Time Image"
+                             class="img-fluid courses-image">
+                    </div>
+                    <div class="col-lg-8 p-3" data-aos="fade-up" data-aos-delay="200">
+                        <h6 class="blue-bold-heading">Hardware Facilities</h6>
+                       
+                        <ul class="text-list mt-2">
+                            <li>
+                                <span class="fw-bold">Acer Veriton M4660G </span> I3810H1 Desktop Computers (4 Nos)
+                                
+                            </li>
+</ul>
+                        
+                        <ul class="text-list mt-2">
+                            <li>
+                                <span class="fw-bold">Lenovo ThinkStation P3 Tower</span> Memory: 16.0 GiB Processor: 13th Gen Intel Core i9-13900K 32 Graphics: NVIDIA RTX A4000 (2 Nos)
+                               
+                            </li>
+</ul>
+
+                        <!--
+                        <ul class="text-list mt-2">
+                            <li>
+                            Lenovo ThinkStation P3 Tower Memory: 16.0 GiB Processor: 13th Gen Intel Core i9-13900K 32 Graphics: NVIDIA RTX A4000 (2 Nos)
+                            </li>
+                        </ul>
+-->
+                        <h6 class="blue-bold-heading mt-4">Software Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                <span class="fw-bold">RTLinux:</span> Operating System for Real-Time / Embedded
+                                applications
+                            </li>
+                            <li>
+                                <span class="fw-bold"> VxWorks:</span> Real-Time operating system with Tornado
+                                IDE
+                            </li>
+                            <li>
+                                <span class="fw-bold"> LabView:</span> A visual design tool for measurement
+                                analysis & signal processing
+                            </li>
+                            <li>
+                                <span class="fw-bold"> TinyOS:</span>Development platform for tiny devices
+                            </li>
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Live Projects</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                Middleware and Routing Protocols for Wireless Sensor Networks
+                            </li>
+                            <li>
+                                Localization and Tracking for Sensor Networks
+                            </li>
+                            <li>
+                                Streaming video for real time applications
+                            </li>
+                            <li>
+                                Secure file system for tiny devices
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Bioinformatics Lab/Artificial Intelligence & Software Engineering Lab Card -->
+        <!-- Cyber Physical Systems Lab/ Artificial Intelligence & Computer Vision Lab Card -->
+        <div class="card courses-card mt-5">
+            <div class="card-header courses-card-header p-4 bg-blue rounded-top">
+                <h5 class="fw-bold text-white">Cyber Physical Systems Lab/ Artificial Intelligence & Computer
+                    Vision Lab</h5>
+            </div>
+            <div class="card-body m-0 p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 order-lg-1 order-xl-2 lab-img-right" data-aos="fade-up">
+                        <img src="assets/images/labs-cyber-physical.jpg"
+                             alt="MTech Course AI Full Time Image"
+                             class="img-fluid courses-image">
+                    </div>
+                    <div class="col-lg-8 p-3" data-aos="fade-up" data-aos-delay="200">
+                        <h6 class="blue-bold-heading">Hardware Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                <span class="fw-bold">Fujitsu workstations</span> Quad Core Xeon E3-1240 Quad
+                                Core Xeon E5-1600 (4nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">Thinkstation P 900</span> Intel Xeon E5-2620 2.1 Ghz 4GB
+                                DDR3 Memory 1TB SATA HDD (2nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">Thinkcentre</span> Core i5 processor, 4 GB DDR3 RAM, 500
+                                GB HDD, I TB SATA HDD (3nos)
+                            </li>
+                            <li>
+                            <span class="fw-bold">HCL</span>  Intel Core i3 CPU 550 @ 3.20GHz Memory: 3.7 GiB Graphics: Intel HD Graphics (ILK) GNOME: 3.28.2 4 (1nos)
+                            </li>
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Software Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                <span class="fw-bold">Montavista Linux</span>
+                            </li>
+                            <li>
+                                <span class="fw-bold">Asterix IP PBX</span> (to be acquired)
+                            </li>
+                            <li>
+                                <span class="fw-bold">NS2</span> Simulation Software
+                            </li>
+                            <li>
+                                <span class="fw-bold">Matlab R2006a</span>
+                            </li>
+                            <li>
+                                <span class="fw-bold">Opensource JAVA/SIP environment</span>
+                            </li>
+                            <li>
+                                <span class="fw-bold">Service Delivery Platform</span> (to be acquired)
+                            </li>
+                            <li>
+                                <span class="fw-bold">SDK for Windows/Linux Smart Phones</span> (to be acquired)
+                            </li>
+                            <li>
+                                <span class="fw-bold">Network Simulator software : QualNet</span>
+                            </li>
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Live Projects</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                Mobility Modeling of Adhoc Networks
+                            </li>
+                            <li>
+                                Service Oriented Architecture for WSNs
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Cyber Physical Systems Lab/ Artificial Intelligence & Computer Vision Lab Card -->
+        <!-- Software Engineering Laboratory (SEL) Card -->
+        <div class="card courses-card mt-5">
+            <div class="card-header courses-card-header p-4 bg-blue rounded-top">
+                <h5 class="fw-bold text-white">Quantum Computing /Artifical Intelligence & Natural Language Processing LAB</h5>
+            </div>
+            <div class="card-body m-0 p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 lab-img-left" data-aos="fade-up">
+                        <img src="assets/images/labs-software.jpg"
+                             alt="MTech Course AI Full Time Image"
+                             class="img-fluid courses-image rounded-start">
+                    </div>
+                    <div class="col-lg-8 p-3" data-aos="fade-up" data-aos-delay="200">
+                        <h6 class="blue-bold-heading">Hardware Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                <span class="fw-bold">Fujitsu workstations</span> Quad Core Xeon E3-1240 Quad
+                                Core Xeon E5-1600 (3nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">Thinkcentre</span> Core i5 processor, 4 GB DDR3 RAM, 500
+                                GB HDD, I TB SATA HDD (1nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">CoolerMaster</span> Intel Core i7-9700F CPU @ 3.00GHz x 8 15.5 GİB NVIDIA Corporation TU106 [GeForce RTX 2060 SUPER] 1.0 TB(1nos)
+                            </li>
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Software Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>
+                                <span class="fw-bold">Microsoft Visual Studio .NET with MSDN</span> <br>
+                                An integrated development environment (IDE) for developing web applications, web
+                                services, desktop applications, and mobile applications.
+                            </li>
+                            <li>
+                                <span class="fw-bold">NetBeans (freeware)</span> <br>Linux based integrated tool
+                                for software development and associated documentation (UML diagrams).
+                            </li>
+                            <li>
+                                <span class="fw-bold">Matlab version 7.0</span> <br>
+                                Library of signal and image processing routines.
+                            </li>
+                            <li><span class="fw-bold">Open CV (Computer Vision)</span> <br>
+                                Intel’s open computer vision library for solving various computer vision
+                                problems.
+                            </li>
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Live Projects</h6>
+                        <ul class="text-list mt-2">
+                        <li>
+                                DSP and AI workload tuned Embedded RISC-V Processors
+                            </li>
+                        
+                          
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Software Engineering Laboratory (SEL) Card -->
+        
+
+        
+        <!-- Computing Lab I Card -->
+        <div class="card courses-card mt-5">
+            <div class="card-header courses-card-header p-4 bg-blue rounded-top">
+                <h5 class="fw-bold text-white">Computing Lab I</h5>
+            </div>
+            <div class="card-body m-0 p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 order-lg-1 order-xl-2 lab-img-right" data-aos="fade-up">
+                        <img src="assets/images/labs-computing.jpg"
+                             alt="MTech Course AI Full Time Image"
+                             class="img-fluid courses-image">
+                    </div>
+                    <div class="col-lg-8 p-3" data-aos="fade-up" data-aos-delay="200">
+                        <p class="mt-3">This well equipped general-purpose Computing lab meets the curricular
+                            requirements of the M.Tech programmes.</p>
+                        <h6 class="blue-bold-heading mt-4">Hardware Facilities</h6>
+                        <ul class="text-list mt-2">
+                        <li>
+                                <span class="fw-bold">Smash PC </span>
+                                Onboard Intel Core i5-8250U 1.6 GHz (8th Gen) Max 3.4GHz Four Core Eight Thread processor 15 W TDP 8Gb RAM (7nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">HCL</span>  Intel Core i3 CPU 550 @ 3.20GHz Memory: 3.7 GiB Graphics: Intel HD Graphics (ILK) GNOME: 3.28.2 4 (10nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">HP</span> Core 2 Duo CPU, 2 GB RAM, 80 GB HDD (1nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">LENOVO PC</span> Intel Pentium Dual Core 64 bit CPU 80 GB HDD 1 GB RAM(12nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">Acer Veriton M4660G</span>Intel Core i5-9400/8.00 GB x64-based processor(1nos)
+                            </li>
+                            <!--
+                            <li>
+                                Core i7/Intel Mother Board/4GB DDR3/1TB SATA/Graphics GPU with 1GB DDR3 on board
+                                (3nos)
+                                
+                            </li>
+-->
+                            <li>
+                                <span class="fw-bold">Dell Workstation Precision</span> T 1600 Xeron 3.30 GHZ/8GB
+                                DDR3/500GB SDRAM/1TB 500
+                                SATA/1GB NividaGraphics Card (4nos)
+                            </li>
+                        </ul>
+                        
+                        <h6 class="blue-bold-heading mt-4">Software Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>Object Oriented Analysis Design and Development Automated Software Testing Tools
+                            </li>
+                            <li>Process Modelling and Agent Based Computing softwares</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Computing Lab I Card -->
+    
+ <!-- Computing Lab II Card -->
+ <div class="card courses-card mt-5">
+            <div class="card-header courses-card-header p-4 bg-blue rounded-top">
+                <h5 class="fw-bold text-white">Computing Lab II</h5>
+            </div>
+            <div class="card-body m-0 p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 order-lg-1 order-xl-2 lab-img-right" data-aos="fade-up">
+                        <img src="assets/images/labs-computing.jpg"
+                             alt="MTech Course AI Full Time Image"
+                             class="img-fluid courses-image">
+                    </div>
+                    <div class="col-lg-8 p-3" data-aos="fade-up" data-aos-delay="200">
+                        <p class="mt-3">This well equipped general-purpose Computing lab meets the curricular
+                            requirements of the M.Tech programmes.</p>
+                        <h6 class="blue-bold-heading mt-4">Hardware Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <!--
+                            <li>
+                                <span class="fw-bold">Fujistu Celsius Workstation</span> Intel Xeon (10 Core, 3.30GHz)
+                            </li>
+                            <li>
+                                64GB DDR4/NVIDIA Quadro P2000 5GB/2TB SATA 
+                            </li>
+-->
+                            <li>
+                                <span class="fw-bold">HP Z2 Tower G9 Workstation Desktop PC </span>13th Gen Intel Core i7-13700 24 Graphics: NVIDIA T400 4GB Graphics 1 : NVIDIA T400 4GB(25nos)
+                            </li>
+
+                            <li>
+                                <span class="fw-bold">LENOVO PC</span> Intel Pentium Dual Core 64 bit CPU 80 GB HDD 1 GB RAM(2nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">Fujistu Celsius Workstation</span> Intel Xeon (10 Core, 3.30GHz) 64GB DDR4/NVIDIA Quadro P2000 5GB/2TB SATA(1nos)
+                            </li>
+                            
+
+                            <!--
+                            <li>
+                                <span class="fw-bold">Dell Workstation Precision</span> T 1600 Xeron 3.30 GHZ/8GB
+                                DDR3/500GB SDRAM/1TB 500
+                                SATA/1GB NividaGraphics Card (11nos)
+                            </li>
+-->
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Software Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>Object Oriented Analysis Design and Development Automated Software Testing Tools
+                            </li>
+                            <li>Process Modelling and Agent Based Computing softwares</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Computing Lab II Card -->
+
+<!-- Computing Lab III Card -->
+<div class="card courses-card mt-5">
+            <div class="card-header courses-card-header p-4 bg-blue rounded-top">
+                <h5 class="fw-bold text-white">Computing Lab III</h5>
+            </div>
+            <div class="card-body m-0 p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 order-lg-1 order-xl-2 lab-img-right" data-aos="fade-up">
+                        <img src="assets/images/labs-computing.jpg"
+                             alt="MTech Course AI Full Time Image"
+                             class="img-fluid courses-image">
+                    </div>
+                    <div class="col-lg-8 p-3" data-aos="fade-up" data-aos-delay="200">
+                        <p class="mt-3">This well equipped general-purpose Computing lab meets the curricular
+                            requirements of the M.Tech programmes.</p>
+                        <h6 class="blue-bold-heading mt-4">Hardware Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <!--
+                            <li>
+                                <span class="fw-bold">Fujistu Celsius Workstation</span> Intel Xeon (10 Core, 3.30GHz)
+                            </li>
+                            <li>
+                                64GB DDR4/NVIDIA Quadro P2000 5GB/2TB SATA 
+                            </li>
+-->
+                            <li>
+                                <span class="fw-bold">LENOVO PC </span>Intel Pentium Dual Core 64 bit CPU 80 GB HDD 1 GB RAM(1nos)
+                            </li>
+
+                            <li>
+                                <span class="fw-bold">COOLMASTER</span> 12th Gen Intel Core i9-12900K × 24 64.0 GiB NVIDIA GeForce RTX 4090 NVIDIA GeForce RTX 4090(1nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">COOLMASTER</span> Intel core i7 12700 x 20 32 GiB NVIDIA GeForce RTX  3060 1.0 TB(1nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">FOXIN</span> Intel Core i7-9700 CPU @ 3.00GHz × 8 15.6 GiB GeForce GTX 1050 Ti/PCIe/SSE2 1.0 TB(1nos)
+                            </li>
+                            <li>
+                                <span class="fw-bold">ANT ESPORTS</span> PROCESSOR AMD RADION GRAPHICS(1nos)
+                            </li>
+
+
+                            <!--
+                            <li>
+                                <span class="fw-bold">Dell Workstation Precision</span> T 1600 Xeron 3.30 GHZ/8GB
+                                DDR3/500GB SDRAM/1TB 500
+                                SATA/1GB NividaGraphics Card (11nos)
+                            </li>
+-->
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Software Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>Object Oriented Analysis Design and Development Automated Software Testing Tools
+                            </li>
+                            <li>Process Modelling and Agent Based Computing softwares</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Computing Lab III Card -->
+ 
+<!-- Computing Lab IV Card -->
+<div class="card courses-card mt-5">
+            <div class="card-header courses-card-header p-4 bg-blue rounded-top">
+                <h5 class="fw-bold text-white">Computing Lab IV</h5>
+            </div>
+            <div class="card-body m-0 p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 order-lg-1 order-xl-2 lab-img-right" data-aos="fade-up">
+                        <img src="assets/images/labs-computing.jpg"
+                             alt="MTech Course AI Full Time Image"
+                             class="img-fluid courses-image">
+                    </div>
+                    <div class="col-lg-8 p-3" data-aos="fade-up" data-aos-delay="200">
+                        <p class="mt-3">This well equipped general-purpose Computing lab meets the curricular
+                            requirements of the M.Tech programmes.</p>
+                        <h6 class="blue-bold-heading mt-4">Hardware Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <!--
+                            <li>
+                                <span class="fw-bold">Fujistu Celsius Workstation</span> Intel Xeon (10 Core, 3.30GHz)
+                            </li>
+                            <li>
+                                64GB DDR4/NVIDIA Quadro P2000 5GB/2TB SATA 
+                            </li>
+-->
+                            <li>
+                                <span class="fw-bold">ACER VERITON S2670G </span>Processor 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz 2.59 GHz Installed RAM 8.00 GB x64-based processor(24nos)
+                            </li>
+
+                            <!--
+                            <li>
+                                <span class="fw-bold">Dell Workstation Precision</span> T 1600 Xeron 3.30 GHZ/8GB
+                                DDR3/500GB SDRAM/1TB 500
+                                SATA/1GB NividaGraphics Card (11nos)
+                            </li>
+-->
+                        </ul>
+                        <h6 class="blue-bold-heading mt-4">Software Facilities</h6>
+                        <ul class="text-list mt-2">
+                            <li>Object Oriented Analysis Design and Development Automated Software Testing Tools
+                            </li>
+                            <li>Process Modelling and Agent Based Computing softwares</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Computing Lab IV Card -->
+
+
+
+    </div>
+
+
+    
+
+    <!-- End Lab Cards -->
+
+
+<!-- Closing Tags -->
+</div>
+<!-- Text Container -->
+</div>
+<!-- End Main Content --><!-- End Closing Tags -->
+
+<!-- Footer -->
+<div class="footer container-fluid bg-darkblue py-5 mt-5">
+    <!-- Footer Container -->
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="d-flex flex-row justify-content-between align-items-center footer-logo-section pb-4">
+            <!-- Footer Logos -->
+            <div class="">
+                <a class = 'footer-home-link' href='index.php'><img class='img-fluid footer-logo-img d-none d-md-block' src = 'assets/images/footer-logo.svg' alt = 'Footer All Devices except Mobile Logo'>
+<img class='img-fluid footer-logo-mobile-img d-block d-md-none' src = 'assets/images/footer-logo-mobile.svg' alt = 'Footer Mobile Logo'></a>            </div>
+            <!-- End Footer Logos -->
+            <!-- Social Icons -->
+            <div class="row gx-3">
+                <div class="col"><a href="#" target="_blank">
+                        <div class="footer-social-icon" id="fb">
+                            <svg x="0px" y="0px" viewBox="0 0 30 30" xml:space="preserve">
+                                <path class="st0" d="M14.62,0C6.55,0,0,6.55,0,14.62c0,7.3,5.35,13.35,12.34,14.44V18.85H8.62v-4.23h3.71V11.4
+	                            c0-3.66,2.18-5.69,5.52-5.69c1.6,0,3.27,0.29,3.27,0.29v3.6h-1.84c-1.82,0-2.38,1.13-2.38,2.28v2.74h4.06l-0.65,4.23h-3.41v10.22
+	                            c6.99-1.1,12.34-7.15,12.34-14.44C29.24,6.55,22.7,0,14.62,0z"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="col"><a href="#" target="_blank">
+                        <div class="footer-social-icon m-0 p-0" id="insta">
+                            <svg x="0px" y="0px" viewBox="0 0 30 30" xml:space="preserve">
+                               <path class="st0" d="M18.04,7.64H11.2c-1.95,0-3.54,1.59-3.54,3.54v6.84c0,1.95,1.59,3.54,3.54,3.54h6.84
+                                    c1.95,0,3.54-1.59,3.54-3.54v-6.84C21.58,9.23,19.99,7.64,18.04,7.64z M14.69,18.82c-2.33,0-4.22-1.89-4.22-4.22
+                                    c0-2.33,1.89-4.22,4.22-4.22c2.33,0,4.22,1.89,4.22,4.22C18.91,16.93,17.02,18.82,14.69,18.82z M19.16,11.1
+                                    c-0.55,0-1.01-0.45-1.01-1.01c0-0.55,0.45-1.01,1.01-1.01c0.56,0,1.01,0.45,1.01,1.01C20.17,10.65,19.72,11.1,19.16,11.1z"/>
+                                <path class="st0" d="M14.69,11.9c-1.49,0-2.7,1.21-2.7,2.7c0,1.49,1.21,2.7,2.7,2.7c1.49,0,2.7-1.21,2.7-2.7
+                                    C17.4,13.11,16.18,11.9,14.69,11.9z"/>
+                                <path class="st0" d="M14.62,0C6.55,0,0,6.55,0,14.62s6.55,14.62,14.62,14.62c8.08,0,14.62-6.55,14.62-14.62S22.7,0,14.62,0z
+                                     M23.19,18.02c0,2.84-2.31,5.15-5.15,5.15H11.2c-2.84,0-5.15-2.31-5.15-5.15v-6.84c0-2.84,2.31-5.15,5.15-5.15h6.84
+                                    c2.84,0,5.15,2.31,5.15,5.15V18.02z"/>
+                          </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="col"><a href="#" target="_blank">
+                        <div class="footer-social-icon" id="twitter">
+                            <svg x="0px" y="0px" viewBox="0 0 30 30" xml:space="preserve">
+                               <path class="st0" d="M14.62,0C6.55,0,0,6.55,0,14.62s6.55,14.62,14.62,14.62s14.62-6.55,14.62-14.62S22.7,0,14.62,0z M22.77,9.63
+                                c0,0.04,0,0.14-0.08,0.25c-0.37,0.5-0.78,0.95-1.27,1.33c-0.07,0.05-0.19,0.11-0.19,0.21c0,2.63-0.67,5.26-2.59,7.17
+                                c-2.44,2.43-6.11,3.09-9.37,2.19c-0.63-0.17-1.23-0.42-1.81-0.72c-0.19-0.1-0.38-0.21-0.56-0.33c-0.05-0.04-0.08-0.07-0.04-0.1
+                                c0.04-0.02,0.07-0.02,0.22,0c0.91,0.09,1.85-0.05,2.71-0.35c0.47-0.17,1.49-0.5,1.78-0.95c0.01-0.01,0.01-0.01,0.02-0.02
+                                c-0.12-0.03-0.24-0.03-0.36-0.05c-0.88-0.25-2.07-0.7-2.61-2.19c-0.03-0.09,0-0.13,0.09-0.11c0.73,0.06,0.99,0.02,1.24-0.04
+                                c-0.14-0.02-0.29-0.07-0.42-0.13c-1.11-0.42-1.93-1.51-2.08-2.69c-0.02-0.14-0.03-0.25-0.02-0.38c0.01-0.09,0.05-0.11,0.12-0.07
+                                c0.57,0.3,1.22,0.37,1.27,0.36c-0.14-0.11-0.28-0.23-0.4-0.36c-0.97-0.92-1.34-2.78-0.57-3.94c0.06-0.09,0.1-0.09,0.18-0.01
+                                c1.77,2.01,3.94,2.95,6.57,3.34c0.07,0.01,0.08,0,0.07-0.08c-0.07-0.46-0.08-0.92,0.03-1.37c0.12-0.47,0.34-0.92,0.65-1.3
+                                c0.3-0.37,0.67-0.67,1.09-0.89c0.42-0.22,0.88-0.35,1.35-0.38c0.48-0.03,0.97,0.05,1.42,0.23c0.34,0.14,0.64,0.33,0.93,0.57
+                                c0.06,0.05,0.11,0.11,0.17,0.17c0.03,0.03,0.08,0.05,0.13,0.03c0.67-0.17,1.3-0.4,1.91-0.73c0.03-0.01,0.05-0.02,0.09-0.01
+                                c0.03,0.02,0.02,0.06,0,0.08c-0.11,0.36-0.3,0.69-0.54,0.98c-0.15,0.19-0.53,0.66-0.79,0.7c0.55-0.09,1.11-0.23,1.61-0.46
+                                c0.06-0.03,0.07-0.04,0.07,0C22.77,9.61,22.77,9.62,22.77,9.63z"/>
+                          </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- End Social Icons -->
+        </div>
+        <!-- End Logo Section -->
+        <!-- Connect Container -->
+            <div class="footer-text d-flex justify-content-between align-items-center flex-wrap py-4 footer-address-section">
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text">
+                    <div class="contact-icon">
+                        <svg x="0px" y="0px" viewBox="0 0 30 30" xml:space="preserve">
+                                   <path class="st0" d="M6.53,0C2.92,0,0,2.92,0,6.53c0,2.72,1.73,4.31,3.74,7.21c1.2,1.73,2.17,3.9,2.45,6.42
+                                        c0.02,0.19,0.18,0.28,0.34,0.28c0.16,0.01,0.32-0.09,0.34-0.28c0.28-2.52,1.25-4.7,2.45-6.42c2.01-2.89,3.74-4.49,3.74-7.21
+                                        C13.06,2.92,10.13,0,6.53,0z M6.53,8.89c-1.31,0-2.37-1.06-2.37-2.37c0-1.31,1.06-2.37,2.37-2.37c1.31,0,2.37,1.06,2.37,2.37
+                                        C8.89,7.84,7.84,8.89,6.53,8.89z"/>
+                            </svg>
+                    </div>
+                    <div class="footer-address">
+                        <p>
+                            <a href="https://www.google.com/maps/place/CUSAT+Computer+Science+Department/@10.0452268,76.3254262,15z/data=!4m2!3m1!1s0x0:0xd4c02f6691f82b5?sa=X&ved=2ahUKEwjmrMXIq575AhXD8DgGHZQMBU8Q_BJ6BAhYEAU"
+                               target="_blank">CUSAT Campus, Kalamassery, Cochin.</a></p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text">
+                    <div class="contact-icon">
+                        <svg x="0px" y="0px" viewBox="0 -8 30 30" xml:space="preserve">
+                                <path class="st0" d="M15.01,11.34L13,10.26c-0.49-0.26-0.87-0.07-1.29,0.51c-0.93,1.28-1.38,1.53-2.52,0.89
+                                c-1.06-0.59-1.82-1.3-2.78-2.25C5.45,8.45,4.75,7.69,4.16,6.63C3.52,5.49,3.77,5.04,5.05,4.11c0.58-0.42,0.77-0.8,0.51-1.29
+                                L4.47,0.8c-0.44-0.86-1.07-0.95-2-0.64C1.18,0.6-0.06,2.45,0,3.33c0.18,2.57,1.47,5.66,4.15,8.34
+                                c2.68,2.68,5.77,3.97,8.34,4.15c0.88,0.06,2.72-1.19,3.16-2.48C15.97,12.42,15.87,11.79,15.01,11.34z"/>
+                            <path class="st0" d="M8.98,3.58c-0.42,0-0.77,0.35-0.76,0.78c0,0.42,0.35,0.76,0.77,0.76c0.01,0,0.01,0,0.02,0
+                                c0.46,0,0.89,0.18,1.21,0.5c0.33,0.33,0.5,0.76,0.5,1.22c0,0.42,0.34,0.77,0.76,0.78h0.01c0.42,0,0.77-0.34,0.77-0.76
+                                c0.01-0.88-0.33-1.7-0.95-2.32C10.69,3.91,9.85,3.59,8.98,3.58z M13.57,2.27c-1.22-1.23-2.87-1.9-4.59-1.89
+                                c-0.42,0-0.77,0.35-0.77,0.77c0,0.42,0.35,0.77,0.77,0.77c0,0,0.01,0,0.02,0c1.31,0,2.55,0.51,3.48,1.44
+                                c0.93,0.93,1.44,2.17,1.44,3.49c0,0.42,0.34,0.77,0.77,0.77h0c0.42,0,0.77-0.34,0.77-0.77C15.47,5.12,14.8,3.49,13.57,2.27z"/>
+                            </svg>
+                    </div>
+                    <div class="">
+                        <p><a href="tel:+914842862301">+91-484-2862301</a></p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text">
+                    <div class="contact-icon fax-icon">
+                        <svg id="faxIcon" x="0px" y="0px"
+                             viewBox="0 0 2319.72 2222.34"
+                             xml:space="preserve">
+<g>
+    <g>
+        <polygon points="528.07,452.95 528.07,452.95 527.94,88.95 		"/>
+    </g>
+    <g>
+        <path d="M2263.75,774.36h-59.83V505.41c0-28.85-23.21-52.46-51.59-52.46h-173.09V351.65c0-8.79-3.62-17.32-9.93-23.36
+			L1636.01,8.92c-5.9-5.64-13.57-8.72-21.64-8.72L520.24,0c-21.98,0-41.93,9.09-56.37,23.79c-14.45,14.68-23.39,34.96-23.39,57.32
+			v371.85H267.39c-28.37,0-51.59,23.61-51.59,52.46v268.95h-59.83C69.83,774.36,0,845.37,0,932.98v703.62
+			c0,87.6,69.83,158.62,155.97,158.62h178.1l61.38-313.45c7.78-39.74,42.08-68.36,81.93-68.36h1464.97
+			c39.85,0,74.14,28.62,81.93,68.36l61.38,313.45h178.1c86.14,0,155.97-71.02,155.97-158.62V932.98
+			C2419.72,845.37,2349.89,774.36,2263.75,774.36z M302.12,1017.89c0,35.82-28.82,65.13-64.04,65.13l0,0
+			c-35.22,0-64.04-29.31-64.04-65.13l0,0c0-35.82,28.82-65.13,64.04-65.13l0,0C273.3,952.76,302.12,982.07,302.12,1017.89
+			L302.12,1017.89z M1891.6,774.36H528.19l-0.12-321.41l0,0l-0.13-364H1551.2v233.96c0,49.03,39.23,88.93,87.45,88.93h253.13
+			L1891.6,774.36z"/>
+    </g>
+    <g>
+        <path d="M1942.35,1413.41H477.38c-39.84,0-74.14,28.62-81.93,68.36l-61.38,313.45l-63.76,325.57
+			c-4.89,24.95,1.48,50.81,17.35,70.48c15.87,19.67,39.56,31.07,64.58,31.07h1715.25c25.01,0,48.71-11.4,64.58-31.07
+			c15.87-19.67,22.23-45.53,17.35-70.48l-63.76-325.57l-61.38-313.45C2016.49,1442.03,1982.19,1413.41,1942.35,1413.41z
+			 M2067.48,2137.39H352.24l125.14-639.02h1464.97L2067.48,2137.39z"/>
+    </g>
+    <g>
+        <path d="M1822.45,1897.87H597.27c-23.07,0-41.77,19.02-41.77,42.48c0,23.46,18.7,42.48,41.77,42.48h1225.18
+			c23.07,0,41.77-19.02,41.77-42.48C1864.22,1916.89,1845.52,1897.87,1822.45,1897.87z"/>
+    </g>
+    <g>
+        <path d="M645.31,1737.88h1129.11c23.07,0,41.77-19.02,41.77-42.48c0-23.46-18.7-42.48-41.77-42.48H645.31
+			c-23.07,0-41.77,19.02-41.77,42.48C603.54,1718.86,622.24,1737.88,645.31,1737.88z"/>
+    </g>
+</g>
+</svg>
+                    </div>
+                    <div class="">
+                        <p><a href="tel:+914842576368">+91-484-2576368</a></p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text">
+                    <div class="contact-icon">
+                        <svg x="0px" y="0px" viewBox="0 -8 30 30" xml:space="preserve">
+   <path class="st0" d="M16.09,0.08L0.59,6.84c-0.76,0.33-0.8,1.4-0.06,1.78l3.14,1.62l9.36-6.51c0.1-0.07,0.2,0.01,0.21,0.1
+				L5.4,11.32c-0.19,0.19-0.3,0.44-0.3,0.71v3.47c0,1,1.31,1.36,1.83,0.51l1.9-3.11l4.03,2.08c0.57,0.29,1.26-0.02,1.41-0.64
+				l3.18-13.11C17.63,0.43,16.83-0.24,16.09,0.08z"/>
+  </svg>
+                    </div>
+                    <div class="">
+                        <p><a href="mailto:csdir@cusat.ac.in">csdir@cusat.ac.in</a></p>
+                    </div>
+                </div>
+            </div>
+        <!-- End Connect Container -->
+        <!-- Footer Navigation Section -->
+        <div class="d-flex flex-row flex-wrap justify-content-between align-items-top footer-nav-section pt-4 pb-3">
+            <!-- Navigation Container -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-start">
+                <div class='col w-auto'><ul><h6 class='footer-blue-text'>Main</h6><a href='index.php'><li>Home</li></a></ul></div><div class='col w-auto'><ul><h6 class='footer-blue-text'>About</h6><a href='about-cusat.php'><li>About CUSAT</li></a><a href='about-dcs.php'><li>About Department</li></a></ul></div><div class='col w-auto'><ul><h6 class='footer-blue-text'>Academics</h6><a href='programmes.php'><li>Programmes</li></a><a href='people.php'><li>People</li></a><a href='research.php'><li>Research</li></a><a href='e-learning.php'><li>E-Learning</li></a></ul></div><div class='col w-auto'><ul><h6 class='footer-blue-text'>Facilities</h6><a href='labs.php'><li>Labs</li></a><a href='library.php'><li>Library</li></a><a href='https://cusat.ac.in/knowledge-forum'><li>CUSAT Knowledge Forum</li></a><a href='https://cittic.cusat.ac.in/'><li>Enterpreneurship</li></a><a href='computer-center.php'><li>Computer Center</li></a></ul></div><div class='col w-auto'><ul><h6 class='footer-blue-text'>Admission</h6><a href='assets/pdf-files/fee-structure.pdf'><li>Fee Structure</li></a><a href='phd.php'><li>Ph.D</li></a><a href='aicte.php'><li>AICTE Approval / MD</li></a><a href='assets/pdf-files/mou.pdf'><li>MOU</li></a></ul></div><div class='col w-auto'><ul><h6 class='footer-blue-text'>Others</h6><a href='alumni.php'><li>Alumni</li></a><a href='placements.php'><li>Placements</li></a><a href='assets/pdf-files/events-2022.pdf'><li>Events</li></a><a href='lecture-series.php'><li>Lecture Series</li></a></ul></div>            </div>
+            <!-- End Navigation Container -->
+            <!-- QR Code -->
+            <div class="d-flex align-items-center mt-3 mt-lg-0">
+                <img src="assets/images/qr-code.jpg" alt="QR Code" class="img-fluid qr-code">
+            </div>
+            <!-- End QR Code -->
+        </div>
+        <!-- End Footer Navigation Section -->
+        <!-- Footer Disclaimer Section -->
+        <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-between align-items-center footer-disclaimer-section pt-4">
+            <div class="col footer-text">
+                <p> &copy; 2026. Department of Computer Science. All Rights Reserved.</p>
+            </div>
+            <div class="col footer-text text-start text-md-end">
+                <p><a href="mailto:getintouch@mayagrafix.com">Designed & Developed by Maya Grafix.</a></p>
+            </div>
+        </div>
+        <!-- End Footer Disclaimer Section -->
+    </div>
+    <!-- End Footer Container -->
+    <button onclick="topFunction()" id="back-to-top-button" class="bg-dark-blue" title="Go to top">Top</button>
+</div>
+<!-- End Footer -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap Bundle JS -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<!-- Stellar Nav Js -->
+<script src="assets/js/stellarnav.min.js"></script>
+
+<!-- Lightboxed Js -->
+<script src="assets/js/lightboxed.js"></script>
+
+<!-- AOS Js -->
+<script src="assets/js/aos.js"></script>
+
+<!-- Custom Scripts -->
+<script src="assets/js/dcs_scripts.js"></script>
+
+</body>
+</html>
+
+
+
+Facilities - Library
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Department of Computer Science | Facilities - Library</title>
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+
+    <link rel="stylesheet" href= "assets/css/bootstrap.min.css">
+
+    <!-- Stellar Nav Styles -->
+    <link rel="stylesheet" href="assets/css/stellarnav.min.css">
+
+    <!-- Lightbox Styles -->
+    <link rel="stylesheet" href="assets/css/lightboxed.css">
+
+    <!-- Animate Styles -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+
+    <!-- AOS Styles -->
+    <link rel="stylesheet" href="assets/css/aos.css">
+
+    <!-- DCS Custom Styles CSS -->
+    <link rel="stylesheet" href="assets/css/dcs_styles.css">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="assets/images/logo-favicon.png"/>
+    <link rel="apple-touch-icon" href="assets/images/logo-favicon.png"/>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <!-- Top Contact Bar -->
+    <div class="container-fluid bg-darkblue pb-3 pb-sm-0">
+        <!-- Container for Top Bar -->
+        <div class="container d-flex flex-column flex-sm-row justify-content-sm-between align-items-center header-top-bar py-2">
+            <!-- Contact Details -->
+            <div class="header-contact d-flex flex-column flex-sm-row justify-content-start align-items-center mb-3 mb-sm-0">
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text me-sm-3">
+                    <div class="contact-icon">
+                        <svg
+                                x="0px" y="0px"
+                                viewBox="0 -8 30 30"
+                                xml:space="preserve">
+   <path class="st0" d="M16.09,0.08L0.59,6.84c-0.76,0.33-0.8,1.4-0.06,1.78l3.14,1.62l9.36-6.51c0.1-0.07,0.2,0.01,0.21,0.1
+				L5.4,11.32c-0.19,0.19-0.3,0.44-0.3,0.71v3.47c0,1,1.31,1.36,1.83,0.51l1.9-3.11l4.03,2.08c0.57,0.29,1.26-0.02,1.41-0.64
+				l3.18-13.11C17.63,0.43,16.83-0.24,16.09,0.08z"/>
+  </svg>
+                    </div>
+                    <div class="">
+                        <p><a href="mailto:csdir@cusat.ac.in">csdir@cusat.ac.in</a></p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text">
+                    <div class="contact-icon">
+                        <svg
+                                x="0px" y="0px"
+                                viewBox="0 -8 30 30"
+                                xml:space="preserve">
+   <path class="st0" d="M15.01,11.34L13,10.26c-0.49-0.26-0.87-0.07-1.29,0.51c-0.93,1.28-1.38,1.53-2.52,0.89
+						c-1.06-0.59-1.82-1.3-2.78-2.25C5.45,8.45,4.75,7.69,4.16,6.63C3.52,5.49,3.77,5.04,5.05,4.11c0.58-0.42,0.77-0.8,0.51-1.29
+						L4.47,0.8c-0.44-0.86-1.07-0.95-2-0.64C1.18,0.6-0.06,2.45,0,3.33c0.18,2.57,1.47,5.66,4.15,8.34
+						c2.68,2.68,5.77,3.97,8.34,4.15c0.88,0.06,2.72-1.19,3.16-2.48C15.97,12.42,15.87,11.79,15.01,11.34z"/>
+                            <path class="st0" d="M8.98,3.58c-0.42,0-0.77,0.35-0.76,0.78c0,0.42,0.35,0.76,0.77,0.76c0.01,0,0.01,0,0.02,0
+						c0.46,0,0.89,0.18,1.21,0.5c0.33,0.33,0.5,0.76,0.5,1.22c0,0.42,0.34,0.77,0.76,0.78h0.01c0.42,0,0.77-0.34,0.77-0.76
+						c0.01-0.88-0.33-1.7-0.95-2.32C10.69,3.91,9.85,3.59,8.98,3.58z M13.57,2.27c-1.22-1.23-2.87-1.9-4.59-1.89
+						c-0.42,0-0.77,0.35-0.77,0.77c0,0.42,0.35,0.77,0.77,0.77c0,0,0.01,0,0.02,0c1.31,0,2.55,0.51,3.48,1.44
+						c0.93,0.93,1.44,2.17,1.44,3.49c0,0.42,0.34,0.77,0.77,0.77h0c0.42,0,0.77-0.34,0.77-0.77C15.47,5.12,14.8,3.49,13.57,2.27z"/>
+  </svg>
+                    </div>
+                    <div class="">
+                        <p><a href="tel:+914842862301">+91-484-2862301</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Contact Details -->
+            <!-- Student Portal Button -->
+            <button type="button" class="btn lightblue-button">Student Portal</button>
+            <!-- End Student Portal Button -->
+        </div>
+        <!-- End Container for Top Bar -->
+    </div>
+    <!-- End Top Contact Bar -->
+    <!-- Sticky Header -->
+    <div class="container-fluid p-0 m-0 bg-white" id="header-sticky">
+        <!-- Logo Bar -->
+        <div class="container bg-white py-3 px-4 px-md-0">
+            <div class="d-flex flex-row justify-content-between align-items-center header-logo-section">
+                <!-- DCS Logo -->
+                <div class="">
+                    <a class = 'header-home-link' href='index.php'><img class='img-fluid header-logo-img d-none d-md-block' src = 'assets/images/header-logo.svg' alt = 'Header All Devices except Mobile Logo'>
+<img class='img-fluid header-logo-mobile-img d-block d-md-none' src = 'assets/images/header-logo-mobile.svg' alt = 'Header Mobile Logo'></a>                </div>
+                <!-- End DCS Logo -->
+                <!-- Cusat Logo -->
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                    <a class="cusat-logo" href="https://cusat.ac.in/">
+                        <img class="img-fluid" src="assets/images/cusat-logo.svg" alt="Cusat Logo"></a>
+                    <a class="fifty-years" href="https://cusat.ac.in/">
+                        <img class="img-fluid" src="assets/images/goldenjubilee_logo.jpg" alt="Cusat Logo"></a>
+                </div>
+                <!-- End Cusat Logo -->
+            </div>
+        </div>
+        <!-- End Logo Bar -->
+        <!-- Nav Bar -->
+        <div class="container-fluid bg-blue p-0 m-0 d-flex flex-row justify-content-between align-items-center">
+            <div class="container">
+                <div class="stellarnav">
+                    <ul><li><a href='index.php'>Home</a></li><li class='has-sub'><a href='#'>About</a><ul style='display: none;' class='sub-menu'><li><a href='about-cusat.php'>About CUSAT</a></li><li><a href='about-dcs.php'>About Department</a></li></ul></li><li class='has-sub'><a href='#'>Academics</a><ul style='display: none;' class='sub-menu'><li><a href='programmes.php'>Programmes</a></li><li><a href='people.php'>People</a></li><li><a href='research.php'>Research</a></li><li><a href='e-learning.php'>E-Learning</a></li></ul></li><li class='has-sub'><a href='#'>Facilities</a><ul style='display: none;' class='sub-menu'><li><a href='labs.php'>Labs</a></li><li><a href='library.php'>Library</a></li><li><a href='https://cusat.ac.in/knowledge-forum' target='_blank'>CUSAT Knowledge Forum</a></li><li><a href='https://cittic.cusat.ac.in/' target='_blank'>Enterpreneurship</a></li><li><a href='computer-center.php'>Computer Center</a></li></ul></li><li class='has-sub'><a href='#'>Admission</a><ul style='display: none;' class='sub-menu'><li><a href='assets/pdf-files/fee-structure.pdf' target='_blank'>Fee Structure</a></li><li><a href='phd.php'>Ph.D</a></li><li><a href='aicte.php'>AICTE Approval / MD</a></li><li><a href='assets/pdf-files/mou.pdf' target='_blank'>MOU</a></li></ul></li><li class='has-sub'><a href='#'>Others</a><ul style='display: none;' class='sub-menu'><li><a href='alumni.php'>Alumni</a></li><li><a href='placements.php'>Placements</a></li><li><a href='assets/pdf-files/events-2022.pdf' target='_blank'>Events</a></li><li><a href='lecture-series.php'>Lecture Series</a></li></ul></li></ul >                 </div>
+            </div>
+        </div>
+        <!-- Nav Bar -->
+    </div>
+    <!-- End Sticky Header -->
+</header>
+<!-- End Header -->
+<!-- Main Content -->
+<div class='container-fluid main-content m-0 p-0'>
+<!-- Header Image  -->
+<div class='inside-header-image d-flex align-items-center p-3' style='background-image: linear-gradient(rgba(23, 24, 69, 0.7), rgba(23, 24, 69, 0.7)), url("assets/images/header-images/header-library.jpg")'><div class='header-text-container text-center'><h3 data-aos='fade-up'>Library</h3><h5 class='dcs-breadcrumbs-text' data-aos='fade-up' data-aos-delay='100'><a class='dcs-breadcrumbs' href='index.php'>Home</a> &gt; Facilities &gt; Library</h5></div></div><!-- End Header Image  -->
+<!-- Text Container -->
+<div class='container p-3 mt-4'>
+
+    <p class="mt-3">
+        The Department Library provides the students an opportunity to tap the latest information available through a
+        collection of technical journals, magazines, books, research papers, seminar proceedings and project reports.
+    </p>
+    <ul class="mt-3 text-list">
+        <li>
+            More than 6000 Technical Books and 60 Journals.
+        </li>
+        <li>
+            PHD Thesis and Project report for reference.
+        </li>
+        <li>
+            Research Monograms.
+        </li>
+        <li>
+            ACM membership since 1986.
+        </li>
+        <li>
+            International and National Conference proceedings.
+        </li>
+        <li>
+            Excellent collection of CDs.
+        </li>
+        <li>
+            Referance facilty avail for students outside University also
+        </li>
+    </ul>
+    <div class="d-flex flex-wrap justify-content-center mt-4">
+        <div class="p-2">
+            <a class="btn rounded-pill courses-button" role="button"
+               href="http://172.16.64.22"
+               target="_blank">Login to Department Library</a>
+        </div>
+        <div class="p-2">
+            <a class="btn rounded-pill courses-button" role="button"
+               href="https://shodhganga.inflibnet.ac.in/"
+               target="_blank">Shodhganga - Reservoir of Indian Theses</a>
+        </div>
+        <div class="p-2">
+            <a class="btn rounded-pill courses-button" role="button"
+               href="http://library.cusat.ac.in/"
+               target="_blank">University Library</a>
+        </div>
+        <div class="p-2">
+            <a class="btn rounded-pill courses-button" role="button"
+               href="http://opac.cusat.ac.in/"
+               target="_blank">Search OPAC</a>
+        </div>
+    </div>
+
+<!-- Closing Tags -->
+</div>
+<!-- Text Container -->
+</div>
+<!-- End Main Content --><!-- End Closing Tags -->
+
+<!-- Footer -->
+<div class="footer container-fluid bg-darkblue py-5 mt-5">
+    <!-- Footer Container -->
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="d-flex flex-row justify-content-between align-items-center footer-logo-section pb-4">
+            <!-- Footer Logos -->
+            <div class="">
+                <a class = 'footer-home-link' href='index.php'><img class='img-fluid footer-logo-img d-none d-md-block' src = 'assets/images/footer-logo.svg' alt = 'Footer All Devices except Mobile Logo'>
+<img class='img-fluid footer-logo-mobile-img d-block d-md-none' src = 'assets/images/footer-logo-mobile.svg' alt = 'Footer Mobile Logo'></a>            </div>
+            <!-- End Footer Logos -->
+            <!-- Social Icons -->
+            <div class="row gx-3">
+                <div class="col"><a href="#" target="_blank">
+                        <div class="footer-social-icon" id="fb">
+                            <svg x="0px" y="0px" viewBox="0 0 30 30" xml:space="preserve">
+                                <path class="st0" d="M14.62,0C6.55,0,0,6.55,0,14.62c0,7.3,5.35,13.35,12.34,14.44V18.85H8.62v-4.23h3.71V11.4
+	                            c0-3.66,2.18-5.69,5.52-5.69c1.6,0,3.27,0.29,3.27,0.29v3.6h-1.84c-1.82,0-2.38,1.13-2.38,2.28v2.74h4.06l-0.65,4.23h-3.41v10.22
+	                            c6.99-1.1,12.34-7.15,12.34-14.44C29.24,6.55,22.7,0,14.62,0z"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="col"><a href="#" target="_blank">
+                        <div class="footer-social-icon m-0 p-0" id="insta">
+                            <svg x="0px" y="0px" viewBox="0 0 30 30" xml:space="preserve">
+                               <path class="st0" d="M18.04,7.64H11.2c-1.95,0-3.54,1.59-3.54,3.54v6.84c0,1.95,1.59,3.54,3.54,3.54h6.84
+                                    c1.95,0,3.54-1.59,3.54-3.54v-6.84C21.58,9.23,19.99,7.64,18.04,7.64z M14.69,18.82c-2.33,0-4.22-1.89-4.22-4.22
+                                    c0-2.33,1.89-4.22,4.22-4.22c2.33,0,4.22,1.89,4.22,4.22C18.91,16.93,17.02,18.82,14.69,18.82z M19.16,11.1
+                                    c-0.55,0-1.01-0.45-1.01-1.01c0-0.55,0.45-1.01,1.01-1.01c0.56,0,1.01,0.45,1.01,1.01C20.17,10.65,19.72,11.1,19.16,11.1z"/>
+                                <path class="st0" d="M14.69,11.9c-1.49,0-2.7,1.21-2.7,2.7c0,1.49,1.21,2.7,2.7,2.7c1.49,0,2.7-1.21,2.7-2.7
+                                    C17.4,13.11,16.18,11.9,14.69,11.9z"/>
+                                <path class="st0" d="M14.62,0C6.55,0,0,6.55,0,14.62s6.55,14.62,14.62,14.62c8.08,0,14.62-6.55,14.62-14.62S22.7,0,14.62,0z
+                                     M23.19,18.02c0,2.84-2.31,5.15-5.15,5.15H11.2c-2.84,0-5.15-2.31-5.15-5.15v-6.84c0-2.84,2.31-5.15,5.15-5.15h6.84
+                                    c2.84,0,5.15,2.31,5.15,5.15V18.02z"/>
+                          </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="col"><a href="#" target="_blank">
+                        <div class="footer-social-icon" id="twitter">
+                            <svg x="0px" y="0px" viewBox="0 0 30 30" xml:space="preserve">
+                               <path class="st0" d="M14.62,0C6.55,0,0,6.55,0,14.62s6.55,14.62,14.62,14.62s14.62-6.55,14.62-14.62S22.7,0,14.62,0z M22.77,9.63
+                                c0,0.04,0,0.14-0.08,0.25c-0.37,0.5-0.78,0.95-1.27,1.33c-0.07,0.05-0.19,0.11-0.19,0.21c0,2.63-0.67,5.26-2.59,7.17
+                                c-2.44,2.43-6.11,3.09-9.37,2.19c-0.63-0.17-1.23-0.42-1.81-0.72c-0.19-0.1-0.38-0.21-0.56-0.33c-0.05-0.04-0.08-0.07-0.04-0.1
+                                c0.04-0.02,0.07-0.02,0.22,0c0.91,0.09,1.85-0.05,2.71-0.35c0.47-0.17,1.49-0.5,1.78-0.95c0.01-0.01,0.01-0.01,0.02-0.02
+                                c-0.12-0.03-0.24-0.03-0.36-0.05c-0.88-0.25-2.07-0.7-2.61-2.19c-0.03-0.09,0-0.13,0.09-0.11c0.73,0.06,0.99,0.02,1.24-0.04
+                                c-0.14-0.02-0.29-0.07-0.42-0.13c-1.11-0.42-1.93-1.51-2.08-2.69c-0.02-0.14-0.03-0.25-0.02-0.38c0.01-0.09,0.05-0.11,0.12-0.07
+                                c0.57,0.3,1.22,0.37,1.27,0.36c-0.14-0.11-0.28-0.23-0.4-0.36c-0.97-0.92-1.34-2.78-0.57-3.94c0.06-0.09,0.1-0.09,0.18-0.01
+                                c1.77,2.01,3.94,2.95,6.57,3.34c0.07,0.01,0.08,0,0.07-0.08c-0.07-0.46-0.08-0.92,0.03-1.37c0.12-0.47,0.34-0.92,0.65-1.3
+                                c0.3-0.37,0.67-0.67,1.09-0.89c0.42-0.22,0.88-0.35,1.35-0.38c0.48-0.03,0.97,0.05,1.42,0.23c0.34,0.14,0.64,0.33,0.93,0.57
+                                c0.06,0.05,0.11,0.11,0.17,0.17c0.03,0.03,0.08,0.05,0.13,0.03c0.67-0.17,1.3-0.4,1.91-0.73c0.03-0.01,0.05-0.02,0.09-0.01
+                                c0.03,0.02,0.02,0.06,0,0.08c-0.11,0.36-0.3,0.69-0.54,0.98c-0.15,0.19-0.53,0.66-0.79,0.7c0.55-0.09,1.11-0.23,1.61-0.46
+                                c0.06-0.03,0.07-0.04,0.07,0C22.77,9.61,22.77,9.62,22.77,9.63z"/>
+                          </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- End Social Icons -->
+        </div>
+        <!-- End Logo Section -->
+        <!-- Connect Container -->
+            <div class="footer-text d-flex justify-content-between align-items-center flex-wrap py-4 footer-address-section">
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text">
+                    <div class="contact-icon">
+                        <svg x="0px" y="0px" viewBox="0 0 30 30" xml:space="preserve">
+                                   <path class="st0" d="M6.53,0C2.92,0,0,2.92,0,6.53c0,2.72,1.73,4.31,3.74,7.21c1.2,1.73,2.17,3.9,2.45,6.42
+                                        c0.02,0.19,0.18,0.28,0.34,0.28c0.16,0.01,0.32-0.09,0.34-0.28c0.28-2.52,1.25-4.7,2.45-6.42c2.01-2.89,3.74-4.49,3.74-7.21
+                                        C13.06,2.92,10.13,0,6.53,0z M6.53,8.89c-1.31,0-2.37-1.06-2.37-2.37c0-1.31,1.06-2.37,2.37-2.37c1.31,0,2.37,1.06,2.37,2.37
+                                        C8.89,7.84,7.84,8.89,6.53,8.89z"/>
+                            </svg>
+                    </div>
+                    <div class="footer-address">
+                        <p>
+                            <a href="https://www.google.com/maps/place/CUSAT+Computer+Science+Department/@10.0452268,76.3254262,15z/data=!4m2!3m1!1s0x0:0xd4c02f6691f82b5?sa=X&ved=2ahUKEwjmrMXIq575AhXD8DgGHZQMBU8Q_BJ6BAhYEAU"
+                               target="_blank">CUSAT Campus, Kalamassery, Cochin.</a></p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text">
+                    <div class="contact-icon">
+                        <svg x="0px" y="0px" viewBox="0 -8 30 30" xml:space="preserve">
+                                <path class="st0" d="M15.01,11.34L13,10.26c-0.49-0.26-0.87-0.07-1.29,0.51c-0.93,1.28-1.38,1.53-2.52,0.89
+                                c-1.06-0.59-1.82-1.3-2.78-2.25C5.45,8.45,4.75,7.69,4.16,6.63C3.52,5.49,3.77,5.04,5.05,4.11c0.58-0.42,0.77-0.8,0.51-1.29
+                                L4.47,0.8c-0.44-0.86-1.07-0.95-2-0.64C1.18,0.6-0.06,2.45,0,3.33c0.18,2.57,1.47,5.66,4.15,8.34
+                                c2.68,2.68,5.77,3.97,8.34,4.15c0.88,0.06,2.72-1.19,3.16-2.48C15.97,12.42,15.87,11.79,15.01,11.34z"/>
+                            <path class="st0" d="M8.98,3.58c-0.42,0-0.77,0.35-0.76,0.78c0,0.42,0.35,0.76,0.77,0.76c0.01,0,0.01,0,0.02,0
+                                c0.46,0,0.89,0.18,1.21,0.5c0.33,0.33,0.5,0.76,0.5,1.22c0,0.42,0.34,0.77,0.76,0.78h0.01c0.42,0,0.77-0.34,0.77-0.76
+                                c0.01-0.88-0.33-1.7-0.95-2.32C10.69,3.91,9.85,3.59,8.98,3.58z M13.57,2.27c-1.22-1.23-2.87-1.9-4.59-1.89
+                                c-0.42,0-0.77,0.35-0.77,0.77c0,0.42,0.35,0.77,0.77,0.77c0,0,0.01,0,0.02,0c1.31,0,2.55,0.51,3.48,1.44
+                                c0.93,0.93,1.44,2.17,1.44,3.49c0,0.42,0.34,0.77,0.77,0.77h0c0.42,0,0.77-0.34,0.77-0.77C15.47,5.12,14.8,3.49,13.57,2.27z"/>
+                            </svg>
+                    </div>
+                    <div class="">
+                        <p><a href="tel:+914842862301">+91-484-2862301</a></p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text">
+                    <div class="contact-icon fax-icon">
+                        <svg id="faxIcon" x="0px" y="0px"
+                             viewBox="0 0 2319.72 2222.34"
+                             xml:space="preserve">
+<g>
+    <g>
+        <polygon points="528.07,452.95 528.07,452.95 527.94,88.95 		"/>
+    </g>
+    <g>
+        <path d="M2263.75,774.36h-59.83V505.41c0-28.85-23.21-52.46-51.59-52.46h-173.09V351.65c0-8.79-3.62-17.32-9.93-23.36
+			L1636.01,8.92c-5.9-5.64-13.57-8.72-21.64-8.72L520.24,0c-21.98,0-41.93,9.09-56.37,23.79c-14.45,14.68-23.39,34.96-23.39,57.32
+			v371.85H267.39c-28.37,0-51.59,23.61-51.59,52.46v268.95h-59.83C69.83,774.36,0,845.37,0,932.98v703.62
+			c0,87.6,69.83,158.62,155.97,158.62h178.1l61.38-313.45c7.78-39.74,42.08-68.36,81.93-68.36h1464.97
+			c39.85,0,74.14,28.62,81.93,68.36l61.38,313.45h178.1c86.14,0,155.97-71.02,155.97-158.62V932.98
+			C2419.72,845.37,2349.89,774.36,2263.75,774.36z M302.12,1017.89c0,35.82-28.82,65.13-64.04,65.13l0,0
+			c-35.22,0-64.04-29.31-64.04-65.13l0,0c0-35.82,28.82-65.13,64.04-65.13l0,0C273.3,952.76,302.12,982.07,302.12,1017.89
+			L302.12,1017.89z M1891.6,774.36H528.19l-0.12-321.41l0,0l-0.13-364H1551.2v233.96c0,49.03,39.23,88.93,87.45,88.93h253.13
+			L1891.6,774.36z"/>
+    </g>
+    <g>
+        <path d="M1942.35,1413.41H477.38c-39.84,0-74.14,28.62-81.93,68.36l-61.38,313.45l-63.76,325.57
+			c-4.89,24.95,1.48,50.81,17.35,70.48c15.87,19.67,39.56,31.07,64.58,31.07h1715.25c25.01,0,48.71-11.4,64.58-31.07
+			c15.87-19.67,22.23-45.53,17.35-70.48l-63.76-325.57l-61.38-313.45C2016.49,1442.03,1982.19,1413.41,1942.35,1413.41z
+			 M2067.48,2137.39H352.24l125.14-639.02h1464.97L2067.48,2137.39z"/>
+    </g>
+    <g>
+        <path d="M1822.45,1897.87H597.27c-23.07,0-41.77,19.02-41.77,42.48c0,23.46,18.7,42.48,41.77,42.48h1225.18
+			c23.07,0,41.77-19.02,41.77-42.48C1864.22,1916.89,1845.52,1897.87,1822.45,1897.87z"/>
+    </g>
+    <g>
+        <path d="M645.31,1737.88h1129.11c23.07,0,41.77-19.02,41.77-42.48c0-23.46-18.7-42.48-41.77-42.48H645.31
+			c-23.07,0-41.77,19.02-41.77,42.48C603.54,1718.86,622.24,1737.88,645.31,1737.88z"/>
+    </g>
+</g>
+</svg>
+                    </div>
+                    <div class="">
+                        <p><a href="tel:+914842576368">+91-484-2576368</a></p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-start align-items-center contact-text">
+                    <div class="contact-icon">
+                        <svg x="0px" y="0px" viewBox="0 -8 30 30" xml:space="preserve">
+   <path class="st0" d="M16.09,0.08L0.59,6.84c-0.76,0.33-0.8,1.4-0.06,1.78l3.14,1.62l9.36-6.51c0.1-0.07,0.2,0.01,0.21,0.1
+				L5.4,11.32c-0.19,0.19-0.3,0.44-0.3,0.71v3.47c0,1,1.31,1.36,1.83,0.51l1.9-3.11l4.03,2.08c0.57,0.29,1.26-0.02,1.41-0.64
+				l3.18-13.11C17.63,0.43,16.83-0.24,16.09,0.08z"/>
+  </svg>
+                    </div>
+                    <div class="">
+                        <p><a href="mailto:csdir@cusat.ac.in">csdir@cusat.ac.in</a></p>
+                    </div>
+                </div>
+            </div>
+        <!-- End Connect Container -->
+        <!-- Footer Navigation Section -->
+        <div class="d-flex flex-row flex-wrap justify-content-between align-items-top footer-nav-section pt-4 pb-3">
+            <!-- Navigation Container -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-start">
+                <div class='col w-auto'><ul><h6 class='footer-blue-text'>Main</h6><a href='index.php'><li>Home</li></a></ul></div><div class='col w-auto'><ul><h6 class='footer-blue-text'>About</h6><a href='about-cusat.php'><li>About CUSAT</li></a><a href='about-dcs.php'><li>About Department</li></a></ul></div><div class='col w-auto'><ul><h6 class='footer-blue-text'>Academics</h6><a href='programmes.php'><li>Programmes</li></a><a href='people.php'><li>People</li></a><a href='research.php'><li>Research</li></a><a href='e-learning.php'><li>E-Learning</li></a></ul></div><div class='col w-auto'><ul><h6 class='footer-blue-text'>Facilities</h6><a href='labs.php'><li>Labs</li></a><a href='library.php'><li>Library</li></a><a href='https://cusat.ac.in/knowledge-forum'><li>CUSAT Knowledge Forum</li></a><a href='https://cittic.cusat.ac.in/'><li>Enterpreneurship</li></a><a href='computer-center.php'><li>Computer Center</li></a></ul></div><div class='col w-auto'><ul><h6 class='footer-blue-text'>Admission</h6><a href='assets/pdf-files/fee-structure.pdf'><li>Fee Structure</li></a><a href='phd.php'><li>Ph.D</li></a><a href='aicte.php'><li>AICTE Approval / MD</li></a><a href='assets/pdf-files/mou.pdf'><li>MOU</li></a></ul></div><div class='col w-auto'><ul><h6 class='footer-blue-text'>Others</h6><a href='alumni.php'><li>Alumni</li></a><a href='placements.php'><li>Placements</li></a><a href='assets/pdf-files/events-2022.pdf'><li>Events</li></a><a href='lecture-series.php'><li>Lecture Series</li></a></ul></div>            </div>
+            <!-- End Navigation Container -->
+            <!-- QR Code -->
+            <div class="d-flex align-items-center mt-3 mt-lg-0">
+                <img src="assets/images/qr-code.jpg" alt="QR Code" class="img-fluid qr-code">
+            </div>
+            <!-- End QR Code -->
+        </div>
+        <!-- End Footer Navigation Section -->
+        <!-- Footer Disclaimer Section -->
+        <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-between align-items-center footer-disclaimer-section pt-4">
+            <div class="col footer-text">
+                <p> &copy; 2026. Department of Computer Science. All Rights Reserved.</p>
+            </div>
+            <div class="col footer-text text-start text-md-end">
+                <p><a href="mailto:getintouch@mayagrafix.com">Designed & Developed by Maya Grafix.</a></p>
+            </div>
+        </div>
+        <!-- End Footer Disclaimer Section -->
+    </div>
+    <!-- End Footer Container -->
+    <button onclick="topFunction()" id="back-to-top-button" class="bg-dark-blue" title="Go to top">Top</button>
+</div>
+<!-- End Footer -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap Bundle JS -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<!-- Stellar Nav Js -->
+<script src="assets/js/stellarnav.min.js"></script>
+
+<!-- Lightboxed Js -->
+<script src="assets/js/lightboxed.js"></script>
+
+<!-- AOS Js -->
+<script src="assets/js/aos.js"></script>
+
+<!-- Custom Scripts -->
+<script src="assets/js/dcs_scripts.js"></script>
+
+</body>
+</html>
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M9S46V4SPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M9S46V4SPV');
+</script>
+
+    <!-- Google tag (gtag.js) 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5H355DLSZT"></script> 
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-5H355DLSZT'); </script> -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107202370-1"></script> -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107202370-1');
+</script>
+    <title>Cochin University of Science and Technology</title>
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword" content="Cochin University,CUSAT,College,University">
+   
+    <!-- FAV ICON(BROWSER TAB ICON) -->
+    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+    <!-- GOOGLE FONT -->
+    <link href="css/google.css" rel="stylesheet">
+    <!-- FONTAWESOME ICONS -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- ALL CSS FILES -->
+    <link href="css/materialize.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/addons/datatables.css" rel="stylesheet" />
+    <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
+    <link href="css/style-mob.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min3_4.css">
+     <style type="text/css">
+       h4[aria-expanded=true] .fa-chevron-right {
+ transition: .3s transform ease-in-out;
+ transform: rotate(90deg);
+}
+    </style>
+</head>
+<body>  
+
+   <!-- MOBILE MENU -->
+    <section>
+        <div class="ed-mob-menu2">
+            <div class="ed-mm-top" >
+                <a href="#!" class="ed-micon2"><i class="fas fa-ellipsis-v"></i></a>
+                <!--top menu -->
+                <div class="ed-mm-inn2">
+                    <a href="index#!" class="ed-mi-close2"><i class="fa fa-times"></i></a>
+                    <h4><a href="http://oir.cusat.ac.in" target="_blank">International</a>    </h4>
+                    <h4><a href="student">Students</a>    </h4>
+                    <h4><a href="faculty">Faculty</a>   </h4>                                        
+                    <h4> <a class="mm-arr" href="https://admissions.cusat.ac.in"target="_blank" >Admission</a></h4>
+                    <h4> <a href="exam" >Examinations</a></h4>
+                    <h4  data-toggle="collapse" data-target="#demo" aria-expanded="false"><a>Public Relations &nbsp;&nbsp;&nbsp; <i class="fa fa-chevron-right "></i></a> 
+    </h4>
+    <ul id="demo" class="collapse">
+              <li><a href="tejas">News Letter</a></li>
+              <li><a href="press_releases">Press Releases</a></li>
+              <li><a href="media" >CUSAT in Media</a></li>
+           
+              <li><a href="science_communicator">Science Communicator</a></li>
+              <li><a href="services_offered">Services offered</a></li>
+            </ul>
+            <!--<h4><a href="https://recruit.cusat.ac.in/" target="_blank">Careers </a>
+            </h4>-->
+            <h4  data-toggle="collapse" data-target="#demoCareers" aria-expanded="false"><a>Careers &nbsp;&nbsp;&nbsp; <i class="fa fa-chevron-right "></i></a>
+    </h4>
+           <ul id="demoCareers" class="collapse">
+                <li><a href="https://recruit.cusat.ac.in/" target="_blank"> Recruitment</a></li>
+                <li><a href="../bureau" target="_blank" > Employment Bureau</a></li>
+            </ul>
+            <h4  data-toggle="collapse" data-target="#demoiqac" aria-expanded="false"><a>IQAC &nbsp;&nbsp;&nbsp; <i class="fa fa-chevron-right "></i></a> 
+    </h4>
+        <ul id="demoiqac" class="collapse">
+            <li><a href="https://qc.cusat.ac.in/login" target="_blank">IQAC New Portal </a></li>
+            <li><a href="https://iqac.cusat.ac.in" target="_blank">IQAC Old Portal </a></li>
+            <li><a href="nirf_ranking.php" target="_blank" >NIRF</a></li>
+            <li><a href="sustainability" target="_blank">Sustainability</a></li>
+            <li><a href="iqac/MASTER_PLAN_AGENDA_2030.pdf" target="_blank" >Institutional Development Plan</a></li>
+            <!--<li><a href="best_practices.php" target="_blank" >BEST PRACTICES</a></li>-->
+            <li><a href="iqac/CUSAT-IIQA.pdf" target="_blank" >NAAC IIQA</a></li>
+            <li><a href="iqac/CUSAT Declaration.pdf" target="_blank" >IIQA Undertaking</a></li>
+            <li><a href="iqac/CUSAT-Atal Ranking 2021-Updated Report.pdf" target="_blank" >ARIIA 2021 Report</a></li>
+            <li><a href="ukerala"  >Kerala Specific Factors</a></li>
+            
+        </ul>
+           <h4  data-toggle="collapse" data-target="#demoindus" aria-expanded="false"><a>Industry &nbsp;&nbsp;&nbsp; <i class="fa fa-chevron-right "></i></a> 
+    </h4>
+        <ul id="demoindus" class="collapse">
+            <li><a href="http://cusatech.cusat.ac.in/" target="_blank">CUSATECH </a></li>
+            <li><a href="http://cittic.cusat.ac.in/" target="_blank" >CITTIC</a></li>
+                </ul>
+             <h4  data-toggle="collapse" data-target="#demoten" aria-expanded="false"><a>Tenders &nbsp;&nbsp;&nbsp; <i class="fa fa-chevron-right "></i></a> 
+    </h4>
+    <ul id="demoten" class="collapse" >
+              <li><a href="tenders">Active Tenders</a></li>
+              <li><a href="https://etenders.kerala.gov.in/nicgep/app" target="_blank" >E-Procurement</a></li>
+              <li><a href="uploads/Etender_procedures.pdf" target="_blank">e-tender procedures</a></li>
+              <li><a href="uploads/CUSAT-PL(B).SO-78993-2024-1.pdf" target="_blank">e-tender Circular</a></li>
+
+            </ul>
+                <h4  data-toggle="collapse" data-target="#demointra" aria-expanded="false"><a>Intranet &nbsp;&nbsp;&nbsp; <i class="fa fa-chevron-right "></i></a> 
+    </h4>
+    <ul id="demointra" class="collapse">
+                    <li class=""><a href="http://10.0.8.2">Old Website(Internal Only)</a></li>
+                    <li class=""><a href="intercom">Intercom</a></li>                   
+                    <li><a href="mail">Request for Mail id</a></li>
+            <li><a href="http://biometric.cusat.ac.in/timecheck/(S(irf0xpieeqqnm0andgchcu45))/index.aspx">Check  Attendance</a></li>
+                    <li><a href="http://eservices.cusat.ac.in" target="_blank" >eServices</a></li>                   
+                    <li ><a href="faculty/index#pensioners">Pensioners</a></li>
+                    <li class=""><a href="faculty/idcard">Apply Biometric & ID Card</a></li>
+                    <!-- <li class=""><a href="phd_Id_card">Apply PhD/PDF ID Card</a></li> -->
+                    <li><a href="http://rekha.cusat.ac.in/xmlui/handle/123456789/70" target="_blank">Minutes of the Syndicate</a></li>
+                    <li><a href="http://ffms.cusat.ac.in/">FFMS</a></li>
+                    <li><a href="http://training.spark.gov.in/unispark/">UniSPARK</a></li>
+                    <li><a href="http://finance.cusat.ac.in" >Finance Wing</a></li>
+                    <li><a href="http://rekha.cusat.ac.in" >Rekha@CUSAT</a></li>
+                    <li><a href="documents.php# "  >Orders/Circulars</a></li>
+                    <li><a href="campus-life#facilities" >Health Center</a></li>
+            </ul>
+                <!-- <h4>About us</h4>                                    
+            <ul>                                    
+                            <li><a href="about#vision">Vision </a></li>
+                            <li><a href="about#mission">Mission </a></li>
+                            <li><a href="about#history">History</a></li>
+                            <li><a href="https://alumni.cusat.ac.in/" target="_blank">Alumni</a></li>
+                            <li><a href="achievements.php">Achievements</a></li>
+                            <li><a href="best_practices.php" >Best Practices</a></li>
+                            <li><a href="office">Administration</a></li>
+                            <li><a href="acts_and_statutes">Acts and Statutes</a></li>
+                            <li><a href="office/annual_reports"> Annual Reports</a></li>
+                            <li><a href="contact">Contact</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=09llwvVxaT4" target="_blank"> About Kochi</a></li>
+            </ul> -->
+        </div>
+                <!--top menu -->
+    <div class="container">
+        </div></div>
+            <div class="ed-mob-menu-con">
+                <div class="ed-mm-left">
+                    <div class="wed-logo-mm">
+                        <a href="index"><img src="images/logo_m1.png" alt="">
+						</a>
+                    </div>
+                </div>
+                <div class="ed-mm-right">
+                    <div class="ed-mm-menu">
+                        <a href="#!" class="ed-micon"><i class="fa fa-bars"></i></a>
+                        <div class="ed-mm-inn">
+                            <a href="index#!" class="ed-mi-close"><i class="fa fa-times"></i></a>
+                            <h4> <a href="news">News</a></h4>
+                            <h4> <a href="events">Events</a></h4>
+                             <h4> <a href="academics" >Academics</a></h4>                      
+                            <h4> <a href="campus-life">Campus Life</a></h4>
+
+                               <h4  data-toggle="collapse" data-target="#demoPeople" aria-expanded="false"><a>People &nbsp;&nbsp;&nbsp; <i class="fa fa-chevron-right "></i></a> 
+    </h4>
+                            <ul id="demoPeople" class="collapse">
+                                <li> <a href="office/chancellor">  Chancellor </a> </li>
+                                <li> <a href="office/pro-chancellor">  Pro Chancellor </a> </li>
+                                <li> <a href="office/vc">  Vice-Chancellor </a> </li>
+                                <li> <a href="office/pro-vc">  Pro Vice-Chancellor </a> </li>
+                                <li> <a href="office/registrar">   Registrar </a> </li>
+                                <li> <a href="office/fo"> Finance Officer </a> </li>
+                                <li> <a href="office/index">   The Syndicate </a> </li>
+                                <li> <a href="office/senate">    The Senate            </a></li>
+                                <li> <a href="office/ac">      Academic Council </a></li>
+                                <li> <a href="office/deans">  Deans of Faculties     </a></li>
+                                <li> <a href="office/bos">  Board of Studies - Chairman    </a></li>
+                                <li> <a href="office/hod">     Heads of Department    </a></li>
+                                <li> <a href="office/doc">  Directors of Centres</a></li>
+                                <li> <a href="https://iqac.cusat.ac.in/Web/facdetails">CUSAT Faculty  </a> </li>
+                                <li> <a href="office/uo">  University officers</a></li>
+                                <li> <a href="office/former_vc">  Former Vice Chancellors</a></li>
+                                <li> <a href="office/former_pvc">  Former Pro Vice Chancellors</a></li>
+                            </ul>
+                           
+
+                                  <h4  data-toggle="collapse" data-target="#demoResearch" aria-expanded="false"><a>Research &nbsp;&nbsp;&nbsp; <i class="fa fa-chevron-right "></i></a> 
+    </h4>
+                            <ul id="demoResearch" class="collapse">
+                                <li><a class="course-overlay" href="research-centers"> Research Centers </a></li>
+                                <li> <a class="course-overlay" href="research-area"> Research Areas</a></li>
+                                <li><a class="course-overlay" href="open_defences">Open Defences </a></li>
+                                <li><a class="course-overlay" href="research-patents">Patents </a></li>
+                                <li><a class="course-overlay" href="publications">Publications </a></li>
+                                <li><a class="course-overlay" href="funding"> Funding Oppurtunities  </a></li>
+                            </ul>
+                            <h4  data-toggle="collapse" data-target="#demoabout" aria-expanded="false"><a>About us &nbsp;&nbsp;&nbsp; <i class="fa fa-chevron-right "></i></a> 
+    </h4>
+                            <ul id="demoabout" class="collapse">
+                               
+                                <li><a href="about#vision">Vision </a></li>
+                                <li><a href="about#mission">Mission </a></li>
+                                <li><a href="about#history">History</a></li>
+                                <li><a href="https://alumni.cusat.ac.in/" target="_blank">Alumni</a></li>
+                                <li><a href="achievements.php">Achievements</a></li>
+                                <li><a href="best_practices.php" >Best Practices</a></li>
+                                <li><a href="office">Administration</a></li>
+                                <li><a href="acts_and_statutes">Acts and Statutes</a></li>
+                                <li><a href="office/annual_reports"> Annual Reports</a></li>
+                                <li><a href="contact">Contact</a></li>
+                                <li><a href="https://www.youtube.com/watch?v=09llwvVxaT4" target="_blank"> About Kochi</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--HEADER SECTION-->
+    <section>
+        <!-- TOP BAR -->
+        <div class="ed-top" >       
+            <div class="container-fluid">
+                <div class="row " >
+                    <div class="col-md-12">
+                        <div class="ed-com-t1-left ">
+                            <ul>
+                                <li><a href="http://oir.cusat.ac.in" target="_blank">International</a>
+                                </li>
+                                <li><a href="student">Students</a>
+                                </li>
+                                <li><a href="faculty">Faculty</a>
+                                </li>                                
+                                <li><a class="mm-arr" href="https://admissions.cusat.ac.in"target="_blank" >Admissions</a>
+                                </li>
+                                <li >
+                                    <a href="exam" >Examinations</a>
+                                </li>
+                                <li class="dropdown">
+    <a href="#" class=" dropdown-toggle"  data-toggle="dropdown">Public Relations
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="tejas">News Letter</a></li>
+      <li><a href="press_releases">Press Releases</a></li>
+      <li><a href="media" >CUSAT in Media</a></li>
+      <li><a href="science_communicator">Science Communicator</a></li>
+      <li><a href="services_offered">Services offered</a></li>
+      
+    </ul>
+  </li> 
+  <!--<li  class="dropdown" ><a href="https://recruit.cusat.ac.in/" target="_blank">Careers </a>-->
+    <li  class="dropdown" ><a href="#" class=" dropdown-toggle"  data-toggle="dropdown">Careers </a> 
+     <ul class="dropdown-menu">
+        <li><a href="https://recruit.cusat.ac.in/" target="_blank"> Recruitment</a></li>
+        <li><a href="../bureau" > Employment Bureau</a></li>
+    </ul>
+  </li>
+  <li  class="dropdown" ><a href="#" class=" dropdown-toggle"  data-toggle="dropdown">IQAC</a>     
+    <ul class="dropdown-menu">
+        <li><a href="https://qc.cusat.ac.in/login" target="_blank">IQAC New Portal </a></li>
+        <li><a href="https://iqac.cusat.ac.in/Portal" target="_blank">IQAC Old Portal </a></li>
+        <!-- <li><a href="https://iqac.cusat.ac.in/" target="_blank">IQAC Portal </a></li> -->
+        <li><a href="nirf_ranking.php" target="_blank" >NIRF</a></li>
+        <li><a href="sustainability" target="_blank">Sustainability</a></li>
+        <li><a href="iqac/MASTER_PLAN_AGENDA_2030.pdf" target="_blank" >Institutional Development Plan</a></li>
+
+        <!--<li><a href="best_practices.php" target="_blank" >BEST PRACTICES</a></li>-->
+        <li><a href="iqac/CUSAT-IIQA.pdf" target="_blank" >NAAC IIQA</a></li>
+        <li><a href="iqac/CUSAT Declaration.pdf" target="_blank" >IIQA Undertaking</a></li>
+        <li><a href="iqac/CUSAT-Atal Ranking 2021-Updated Report.pdf" target="_blank" >ARIIA 2021 Report</a></li>
+        <li><a href="ukerala"  >Kerala Specific Factors</a></li>
+    </ul>
+</li>
+  <li >
+    <a href="industry" >Industry</a>
+</li>
+  <!--<li class="dropdown"><a  href="#" class=" dropdown-toggle"  data-toggle="dropdown">Industry</a>
+    <ul class="dropdown-menu">
+          <li><a href="http://cusatech.cusat.ac.in/" target="_blank">CUSATECH </a></li>
+          <li><a href="http://cittic.cusat.ac.in/" target="_blank" >CITTIC</a></li>
+          
+        </ul> -->                            
+                                <li class="dropdown">
+    <a  href="#" class=" dropdown-toggle"  data-toggle="dropdown">Tenders
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="tenders">Active Tenders</a></li>
+      <li><a href="https://etenders.kerala.gov.in/nicgep/app" target="_blank" >E-Procurement</a></li>
+      <li><a href="uploads/Etender_procedures.pdf"  target="_blank">e-tender procedures</a></li>
+      <li><a href="uploads/CUSAT-PL(B).SO-78993-2024-1.pdf" target="_blank">e-tender Circular</a></li>
+
+    </ul>
+  </li>
+                                <li class="dropdown"> <a href="#" class=" dropdown-toggle"  data-toggle="dropdown">Intranet </a>
+                                <ul class="dropdown-menu">
+            <li class=""><a href="http://10.0.8.2">Old Website(Internal Only)</a></li>   
+            <hr>                      
+            <li class=""><a href="intercom">Intercom</a></li>                   
+            <li><a href="mail">Request for Mail id</a></li>
+            <li><a href="http://biometric.cusat.ac.in/timecheck/(S(irf0xpieeqqnm0andgchcu45))/index.aspx" target="_blank">Check  Attendance</a></li>
+            <li><a href="http://eservices.cusat.ac.in" target="_blank" >eServices</a></li>
+            <hr> 
+            <li class=""><a href="faculty/index#pensioners">Pensioners</a></li>
+            <li class=""><a href="faculty/idcard">Apply Biometric & ID Card</a></li>
+            <!-- <li class=""><a href="phd_Id_card">Apply PhD/PDF ID Card</a></li> -->
+            <hr> 
+            <li><a href="http://rekha.cusat.ac.in/xmlui/handle/123456789/70" target="_blank">Minutes of the Syndicate</a></li>
+            <li><a href="http://ffms.cusat.ac.in/" target="_blank">FFMS</a></li>
+            <li><a href="http://training.spark.gov.in/unispark/" target="_blank">UniSPARK</a></li>
+            <li><a href="http://finance.cusat.ac.in" target="_blank" >Finance Wing</a></li>
+            <li><a href="http://rekha.cusat.ac.in" target="_blank" >Rekha@CUSAT</a></li>
+            <li><a href="documents.php# "  >Orders/Circulars</a></li>
+            <hr> 
+            <li><a href="campus-life#facilities" >Health Center</a></li>
+
+                            </ul>
+                                </li>
+                                <!--<li class="dropdown"><a href="#" class=" dropdown-toggle"  data-toggle="dropdown">About us </a>
+                                    
+                                    <ul class="dropdown-menu">
+                                      <li><a href="about#glance">Glance</a></li>
+                                      <li><a href="about#vision">Vision </a></li>
+                                      <li><a href="about#mission">Mission </a></li>
+                                  
+                                     <li><a href="about#history">History</a></li>
+                                      <li><a href="office">Administration</a></li>
+                                      <li><a href="office/acts_and_statutes">Acts and Statutes</a></li>
+                                      <li><a href="office/annual_reports"> Annual Reports</a></li>
+                                        </ul>
+                    
+              </li>
+                                <li>-->
+                                    <li><a href="/search" target="_blank">Search <i class="fas fa-search  "  style="color:#77befb;"></i></a></li>
+                                </li>
+                            </ul>
+                             	
+                        </div>
+
+
+ 
+                       
+                         <div id="google_translate_element" style="float:left; padding-left:15px"></div>
+                         <div class="ed-com-t1-left "> 
+                        <ul><li><a href="#"  id="btn-decrease"><small>A-</small></a></li>
+                            <li><a  href="#" id="btn-orig">A</a></li>
+                            <li><a href="#" id="btn-increase">A+</a></li>
+                         </ul>
+                     </div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,ml', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
+       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- LOGO AND MENU SECTION -->
+        <div class="top-logo affix-top" data-spy="affix" data-offset-top="250">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="wed-logo">
+                            <a href="index"><img src="images/logo.png" alt="">
+                            </a>
+                        </div>
+                      <div class="main-menu">
+                            <ul>
+                               <li><a href="news">News</a>
+                                </li>
+                                 <li><a href="events">Events</a>
+                                </li>
+                                <li class="admi-menu"><a >People</a>
+                                    <div class="p-pos">
+                                        <div class="admi-mm m-menu" style="display: none;">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-cour-com mm1-s1">
+                                                <ul>
+                                                    <li><a href="office/chancellor"><span> Chancellor </span></a> </li>
+                                                    <li><a href="office/pro-chancellor"><span>  Pro Chancellor </span></a> </li>
+                                                    <li><a href="office/vc"><span>  Vice-Chancellor </span></a> </li>
+                                                    <li><a href="office/pro-vc"><span>  Pro Vice-Chancellor </span></a> </li>
+                                                    <li> <a href="office/registrar"><span> Registrar</span> </a> </li>
+                                                    <li> <a href="office/fo"><span> Finance Officer</span> </a> </li>
+                                                </ul>       
+                                                </div>
+                                                <div class="mm1-com  mm1-cour-com mm1-s1">
+                                                   <ul>
+                                                    <li> <a href="office/coe"><span> Controller of Examinations</span> </a> </li>
+                                                    <li> <a href="office/index"><span>   The Syndicate </span></a> </li>
+                                                    <li> <a href="office/senate"> <span> The Senate            </span></a></li>
+                                                    <li> <a href="office/ac">     <span> Academic Council </span></a></li>
+                                                    <li> <a href="office/deans">  <span> Deans of Faculties     </span></a></li>
+                                                    <li> <a href="office/bos"> <span>Board of Studies - Chairman  </span>   </a></li>
+                                                    
+                                                </ul>
+                                                </div>
+                                                <div class="mm1-com  mm1-cour-com mm1-s4">
+                                                    <ul>
+                                                        <li> <a href="office/hod">    <span> Heads of Department    </span></a></li>
+                                            <li><a href="office/doc"> <span> Directors of Centres</span></a></li>
+                                            <li><a href="https://iqac.cusat.ac.in/Web/facdetails"><span>CUSAT Faculty</span></a></li>
+                                            <li><a href="office/uo"> <span>University officers</span></a></li>
+                                            <li><a href="office/former_vc"> <span> Former Vice Chancellors</span></a></li>
+                                            <li><a href="office/former_pvc"> <span> Former Pro Vice Chancellors</span></a></li>
+                                        </ul>
+                                        </div>
+                                                                                                                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="cour-menu">
+                                    <a href="academics" class="mm-arr">Academics</a>
+                                </li>
+                                <!--<li class="cour-menu">
+                                    <a href="../exam" >Examinations</a>
+                                </li>-->
+                                <!--<li class="admi-menu">
+                                    
+                                      <div class="mm-pos">
+                                        <div class="admi-mm m-menu" style="display: none;">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-admi-com mm1-s1">
+                                                <h4>Academic Programmes</h4>
+
+<p>CUSAT is academically structured into 9 faculties: Engineering, Environmental Studies, Humanities, Law, Marine Sciences, Medical Sciences & Technology, Science, Social Sciences and Technology.
+
+</p><p>CUSAT has at present 27 Departments of study and research offering Graduate and Post Graduate programmes across a wide spectrum of disciplines in frontier areas of engineering, science, technology, humanities, law & management.
+
+</p><p>Centres in specialized thematic areas have been established by the University, to encourage and promote collaborative, multi-disciplinary interaction. Conceived as umbrella organizations for inter-faculty interaction and joint enterprises, aimed at wholesome integration, assimilation and dissemination of knowledge beyond all sectarian confines, these Centres are expected to engage themselves in unfettered intellectual pursuits. 
+                                                    
+                                                    </p>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <div class="ed-course-in">
+                                                        <a class="course-overlay menu-about" href="https://admissions.cusat.ac.in">
+                                                            <img src="images/h-admision.jpg" alt="">
+                                                            <span> ACADEMIC ADMISSION PORTAL</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>-->
+                                 <li><a href="campus-life">Campus </a>
+                                </li>
+                               
+                                <li class="res-menu">
+                                    <a href="#" class="mm-arr">Research</a>
+                                    <!-- MEGA MENU 1 -->
+                                     <div class="mm-pos">
+                                        <div class="res-mm m-menu" style="display: none;">
+                                            <div class="m-menu-inn">
+                                                <div class=" col-md-2"> 
+                                                    <div class="research1">
+                                                        <a class=" ho-lat-ev" href="research-centers">                                                            
+                                                            <h4>Recognised  Centers</h4>
+                                                        </a>
+                                                    </div>    
+                                                </div>
+                                                <div class=" col-md-2">
+                                                    <div class="research2">
+                                                        <a class="ho-lat-ev" href="research-area">                                                       
+                                                            <h4>Research Areas</h4>
+                                                        </a>
+                                                    </div>   
+                                                </div>
+                                                <div class="  col-md-2">
+                                                    <div class="research3">
+                                                        <a class=" ho-lat-ev" href="open_defences">                                                           
+                                                            <h4>Open Defences</h4>
+                                                        </a>
+                                                    </div>   
+                                                </div>
+                                                <div class=" col-md-2">
+                                                    <div class="research4">
+                                                        <a class="ho-lat-ev " href="research-patents">                                                           
+                                                            <h4>Patents</h4>
+                                                        </a>
+                                                    </div>   
+                                                </div><div class=" col-md-2">
+                                                    <div class="research5">
+                                                        <a class="ho-lat-ev " href="publications">                                                         
+                                                            <h4>Publications</h4>
+                                                        </a>
+                                                    </div>   
+                                                </div>
+                                                <div class="col-md-2 ">
+                                                    <div class="research6">
+                                                        <a class=" ho-lat-ev" href="funding">                                                            
+                                                            <h4>Funding Oppurtunities</h4>
+                                                        </a>
+                                                    </div>   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="about-menu">
+                                    <a href="about" class="mm-arr">About us</a>                                   
+                                    <div class="mm-pos">
+                                        <div class="about-mm m-menu" style="display: none;">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <div class="ed-course-in">
+                                                        <a class="course-overlay menu-about" href="about">
+                                                            <img src="images/h-about.webp" alt="">
+                                                            <span>CUSAT</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="mm1-com mm1-s2">
+                                                    <p>
+                                                        The birth of the University of Cochin was with the specific purpose of
+                                                         “development of higher education with particular emphasis on post-graduate
+                                                          studies and research in applied science, technology, industry and commerce”. 
+                                                          Later reorganized as CUSAT.</p>
+                                                    <a href="about" class="mm-r-m-btn">Read more</a>
+                                                </div>
+                                                <div class="mm1-com mm1-s3">
+                                              		<ul>
+                                                        
+                                                        <li><a href="about#vision">Vision </a></li>
+                                                        <li><a href="about#mission">Mission </a></li>
+                                                        <li><a href="about#history">History</a></li> 
+                                                        <li><a href="https://alumni.cusat.ac.in/" target="_blank">Alumni</a></li>
+                                                        <li><a href="achievements.php">Achievements</a></li>
+                                                        <li><a href="best_practices.php" >Best Practices</a></li>
+                                                    </ul>
+                                                </div>
+                                               <div class="mm1-com mm1-s4">
+                                                    <ul>
+                                                       
+                                                        <li><a href="office">Administration</a></li>
+                                                        <li><a href="office/acts_and_statutes">Acts and Statutes</a></li>
+                                                        <li><a href="office/annual_reports"> Annual Reports</a></li>
+                                                        <li><a href="contact">Contact</a></li>
+                                                        <li><a href="https://www.youtube.com/watch?v=09llwvVxaT4" target="_blank"> About Kochi</a></li>
+                                         				 </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+       <!--Import jQuery before materialize.js-->
+       <script src="js/main.min.js"></script>
+       <script src="js/bootstrap.min.js"></script>
+      
+       <script src="js/custom.js"></script>
+       <!--END HEADER SECTION-->  
+      
+      <style>
+      * { box-sizing: border-box; }
+      
+      body { font-family: sans-serif; }
+      
+      .scene {
+        width: 100px;
+        height: 100px;
+        margin-left: 90%;
+        perspective: 600px;
+        margin-bottom: 3px;;
+      }
+      
+      .cube {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(-100px);
+        transition: transform 1s;
+      }
+      
+      .cube.show-front  { transform: translateZ(-50px) rotateY(   0deg); }
+      .cube.show-right  { transform: translateZ(-50px) rotateY( -90deg); }
+      .cube.show-back   { transform: translateZ(-50px) rotateY(-180deg); }
+      .cube.show-left   { transform: translateZ(-50px) rotateY(  90deg); }
+      .cube.show-top    { transform: translateZ(-50px) rotateX( -90deg); }
+      .cube.show-bottom { transform: translateZ(-50px) rotateX(  90deg); }
+      
+      .cube__face {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        line-height: 30px;
+       
+        font-weight: bold;
+        color: white;
+        text-align: center;
+      }
+      
+      .cube__face  a {
+        
+        color: white;
+        text-decoration: none;
+       
+      }
+      
+      
+      .cube__face--front  { background-image: url("images/l2.png"); background-color: #ff2b00; background-size:contain ;  background-position: center;
+        background-repeat: no-repeat;}
+      .cube__face--right  { background: #fff; }
+      .cube__face--back   {background-image: url("images/l1.png"); background-color: #fff; background-size: contain;    background-position: center;
+        background-repeat: no-repeat; }
+      .cube__face--left   { background-color: #0008ff;  }
+      .cube__face--top    { background-image: url("images/b1.jpg");  background-size: cover ; }
+      .cube__face--bottom { background: #ff006f; }
+      
+      .cube__face--front  { transform: rotateY(  0deg) translateZ(50px); }
+      .cube__face--right  { transform: rotateY( 90deg) translateZ(50px); }
+      .cube__face--back   { transform: rotateY(180deg) translateZ(50px); }
+      .cube__face--left   { transform: rotateY(-90deg) translateZ(50px); }
+      .cube__face--top    { transform: rotateX( 90deg) translateZ(50px); }
+      .cube__face--bottom { transform: rotateX(-90deg) translateZ(50px); }
+      
+      label { margin-right: 10px; }
+      </style>
+      <script>
+      var cube = document.querySelector('.cube');
+      var currentClass = '';
+      var i=1;
+      function changeSide(r) {
+      showClass = 'show-'+r;
+        if ( currentClass ) {
+          cube.classList.remove( currentClass );
+        }
+      //alert(r)
+      //alert(currentClass);
+       // cube.classList.add( showClass );
+       // currentClass = showClass;
+      }
+      
+      
+      window.setInterval(function(){
+      s = i%6;
+      //alert(s);
+      i++;
+      if(s==1){
+       changeSide("top");
+      }else if(s==2){
+       changeSide("front");
+      }else if(s==3){
+        changeSide("left");
+      }else if(s==4){
+       changeSide("right");
+      }else if(s==5){
+        changeSide( "back");
+      }else if(s==0){
+       changeSide("bottom");
+      }
+      }, 2000);
+      
+      </script>
+      <script type="text/javascript">
+    //Change Found
+var $affectedElements = $("body,div p, span ,h4,p,ho-ev-link span, .con-title h2 span,.con-title h2,.course-overlay span,.wed-foot-link ul li a ,.wed-hom-footer h4,.col-md-3,col-md-3 h4,h2,h1, h4,about-sp p, .cor .about-sp .stu-life-cond p,.stu-life p, body p,.stu-life-cond p"  ); // Can be extended, ex. $("div, p, span.someClass")
+
+// Storing the original size in a data attribute so size can be reset
+$affectedElements.each( function(){
+  var $this = $(this);
+  $this.data("orig-size", $this.css("font-size") );
+});
+
+$("#btn-increase").click(function(){
+  changeFontSize(1);
+})
+
+$("#btn-decrease").click(function(){
+  changeFontSize(-1);
+})
+
+$("#btn-orig").click(function(){
+  $affectedElements.each( function(){
+        var $this = $(this);
+        $this.css( "font-size" , $this.data("orig-size") );
+   });
+})
+
+function changeFontSize(direction){
+    $affectedElements.each( function(){
+
+        var $this = $(this);
+        //alert($this.css( "font-size"));
+
+        $this.css( "font-size" , parseInt($this.css("font-size"))+direction );
+    });
+}
+
+</script> 
+      	<script src="js/ticker.js"></script><script type="text/javascript">
+		function viewOD($sid) {
+		$("#loaderIcon").show();
+			jQuery.ajax({
+				url: "view_kforum.php",
+				data:'id='+$sid,
+				type: "POST",
+				success:function(data){
+					//console.log(data);
+					$("#display").html(data);
+					$("#loaderIcon").hide();
+					},
+				error:function (){}
+				});
+		}	
+        </script>	
+     <!--SECTION START-->
+    <section>
+        <div class="container com-sp pad-bot-70">
+         <div class="row">
+                <div class="con-title">
+                    <h2>CUSAT  <span>Knowledge Forum </span></h2>
+                    
+                </div>
+            </div>
+            <div class="row">
+ 
+                <div class="sb2-2-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box-inn-sp">
+                                <div class="inn-title">
+									<h4>Technical talks by the CUSAT faculty members arranged on second wednesday of every month</h4>
+                                </div>
+                                <div class="tab-inn" id ="display">
+                                    <div class="table-responsive table-desi">
+                                       <table id="table100" border="0">
+        <tbody>
+                <tr>
+      <td width="67" valign="top">Talk-59</td>
+      <td width="572" valign="top"><a onClick="viewOD('70');"> How to Secure an Indian Patent in One Year</a></td>
+      <td width="113" valign="top"><em>2025-04-09</em></td>
+      <td width="164" valign="top"><em>(Posted on 2025-04-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-58</td>
+      <td width="572" valign="top"><a onClick="viewOD('69');"> Mathematics behind Google Search</a></td>
+      <td width="113" valign="top"><em>2025-03-12</em></td>
+      <td width="164" valign="top"><em>(Posted on 2025-04-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-57</td>
+      <td width="572" valign="top"><a onClick="viewOD('68');"> Silent Saboteurs: How Electromagnetic Compatibility Affects Modern Technology</a></td>
+      <td width="113" valign="top"><em>2025-02-12</em></td>
+      <td width="164" valign="top"><em>(Posted on 2025-04-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-56</td>
+      <td width="572" valign="top"><a onClick="viewOD('67');"> Exploring the Capabilities and Applications of ChatGPT: An Introduction to Artificial Intelligence</a></td>
+      <td width="113" valign="top"><em>2023-04-03</em></td>
+      <td width="164" valign="top"><em>(Posted on 2025-04-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-55</td>
+      <td width="572" valign="top"><a onClick="viewOD('66');"> Compartments of the total Environment: An Introduction</a></td>
+      <td width="113" valign="top"><em>2023-03-08</em></td>
+      <td width="164" valign="top"><em>(Posted on 2025-04-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-54</td>
+      <td width="572" valign="top"><a onClick="viewOD('65');"> Neuromorphic Computing: Mimicking the Brain for Efficient Computations</a></td>
+      <td width="113" valign="top"><em>2022-04-20</em></td>
+      <td width="164" valign="top"><em>(Posted on 2022-04-18)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-53</td>
+      <td width="572" valign="top"><a onClick="viewOD('64');"> Stable Isotopes Of Water: A Lens To Past Climate</a></td>
+      <td width="113" valign="top"><em>2022-03-09</em></td>
+      <td width="164" valign="top"><em>(Posted on 2022-03-05)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-52</td>
+      <td width="572" valign="top"><a onClick="viewOD('63');"> Quorum sensing: Language of Bacteria in Biofilms</a></td>
+      <td width="113" valign="top"><em>2022-02-16</em></td>
+      <td width="164" valign="top"><em>(Posted on 2022-02-12)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-51</td>
+      <td width="572" valign="top"><a onClick="viewOD('62');"> Coir –The Golden Fibre: Characteristics and Application</a></td>
+      <td width="113" valign="top"><em>2022-01-19</em></td>
+      <td width="164" valign="top"><em>(Posted on 2022-01-22)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-50</td>
+      <td width="572" valign="top"><a onClick="viewOD('61');"> Access to COVID 19 Medical products: Challenges and way forward</a></td>
+      <td width="113" valign="top"><em>2021-08-30</em></td>
+      <td width="164" valign="top"><em>(Posted on 2022-01-22)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-49</td>
+      <td width="572" valign="top"><a onClick="viewOD('59');"> Gender Empowerment through Emotions</a></td>
+      <td width="113" valign="top"><em>2021-02-24</em></td>
+      <td width="164" valign="top"><em>(Posted on 2021-02-19)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-48</td>
+      <td width="572" valign="top"><a onClick="viewOD('58');"> From Handshakes to Small World</a></td>
+      <td width="113" valign="top"><em>2021-01-13</em></td>
+      <td width="164" valign="top"><em>(Posted on 2021-02-19)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-47</td>
+      <td width="572" valign="top"><a onClick="viewOD('57');"> Neuroplasticity: The Art of learning, Un-learning and Re-learning</a></td>
+      <td width="113" valign="top"><em>2020-12-16</em></td>
+      <td width="164" valign="top"><em>(Posted on 2020-12-13)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-46</td>
+      <td width="572" valign="top"><a onClick="viewOD('56');"> Human Values and Professional Ethics</a></td>
+      <td width="113" valign="top"><em>2020-11-11</em></td>
+      <td width="164" valign="top"><em>(Posted on 2020-11-09)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-45</td>
+      <td width="572" valign="top"><a onClick="viewOD('55');"> BIOMIMICRY-Innovation Inspired by Nature</a></td>
+      <td width="113" valign="top"><em>1970-01-01</em></td>
+      <td width="164" valign="top"><em>(Posted on 2020-10-19)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-44</td>
+      <td width="572" valign="top"><a onClick="viewOD('54');"> Scientific Crime Investigation using Cyber Forensic Technology</a></td>
+      <td width="113" valign="top"><em>2020-10-21</em></td>
+      <td width="164" valign="top"><em>(Posted on 2020-10-18)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-43</td>
+      <td width="572" valign="top"><a onClick="viewOD('53');"> Brain, Face and Beauty - An Evolutionary Saga</a></td>
+      <td width="113" valign="top"><em>2020-09-24</em></td>
+      <td width="164" valign="top"><em>(Posted on 2020-10-18)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-42</td>
+      <td width="572" valign="top"><a onClick="viewOD('52');"> IAS to Princeton: a US educational experience in comparative perspective</a></td>
+      <td width="113" valign="top"><em>2020-08-26</em></td>
+      <td width="164" valign="top"><em>(Posted on 2020-10-18)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-41</td>
+      <td width="572" valign="top"><a onClick="viewOD('50');"> COVID-19 challenges to economy of Kerala</a></td>
+      <td width="113" valign="top"><em>2020-07-08</em></td>
+      <td width="164" valign="top"><em>(Posted on 2020-07-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-40</td>
+      <td width="572" valign="top"><a onClick="viewOD('49');"> Cellular nanofibre - a renewable reinforcing filler for rubber-based composites</a></td>
+      <td width="113" valign="top"><em>2020-02-19</em></td>
+      <td width="164" valign="top"><em>(Posted on 2020-07-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-39</td>
+      <td width="572" valign="top"><a onClick="viewOD('48');"> Non-linearity in Economics</a></td>
+      <td width="113" valign="top"><em>2020-01-15</em></td>
+      <td width="164" valign="top"><em>(Posted on 2020-07-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-38</td>
+      <td width="572" valign="top"><a onClick="viewOD('47');"> Blockchain and its Applications</a></td>
+      <td width="113" valign="top"><em>2019-12-11</em></td>
+      <td width="164" valign="top"><em>(Posted on 2019-12-09)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-37</td>
+      <td width="572" valign="top"><a onClick="viewOD('46');"> Start-up ecosystem with special focus on CUSAT Initiatives</a></td>
+      <td width="113" valign="top"><em>2019-11-13</em></td>
+      <td width="164" valign="top"><em>(Posted on 2019-12-09)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-36</td>
+      <td width="572" valign="top"><a onClick="viewOD('45');"> Living with Water - Exploring Indigenous Resilience in Construction</a></td>
+      <td width="113" valign="top"><em>2019-10-16</em></td>
+      <td width="164" valign="top"><em>(Posted on 2019-12-09)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-35</td>
+      <td width="572" valign="top"><a onClick="viewOD('44');"> Administration of Higher Education Institutes in India</a></td>
+      <td width="113" valign="top"><em>2019-09-18</em></td>
+      <td width="164" valign="top"><em>(Posted on 2019-12-09)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-34</td>
+      <td width="572" valign="top"><a onClick="viewOD('42');"> A state-of-the-art Stratosphere-Troposphere Radar for tropical weather and climate research</a></td>
+      <td width="113" valign="top"><em>2019-08-21</em></td>
+      <td width="164" valign="top"><em>(Posted on 2019-08-20)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-33</td>
+      <td width="572" valign="top"><a onClick="viewOD('41');"> "Union budget 2019-20 "</a></td>
+      <td width="113" valign="top"><em>2019-07-08</em></td>
+      <td width="164" valign="top"><em>(Posted on 2019-07-04)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-32</td>
+      <td width="572" valign="top"><a onClick="viewOD('40');"> Internet based legal research methods: Web data Extraction</a></td>
+      <td width="113" valign="top"><em>2019-04-08</em></td>
+      <td width="164" valign="top"><em>(Posted on 2019-04-08)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-31</td>
+      <td width="572" valign="top"><a onClick="viewOD('39');"> Kerala's Socio-Economic Transformation since Independence</a></td>
+      <td width="113" valign="top"><em>2019-03-12</em></td>
+      <td width="164" valign="top"><em>(Posted on 2019-03-12)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-30</td>
+      <td width="572" valign="top"><a onClick="viewOD('34');"> Origin, Structure, and evolution of Universe</a></td>
+      <td width="113" valign="top"><em>2019-02-19</em></td>
+      <td width="164" valign="top"><em>(Posted on 2019-02-19)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-29</td>
+      <td width="572" valign="top"><a onClick="viewOD('33');"> Transforming Job seekers to Job givers - Unravelling the Potential of Entrepreneurship Education</a></td>
+      <td width="113" valign="top"><em>2018-12-12</em></td>
+      <td width="164" valign="top"><em>(Posted on 2018-12-08)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-28</td>
+      <td width="572" valign="top"><a onClick="viewOD('32');"> Legal and Social issues in Surrogacy and its Regulatory Framework in India</a></td>
+      <td width="113" valign="top"><em>2018-11-14</em></td>
+      <td width="164" valign="top"><em>(Posted on 2018-12-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-27</td>
+      <td width="572" valign="top"><a onClick="viewOD('31');"> Human Microbiomes - A world in itself</a></td>
+      <td width="113" valign="top"><em>2018-10-10</em></td>
+      <td width="164" valign="top"><em>(Posted on 2018-10-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-26</td>
+      <td width="572" valign="top"><a onClick="viewOD('30');"> Excellence in Research</a></td>
+      <td width="113" valign="top"><em>2018-09-12</em></td>
+      <td width="164" valign="top"><em>(Posted on 2018-09-13)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-25</td>
+      <td width="572" valign="top"><a onClick="viewOD('29');"> Academic works and Copyright</a></td>
+      <td width="113" valign="top"><em>2017-10-11</em></td>
+      <td width="164" valign="top"><em>(Posted on 2018-08-05)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-24</td>
+      <td width="572" valign="top"><a onClick="viewOD('28');"> Emerging Infectious Diseases - Role of Ecology and Technology</a></td>
+      <td width="113" valign="top"><em>2018-08-09</em></td>
+      <td width="164" valign="top"><em>(Posted on 2018-08-05)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-23</td>
+      <td width="572" valign="top"><a onClick="viewOD('27');"> Mayonic Science: A Scientific tradition of art and architecture of India</a></td>
+      <td width="113" valign="top"><em>2018-07-11</em></td>
+      <td width="164" valign="top"><em>(Posted on 2018-08-05)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-22</td>
+      <td width="572" valign="top"><a onClick="viewOD('26');"> Sepsis the hidden killer</a></td>
+      <td width="113" valign="top"><em>2018-03-28</em></td>
+      <td width="164" valign="top"><em>(Posted on 2018-08-05)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-21</td>
+      <td width="572" valign="top"><a onClick="viewOD('25');"> Man Machine, towards a Cognitive Coherence</a></td>
+      <td width="113" valign="top"><em>2018-02-12</em></td>
+      <td width="164" valign="top"><em>(Posted on 2018-02-12)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-20</td>
+      <td width="572" valign="top"><a onClick="viewOD('24');"> Artificial Photosynthesis - Approaches and Bottlenecks</a></td>
+      <td width="113" valign="top"><em>2018-01-17</em></td>
+      <td width="164" valign="top"><em>(Posted on 2018-01-16)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-19</td>
+      <td width="572" valign="top"><a onClick="viewOD('23');"> Autonomous Underwater Vehicles (AUVs): The next generation ocean exploration tools</a></td>
+      <td width="113" valign="top"><em>2017-12-11</em></td>
+      <td width="164" valign="top"><em>(Posted on 2017-12-11)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-18</td>
+      <td width="572" valign="top"><a onClick="viewOD('22');"> Introduction to Multivariate Statistical Analysis</a></td>
+      <td width="113" valign="top"><em>2017-11-06</em></td>
+      <td width="164" valign="top"><em>(Posted on 2017-12-11)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-17</td>
+      <td width="572" valign="top"><a onClick="viewOD('20');"> Finance management for Educational Institutions</a></td>
+      <td width="113" valign="top"><em>2017-09-13</em></td>
+      <td width="164" valign="top"><em>(Posted on 2017-09-11)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-16</td>
+      <td width="572" valign="top"><a onClick="viewOD('19');"> Invisible Mathematics</a></td>
+      <td width="113" valign="top"><em>2017-08-23</em></td>
+      <td width="164" valign="top"><em>(Posted on 2017-09-11)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-15</td>
+      <td width="572" valign="top"><a onClick="viewOD('18');"> Protecting Inventions: Prerequisite for Patenting and Procedures</a></td>
+      <td width="113" valign="top"><em>2017-07-12</em></td>
+      <td width="164" valign="top"><em>(Posted on 2017-09-11)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-14</td>
+      <td width="572" valign="top"><a onClick="viewOD('17');"> Numerical methods for impact analysis</a></td>
+      <td width="113" valign="top"><em>2017-04-12</em></td>
+      <td width="164" valign="top"><em>(Posted on 2017-09-11)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-13</td>
+      <td width="572" valign="top"><a onClick="viewOD('16');"> Reading the history of the universe from the stars</a></td>
+      <td width="113" valign="top"><em>2017-03-08</em></td>
+      <td width="164" valign="top"><em>(Posted on 2017-03-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-12</td>
+      <td width="572" valign="top"><a onClick="viewOD('15');"> Length Scale Challenges</a></td>
+      <td width="113" valign="top"><em>2017-02-08</em></td>
+      <td width="164" valign="top"><em>(Posted on 2017-02-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-11</td>
+      <td width="572" valign="top"><a onClick="viewOD('14');"> IntraCellular Microlasers</a></td>
+      <td width="113" valign="top"><em>2017-01-11</em></td>
+      <td width="164" valign="top"><em>(Posted on 2017-01-07)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-10</td>
+      <td width="572" valign="top"><a onClick="viewOD('13');"> Biowaste recycling: A novel approach</a></td>
+      <td width="113" valign="top"><em>2016-12-14</em></td>
+      <td width="164" valign="top"><em>(Posted on 2016-12-13)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-9</td>
+      <td width="572" valign="top"><a onClick="viewOD('12');"> Embedded software for safety critical systems</a></td>
+      <td width="113" valign="top"><em>2016-11-09</em></td>
+      <td width="164" valign="top"><em>(Posted on 2016-11-05)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-8</td>
+      <td width="572" valign="top"><a onClick="viewOD('11');"> Internet of Things</a></td>
+      <td width="113" valign="top"><em>2016-10-05</em></td>
+      <td width="164" valign="top"><em>(Posted on 2016-11-05)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-7</td>
+      <td width="572" valign="top"><a onClick="viewOD('10');"> Recent trends in Biotech Patent</a></td>
+      <td width="113" valign="top"><em>2016-09-07</em></td>
+      <td width="164" valign="top"><em>(Posted on 2016-09-03)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-6</td>
+      <td width="572" valign="top"><a onClick="viewOD('9');"> Emission control of ships</a></td>
+      <td width="113" valign="top"><em>2016-08-10</em></td>
+      <td width="164" valign="top"><em>(Posted on 2016-09-03)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-5</td>
+      <td width="572" valign="top"><a onClick="viewOD('8');"> Soil characterisation using microwave</a></td>
+      <td width="113" valign="top"><em>2016-07-13</em></td>
+      <td width="164" valign="top"><em>(Posted on 2016-09-03)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-4</td>
+      <td width="572" valign="top"><a onClick="viewOD('7');"> Batteries on Fire-Electrospinning and Graphene stretching beyond the theoretical boundaries</a></td>
+      <td width="113" valign="top"><em>2016-04-13</em></td>
+      <td width="164" valign="top"><em>(Posted on 2016-09-03)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-3</td>
+      <td width="572" valign="top"><a onClick="viewOD('6');"> In search of cure - From Biomimetic  Grafts for Bone Tissue Regeneration to Magnetic field Assisted </a></td>
+      <td width="113" valign="top"><em>2016-02-10</em></td>
+      <td width="164" valign="top"><em>(Posted on 2016-09-03)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-2</td>
+      <td width="572" valign="top"><a onClick="viewOD('5');"> Technology Business Incubation (TBI) Initiatives at CUSAT</a></td>
+      <td width="113" valign="top"><em>2016-03-09</em></td>
+      <td width="164" valign="top"><em>(Posted on 2016-09-03)</em></td>
+    </tr>
+              <tr>
+      <td width="67" valign="top">Talk-1</td>
+      <td width="572" valign="top"><a onClick="viewOD('4');"> Stem cells and other pharmacological strategies for the treatment of various brain disorders</a></td>
+      <td width="113" valign="top"><em>2016-01-13</em></td>
+      <td width="164" valign="top"><em>(Posted on 2016-09-03)</em></td>
+    </tr>
+       
+      </tbody></table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+  
+               
+        
+    </section>
+
+    <!-- FOOTER -->
+    <section class="media-icon">
+         <div class="container">
+<ul>
+         <a href="https://www.facebook.com/officialcusat" target="_blank"><i class="fab fa-facebook-square  blue-text text-darken-3 fa-2x" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/channel/UCdfo9bvqrz_kvv3SK9wWEDw" target="_blank"><i class="fab fa-youtube  red-text text-darken-3 fa-2x" aria-hidden="true"></i></a>
+          <a href="https://x.com/CUSATU1971?t=ESbtKdodTkN9LKIyUBgAyg&s=09" target="_blank"><i class="fab fa-twitter-square  blue-text text-darken-3 fa-2x" aria-hidden="true"></i>         </a>
+          <a href="https://www.instagram.com/officialcusat?igsh=MXBiMDZtYjJjZXRsMg==" target="_blank"><i class="fab fa-instagram  red-text text-darken-3 fa-2x" aria-hidden="true"></i></a>
+          <a href="https://whatsapp.com/channel/0029VaggcKO4NVijRokV8c1d" target="_blank"><i class="fab fa-whatsapp-square  green-text text-darken-3 fa-2x" aria-hidden="true"></i></a>
+
+         
+     </ul>
+ </div>
+     </section>
+    <section class="wed-hom-footer">
+        <div class="container">
+              <div class="row wed-foot-link">
+                <div class="col-md-3 foot-tc-mar-t-o">
+                    <h4>ACADEMIC</h4>
+                    <ul>
+                        <li><a href="research-area.php">Research</a></li>
+                        <li><a href="http://library.cusat.ac.in" target="_blank">Library</a></li>
+                        <li><a href="https://admissions.cusat.ac.in/"  target="_blank">Admissions</a></li>
+                        <li><a href="campus-life.php">Campus Life</a></li>
+                        <li><a href="academics.php">Academic Programmes</a></li>
+                        <!-- <li><a href="gallery.php">Gallery</a></li> -->
+                        <li><a href="misc.php">Useful Downloads</a></li> 
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>PUBLIC AFFAIRS</h4>
+                    <ul>
+                        <li><a href="tenders.php">Tenders</a></li>
+                        <li><a href="press_releases.php">Press Releases</a></li>
+                        <li><a href="uploads/CUSAT_ IT_Policy.pdf" target="_blank">IT Policy</a></li>
+                        <li><a href="https://recruit.cusat.ac.in/" target="_blank">Careers/Vacancies</a></li>
+                        <li><a href="https://cusat.directverify.in/student/index.html#" target="_blank">Certificate Verify System</a></li>
+                        <li><a href="right_to_services_act.php">Right to Services Act</a></li>
+                        <li><a href="right_to_info_act.php">Right to Information Act</a></li>
+                       
+                    </ul>
+                </div>
+               <!--  <div class="col-md-3">
+                   
+                      <a>  <i class="waves-effect waves-light footer-btn waves-input-wrapper" style=""><input type="button" value="Contact" class="waves-button-input"></i>
+                        </a> 
+                  
+                   
+                </div>-->
+                <div class="col-md-3">
+                    <h4>REACH OUT</h4>
+                    <ul>
+                        <li><a href="alumni.php">Alumni</a></li>
+                        <li><a href="https://hostels.cusat.ac.in/" target="_blank">Hostels</a></li>
+                        <li><a href="http://cpo.cusat.ac.in/" target="_blank">Placements</a></li>
+                        <li><a href="http://welfarecusat.in/" target="_blank">Youth Welfare</a></li>
+                        <li><a href="https://eocsoce.cusat.ac.in/" target="_blank">Equal Opportunity Cell</a></li>
+                        <li><a href="http://nss.cusat.ac.in/" target="_blank">National Service Scheme</a></li>
+                        <li><a href="https://studentsunion.cusat.ac.in/" target="_blank">Students Union</a></li>
+                       
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>OTHER LINKS</h4>
+                    <ul>
+                        
+                        <li><a href="https://www.kerala.gov.in/" target="_blank">Govt. of Kerala</a></li>
+                        <li><a href="https://www.india.gov.in/" target="_blank">Govt. of India</a></li>
+                        <!-- <li><a href="https://mhrd.gov.in/"     target="_blank">MHRD India</a></li> -->
+                        
+                        <li><a href="http://epgp.inflibnet.ac.in/" target="_blank">e-Pathshala</a></li>
+                         <li><a href="https://nptel.ac.in/" target="_blank">NPTEL</a></li>
+                         <li><a href="https://www.nios.ac.in/" target="_blank">NIOS</a></li>
+                         <li><a href="https://cusat.ac.in/campus-life#woman" target="_blank">24x7 Women Helpline</a></li>
+                         
+                       
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- COPY RIGHTS -->
+    <section class="wed-rights">
+        <div class="container">
+            <div class="row">
+                <div class="copy-right">
+                    <p>Copyrights © 2021 CUSAT. All rights reserved | <a href="disclaimer.php">Disclaimer</a> | <a href="contact.php">Contact</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--SECTION LOGIN, REGISTER AND FORGOT PASSWORD-->
+ 
+    
+       
+  
+
+    <!--Import jQuery before materialize.js-->
+  
+
+    <script src="js/addons/datatables.min.js"></script>
+    <script src="js/addons/datatables.js"></script>
+ <script src="js/materialize.min.js"></script>
+<div class="hiddendiv common"></div></body></html>
+
