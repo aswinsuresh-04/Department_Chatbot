@@ -1,6 +1,10 @@
 import os
 import re
 import shutil
+import uuid
+import sqlite3
+from typing import Optional
+from datetime import datetime
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -38,14 +42,124 @@ collection = chroma_client.get_or_create_collection(name="department_docs")
 DATA_PATH = "../data/raw/general"
 
 
+# ============================================================
+# SQLite CHAT HISTORY
+# ============================================================
+DB_PATH = "chat_history.db"
+
+def init_db():
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS conversations (
+            id TEXT PRIMARY KEY,
+            created_at TEXT,
+            title TEXT DEFAULT 'New Conversation'
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS messages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            conversation_id TEXT,
+            role TEXT,
+            content TEXT,
+            sources TEXT DEFAULT '',
+            timestamp TEXT,
+            FOREIGN KEY(conversation_id) REFERENCES conversations(id)
+        )
+    """)
+    conn.commit()
+    conn.close()
+
+init_db()
+
+def get_conversation_history(conversation_id: str):
+    if not conversation_id:
+        return []
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.execute(
+        "SELECT role, content FROM messages WHERE conversation_id = ? ORDER BY timestamp ASC",
+        (conversation_id,)
+    )
+    history = [{"role": row[0], "text": row[1]} for row in cursor.fetchall()]
+    conn.close()
+    return history
+
+def save_message(conversation_id: str, role: str, content: str, sources: str = ""):
+    if not conversation_id:
+        return
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute(
+        "INSERT INTO messages (conversation_id, role, content, sources, timestamp) VALUES (?, ?, ?, ?, ?)",
+        (conversation_id, role, content, sources, datetime.now().isoformat())
+    )
+    conn.commit()
+    conn.close()
+
+def create_new_conversation(title: str = "New Conversation"):
+    conversation_id = str(uuid.uuid4())
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute(
+        "INSERT INTO conversations (id, created_at, title) VALUES (?, ?, ?)",
+        (conversation_id, datetime.now().isoformat(), title)
+    )
+    conn.commit()
+    conn.close()
+    return conversation_id
+
+def update_conversation_title(conversation_id: str, title: str):
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute("UPDATE conversations SET title = ? WHERE id = ?", (title, conversation_id))
+    conn.commit()
+    conn.close()
+
+def get_all_conversations():
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.execute(
+        "SELECT id, title, created_at FROM conversations ORDER BY created_at DESC LIMIT 20"
+    )
+    convos = [{"id": row[0], "title": row[1], "created_at": row[2]} for row in cursor.fetchall()]
+    conn.close()
+    return convos
+
+def get_conversation_messages(conversation_id: str):
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.execute(
+        "SELECT role, content, sources FROM messages WHERE conversation_id = ? ORDER BY timestamp ASC",
+        (conversation_id,)
+    )
+    msgs = []
+    for row in cursor.fetchall():
+        sources = row[2].split(",") if row[2] else []
+        msgs.append({"role": row[0], "text": row[1], "sources": sources})
+    conn.close()
+    return msgs
+
+def delete_conversation(conversation_id: str):
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute("DELETE FROM messages WHERE conversation_id = ?", (conversation_id,))
+    conn.execute("DELETE FROM conversations WHERE id = ?", (conversation_id,))
+    conn.commit()
+    conn.close()
+
+
+# ============================================================
+# FILE READING
+# ============================================================
+
 def read_pdf(file_path):
-    reader = PdfReader(file_path)
+    try:
+        reader = PdfReader(file_path, strict=False)
+    except:
+        reader = PdfReader(file_path)
     text = ""
     for page in reader.pages:
-        t = page.extract_text()
-        if t: text += t + "\n"
+        try:
+            t = page.extract_text()
+            if t:
+                text += t + "\n"
+        except:
+            continue
     return text
-
 
 def read_txt(file_path):
     with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
@@ -53,12 +167,11 @@ def read_txt(file_path):
 
 
 # ============================================================
-# IMPROVED CHUNKING (same as ingest.py for uploaded files)
+# CHUNKING
 # ============================================================
 
 MAX_CHUNK_SIZE = 800
 OVERLAP_SIZE = 150
-
 
 def merge_short_lines(text):
     lines = text.split("\n")
@@ -86,7 +199,6 @@ def merge_short_lines(text):
         merged.append(buffer)
     return "\n".join(merged)
 
-
 def chunk_text(text, source):
     chunks = []
     text = merge_short_lines(text)
@@ -98,10 +210,8 @@ def chunk_text(text, source):
         if text.strip():
             return [{"text": text.strip(), "source": source}]
         return []
-
     current_chunk = ""
     prev_chunk_tail = ""
-
     for para in paragraphs:
         if not para:
             continue
@@ -112,21 +222,22 @@ def chunk_text(text, source):
             current_chunk = prev_chunk_tail + "\n" + para + "\n"
         else:
             current_chunk += para + "\n"
-
     if current_chunk.strip():
         chunks.append({"text": current_chunk.strip(), "source": source})
-
     if not chunks and text.strip():
         chunks.append({"text": text.strip(), "source": source})
     return chunks
 
-
 def ingest_file(file_path, source_name):
-    if file_path.endswith(".pdf"): text = read_pdf(file_path)
-    elif file_path.endswith(".txt"): text = read_txt(file_path)
-    else: return 0
+    if file_path.endswith(".pdf"):
+        text = read_pdf(file_path)
+    elif file_path.endswith(".txt"):
+        text = read_txt(file_path)
+    else:
+        return 0
     chunks = chunk_text(text, source_name)
-    if not chunks: return 0
+    if not chunks:
+        return 0
     texts = [c["text"] for c in chunks]
     embeddings = embed_model.encode(texts, normalize_embeddings=True).tolist()
     existing = collection.count()
@@ -141,61 +252,83 @@ def ingest_file(file_path, source_name):
 
 
 # ============================================================
-# IMPROVED RETRIEVAL
-# - Hybrid search: semantic + keyword matching
-# - Multiple query variations for better coverage
-# - Deduplication of results
-# - Smarter ranking
+# RETRIEVAL
 # ============================================================
+
+def extract_keywords(query):
+    stop_words = {
+        "what", "who", "how", "when", "where", "is", "are", "the", "a", "an",
+        "in", "of", "for", "to", "and", "or", "can", "do", "does", "did",
+        "tell", "me", "about", "give", "list", "show", "details", "information",
+        "info", "any", "some", "please", "could", "would", "should", "has",
+        "have", "had", "be", "been", "being", "was", "were", "will", "shall",
+        "this", "that", "these", "those", "it", "its", "i", "my", "your",
+        "on", "at", "by", "with", "from", "up", "out", "there", "here",
+        "more", "also", "know", "you", "she", "he", "her", "his",
+        "they", "them", "got", "get", "only", "thing", "many", "much"
+    }
+    words = re.findall(r'\b\w+\b', query.lower())
+    keywords = [w for w in words if w not in stop_words and len(w) > 2]
+    synonym_map = {
+        "hod": "head", "faculty": "professor", "faculties": "professor",
+        "staff": "officer", "courses": "programmes", "programs": "programmes",
+        "labs": "lab", "phd": "ph.d", "phds": "ph.d",
+        "founded": "established", "started": "established",
+        "contact": "email", "phone": "email",
+        "placed": "placement", "jobs": "placement",
+        "fee": "tuition", "fees": "fee", "produced": "ph.d",
+    }
+    expanded = []
+    for k in keywords:
+        expanded.append(k)
+        if k in synonym_map:
+            expanded.append(synonym_map[k])
+    return expanded
 
 def retrieve(query, n_results=10):
     total_docs = collection.count()
     if total_docs == 0:
         return {"documents": [[]], "metadatas": [[]]}
 
-    # --- Semantic search ---
     qe = embed_model.encode("query: " + query, normalize_embeddings=True).tolist()
+
     semantic_results = collection.query(
         query_embeddings=[qe],
         n_results=min(n_results * 3, total_docs),
         include=["documents", "metadatas", "distances"]
     )
 
-    # --- Keyword search ---
-    # Extract important keywords from query
     keywords = extract_keywords(query)
-    keyword_results = {"documents": [[]], "metadatas": [[]], "distances": [[]]}
-
+    keyword_results = {"documents": [[]], "metadatas": [[]]}
     if keywords:
-        try:
-            # Try keyword-based search using ChromaDB where filter
-            keyword_results = collection.query(
-                query_embeddings=[qe],
-                n_results=min(n_results * 2, total_docs),
-                where_document={"$contains": keywords[0]},
-                include=["documents", "metadatas", "distances"]
-            )
-        except:
-            pass
+        for kw in keywords[:3]:
+            try:
+                kw_results = collection.query(
+                    query_embeddings=[qe],
+                    n_results=min(n_results, total_docs),
+                    where_document={"$contains": kw},
+                    include=["documents", "metadatas", "distances"]
+                )
+                keyword_results["documents"][0].extend(kw_results["documents"][0])
+                keyword_results["metadatas"][0].extend(kw_results["metadatas"][0])
+            except:
+                pass
 
-    # --- Merge and deduplicate ---
-    seen_docs = set()
+    seen = set()
     final_docs = []
     final_metas = []
 
-    # Add keyword matches first (higher priority for exact matches)
     for doc, meta in zip(keyword_results["documents"][0], keyword_results["metadatas"][0]):
-        doc_hash = hash(doc[:200])
-        if doc_hash not in seen_docs:
-            seen_docs.add(doc_hash)
+        h = hash(doc[:200])
+        if h not in seen:
+            seen.add(h)
             final_docs.append(doc)
             final_metas.append(meta)
 
-    # Then add semantic matches
     for doc, meta in zip(semantic_results["documents"][0], semantic_results["metadatas"][0]):
-        doc_hash = hash(doc[:200])
-        if doc_hash not in seen_docs:
-            seen_docs.add(doc_hash)
+        h = hash(doc[:200])
+        if h not in seen:
+            seen.add(h)
             final_docs.append(doc)
             final_metas.append(meta)
 
@@ -204,51 +337,7 @@ def retrieve(query, n_results=10):
         "metadatas": [final_metas[:n_results]]
     }
 
-
-def extract_keywords(query):
-    """Extract important keywords from query for keyword search"""
-    # Remove common words
-    stop_words = {
-        "what", "who", "how", "when", "where", "is", "are", "the", "a", "an",
-        "in", "of", "for", "to", "and", "or", "can", "do", "does", "did",
-        "tell", "me", "about", "give", "list", "show", "details", "information",
-        "info", "any", "some", "please", "could", "would", "should", "has",
-        "have", "had", "be", "been", "being", "was", "were", "will", "shall",
-        "this", "that", "these", "those", "it", "its", "i", "my", "your",
-        "on", "at", "by", "with", "from", "up", "out", "there", "here"
-    }
-
-    words = re.findall(r'\b\w+\b', query.lower())
-    keywords = [w for w in words if w not in stop_words and len(w) > 2]
-
-    # Also add common synonyms/expansions
-    synonym_map = {
-        "hod": "head",
-        "faculty": "professor",
-        "staff": "officer",
-        "courses": "programmes",
-        "programs": "programmes",
-        "labs": "lab",
-        "phd": "ph.d",
-        "founded": "established",
-        "started": "established",
-        "contact": "email",
-        "phone": "email",
-        "placed": "placement",
-        "jobs": "placement",
-    }
-
-    expanded = []
-    for k in keywords:
-        expanded.append(k)
-        if k in synonym_map:
-            expanded.append(synonym_map[k])
-
-    return expanded
-
-
 def expand_query(query):
-    """Expand query for better semantic search"""
     try:
         from groq import Groq
         gc = Groq(api_key=os.environ.get("GROQ_API_KEY"))
@@ -256,7 +345,7 @@ def expand_query(query):
             model="meta-llama/llama-4-scout-17b-16e-instruct",
             messages=[
                 {"role": "system", "content": "You are a search query optimizer. Return ONLY the expanded query, nothing else."},
-                {"role": "user", "content": f"Expand for a university department database. Expand abbreviations (HoD=Head of Department, PhD=Doctor of Philosophy, CS=Computer Science). Keep under 25 words. Return ONLY the query.\n\nQuery: {query}"}
+                {"role": "user", "content": f"Expand for a university department database. Expand abbreviations (HoD=Head of Department, PhD=Doctor of Philosophy, CS=Computer Science, faculty/faculties=department faculty members/professors). When someone says 'faculties' they mean teaching staff/professors of the department, NOT university faculties like Engineering or Science. Keep under 25 words. Return ONLY the query.\n\nQuery: {query}"}
             ],
             max_tokens=60
         )
@@ -320,7 +409,32 @@ def list_documents():
 
 
 # ============================================================
-# CHAT ENDPOINT
+# CONVERSATION HISTORY ENDPOINTS
+# ============================================================
+
+@app.get("/conversations")
+def list_conversations():
+    return {"conversations": get_all_conversations()}
+
+class LoadConversationRequest(BaseModel):
+    conversation_id: Optional[str] = None
+
+@app.post("/conversation/load")
+def load_conversation(req: LoadConversationRequest):
+    if not req.conversation_id:
+        return {"messages": [], "conversation_id": None}
+    msgs = get_conversation_messages(req.conversation_id)
+    return {"messages": msgs, "conversation_id": req.conversation_id}
+
+@app.post("/conversation/delete")
+def delete_conversation_endpoint(req: LoadConversationRequest):
+    if req.conversation_id:
+        delete_conversation(req.conversation_id)
+    return {"success": True}
+
+
+# ============================================================
+# CHAT
 # ============================================================
 
 class ChatMessage(BaseModel):
@@ -330,32 +444,42 @@ class ChatMessage(BaseModel):
 class QueryRequest(BaseModel):
     question: str
     history: list[ChatMessage] = []
+    conversation_id: Optional[str] = None
 
 @app.post("/chat")
 def chat(req: QueryRequest):
     query = req.question.strip()
     if not query:
-        return {"answer": "Please ask a question.", "sources": []}
+        return {"answer": "Please ask a question.", "sources": [], "conversation_id": req.conversation_id}
 
-    # Step 1: Expand query
+    # Create conversation if needed
+    if not req.conversation_id:
+        title = query[:50] + ("..." if len(query) > 50 else "")
+        req.conversation_id = create_new_conversation(title)
+
+    # Load history from SQLite
+    db_history = get_conversation_history(req.conversation_id)
+
+    history_str = ""
+    if db_history:
+        lines = [f"{'User' if m['role']=='user' else 'Assistant'}: {m['text']}" for m in db_history[-6:]]
+        history_str = "\n".join(lines)
+
+    # Expand and retrieve
     expanded = expand_query(query)
-
-    # Step 2: Retrieve with both original and expanded queries
     results1 = retrieve(expanded, n_results=10)
     results2 = retrieve(query, n_results=5)
 
-    # Merge results, deduplicate
+    # Merge results
     seen = set()
     all_docs = []
     all_metas = []
-
     for doc, meta in zip(results1["documents"][0], results1["metadatas"][0]):
         h = hash(doc[:200])
         if h not in seen:
             seen.add(h)
             all_docs.append(doc)
             all_metas.append(meta)
-
     for doc, meta in zip(results2["documents"][0], results2["metadatas"][0]):
         h = hash(doc[:200])
         if h not in seen:
@@ -363,45 +487,32 @@ def chat(req: QueryRequest):
             all_docs.append(doc)
             all_metas.append(meta)
 
-    # Take top 12 results
     retrieved_docs = all_docs[:12]
     retrieved_metas = all_metas[:12]
-
     context = "\n".join(retrieved_docs)
     sources = list(dict.fromkeys(m.get("source", "unknown") for m in retrieved_metas))
 
-    print(f"\n--- Query: {query}")
-    print(f"--- Expanded: {expanded}")
-    print(f"--- Retrieved {len(retrieved_docs)} chunks from {len(sources)} sources")
+    prompt = f"""You work at the Department of Computer Science, CUSAT. A visitor asks you a question. Answer naturally, like a knowledgeable staff member would — clearly, concisely, and helpfully.
 
-    history_str = ""
-    if req.history:
-        lines = []
-        for msg in req.history[-4:]:
-            label = "User" if msg.role == "user" else "Assistant"
-            lines.append(f"{label}: {msg.text}")
-        history_str = "\n".join(lines)
-
-    prompt = f"""You are a friendly and knowledgeable assistant for the Department of Computer Science at Cochin University of Science and Technology (CUSAT).
-
-Context:
+Here is what you know:
+---
 {context}
-{"Previous conversation:" if history_str else ""}
+---
+{"Conversation so far:" if history_str else ""}
 {history_str}
 
-Question: {query}
+Visitor: {query}
 
-Guidelines:
-- Be warm, helpful, and conversational in your responses.
-- Answer based on the context provided. If the context contains relevant details, share them naturally and completely.
-- When asked about a person, share all available details like name, designation, qualifications, achievements, scholarships, or any other information found in the context.
-- For follow-up questions using "his", "her", "they", "she", "he", refer to the previous conversation to identify who is being discussed, and provide all relevant information about that person from the context.
-- If the information is genuinely not available in the context, politely say you don't have that specific information and suggest how they might find it (e.g., contacting the department).
-- Never mention "context", "documents", "knowledge base", or "database" in your answer.
-- For lists, use a clean numbered format.
-- Keep answers informative but not overly long.
-
-Answer:"""
+Your answer (only use the information above, never make things up):"""
 
     answer = call_llm(prompt)
-    return {"answer": answer, "sources": sources}
+
+    # Save to SQLite
+    save_message(req.conversation_id, "user", query)
+    save_message(req.conversation_id, "assistant", answer, ",".join(sources))
+
+    return {
+        "answer": answer,
+        "sources": sources,
+        "conversation_id": req.conversation_id
+    }
